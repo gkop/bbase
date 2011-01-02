@@ -1,4 +1,6 @@
-.bundle
-db/*.sqlite3
+\.bundle
 log/*.log
+log/*.out
+log/*.err
 tmp/**/*
+**/*.swp
