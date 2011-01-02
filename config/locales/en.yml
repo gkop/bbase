@@ -3,8 +3,21 @@
 
 en:
  actions: "Actions"
+ are_you_sure: "Are you sure?"
+ back: "Back"
+ destroy: "Destroy"
+ edit: "Edit"
+ show: "Show"
 
  users:
+   edit:
+     title: "Update user details"
    index:
      new_user: "New user"
      title: "Users index"
+
+   new:
+     title: "Create an account"
+
+   show:
+     title: "User profile"
