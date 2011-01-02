@@ -1,8 +1,18 @@
 Bbase::Application.routes.draw do
   
-  devise_for :users
+  resources :sites
+
+  resources :cities
+
+  resources :artworks
 
   root :to => "home#index"
+  
+  devise_for :users do
+    # block new user registration
+    get "/users/sign_up(.:format)" => "invites#new"
+    post "/users(.:format)" => "invites#new"
+  end
 
   resources :users, :only => [ :index, :show ]
 

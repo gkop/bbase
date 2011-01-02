@@ -9,6 +9,21 @@ en:
  edit: "Edit"
  show: "Show"
 
+ artworks:
+   index:
+     title: "Listing all artworks"
+     new_artwork: "New artwork"
+   new:
+     title: "Add new piece of artwork"
+
+ home:
+   index: 
+     title: "Your dashboard"
+
+ invites:
+   new:
+     title: "Request an invite"
+
  users:
    edit:
      title: "Update user details"

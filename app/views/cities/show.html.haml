@@ -1,0 +1,12 @@
+%h1= t '.title'
+%p
+  = link_to t('back'), cities_path
+  = link_to t('edit'), edit_city_path(@city)
+
+%dl
+  %dt= City.human_attribute_name :name
+  %dd= @city.name
+  %dt= City.human_attribute_name :state
+  %dd= @city.state
+  %dt= City.human_attribute_name :country
+  %dd= @city.country

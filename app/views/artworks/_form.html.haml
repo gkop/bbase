@@ -1,0 +1,11 @@
+= form_for(@artwork) do |f|
+  - if @artwork.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@artwork.errors.count, 'error')} prohibited this user from being saved:"
+      %ul
+      - @artwork.errors.full_messages.each do |msg|
+        %li= msg
+  
+
+  .actions
+    = f.submit

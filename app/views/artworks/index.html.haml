@@ -1,0 +1,14 @@
+%h1= t('.title')
+%p= link_to t('.new_artwork'), new_artwork_path
+
+%table
+  %thead
+    %tr
+      %th{:colspan => 3}= t 'actions'
+  
+  %tbody
+    - for artwork in @artworks
+      %tr{ :class => cycle(:odd, :even) }
+        %td.action= link_to t('show'), artwork
+        %td.action= link_to t('edit'), edit_artwork_path(artwork)
+        %td.action= link_to t('destroy'), artwork, :confirm => t('are_you_sure'), :method => :delete
