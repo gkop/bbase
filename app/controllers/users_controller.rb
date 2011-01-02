@@ -21,4 +21,13 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /home
+  def home
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => current_user }
+    end
+  end
+ 
+
 end
