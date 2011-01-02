@@ -16,6 +16,12 @@ gem 'devise'
 # authorization
 gem 'cancan'
 
+# user uploads
+gem 'carrierwave'
+
+# edit images
+gem 'mini_magick'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'

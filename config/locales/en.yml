@@ -32,6 +32,7 @@ en:
  home:
    index: 
      title: "Your dashboard"
+     new_artwork: "Add new artwork"
 
  invites:
    new:

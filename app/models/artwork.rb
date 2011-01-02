@@ -3,6 +3,8 @@ class Artwork
 
   field :title, :type => String
 
+#  mount_uploader :image, ImageUploader
+
   references_one :location_created, :class_name => "Site"
   references_one :location_stored, :class_name => "Site"
   references_one :collection, :class_name => "Site"
