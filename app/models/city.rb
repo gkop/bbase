@@ -8,4 +8,10 @@ class City
 
   validates_presence_of :name
 
+  def self.find_or_create(params)
+    @city = City.first(:conditions => { :name => params[:name] })
+    @city = City.new(params) unless @city
+    @city.save
+  end
+
 end

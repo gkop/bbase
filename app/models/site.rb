@@ -3,6 +3,8 @@ class Site
   field :name, :type => String
   field :address, :type => String
 
+  references_one :city
+    
   referenced_in :city
   referenced_in :artwork
 

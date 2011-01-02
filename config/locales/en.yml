@@ -10,11 +10,24 @@ en:
  show: "Show"
 
  artworks:
+   edit:
+     title: "Edit artwork"
    index:
      title: "Listing all artworks"
      new_artwork: "New artwork"
    new:
      title: "Add new piece of artwork"
+
+ cities:
+   edit:
+     title: "Edit city"
+   index:
+     new_city: "New city"
+     title: "Listing all cities"
+   new:
+     title: "Add a city"
+   show:
+     title: "City details"
 
  home:
    index: 
@@ -36,3 +49,16 @@ en:
 
    show:
      title: "User profile"
+
+ sites:
+   edit:
+     title: "Edit site"
+   index:
+     new_site: "New site"
+     title: "Listing all sites"
+   new:
+     title: "Add a site"
+   show:
+     title: "Site details"
+
+

@@ -14,9 +14,6 @@
     = f.label :address
     %br
     = f.text_field :address
-  
-  = fields_for :city do |city_fields|
-    = render :partial => 'cities/choose', :locals => { :f => city_fields }
 
   .actions
     = f.submit

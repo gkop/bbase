@@ -57,7 +57,9 @@ class SitesController < ApplicationController
   # PUT /sites/1.xml
   def update
     @site = Site.find(params[:id])
-
+ 
+    @site.city = City.find_or_create(params[:city])
+ 
     respond_to do |format|
       if @site.update_attributes(params[:site])
         format.html { redirect_to(@site, :notice => 'Site was successfully updated.') }
