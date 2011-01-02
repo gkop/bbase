@@ -1,5 +1,13 @@
 %h1= t '.title'
 %p
+
+  %dl
+    %dt= :title
+    %dd= @artwork.title
+
+    %dt= 'Image URL'
+    %dd= @artwork.image.url
+
   = link_to t('back'), artworks_path
   = link_to t('edit'), edit_artwork_path(@artwork)
 

@@ -17,6 +17,8 @@ en:
      new_artwork: "New artwork"
    new:
      title: "Add new piece of artwork"
+   show:
+     title: "Artwork details"
 
  cities:
    edit:

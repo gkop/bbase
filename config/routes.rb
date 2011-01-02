@@ -18,6 +18,8 @@ Bbase::Application.routes.draw do
 
   get 'home' => "home#index"
 
+  get "/images/uploads/*path" => "gridfs#serve"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

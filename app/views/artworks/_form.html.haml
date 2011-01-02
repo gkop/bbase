@@ -1,11 +1,20 @@
-= form_for(@artwork) do |f|
+= form_for @artwork, :html => {:multipart => true} do |f|
   - if @artwork.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@artwork.errors.count, 'error')} prohibited this user from being saved:"
       %ul
       - @artwork.errors.full_messages.each do |msg|
         %li= msg
-  
 
+  .field
+    = f.label :title
+    %br
+    = f.text_field :title
+
+  .field
+    = f.label :image
+    %br
+    = f.file_field :image
+  
   .actions
     = f.submit
