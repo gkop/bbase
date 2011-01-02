@@ -6,6 +6,15 @@ gem 'mongoid'
 gem 'bson_ext'
 
 gem 'haml'
+gem 'hpricot'
+
+gem 'ruby_parser'
+
+# authentication
+gem 'devise'
+
+# authorization
+gem 'cancan'
 
 group :development do
   gem 'unicorn'

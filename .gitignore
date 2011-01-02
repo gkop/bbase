@@ -1,6 +1,6 @@
-\.bundle
+.bundle
+**/*.swp
 log/*.log
 log/*.out
 log/*.err
 tmp/**/*
-**/*.swp

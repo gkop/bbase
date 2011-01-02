@@ -1,5 +1,10 @@
 Bbase::Application.routes.draw do
-  resources :users
+  
+  devise_for :users
+
+  root :to => "home#index"
+
+  resources :users, :only => [ :index, :show ]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

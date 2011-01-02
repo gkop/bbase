@@ -6,8 +6,6 @@
     %tr
       %th= User.human_attribute_name :name
       %th= User.human_attribute_name :email
-      %th= User.human_attribute_name :password_hash
-      %th= User.human_attribute_name :password_reset
       %th{:colspan => 3}= t 'actions'
   
   %tbody
@@ -15,8 +13,6 @@
       %tr{ :class => cycle(:odd, :even) }
         %td= user.name
         %td= user.email
-        %td= user.password_hash
-        %td= user.password_reset
         %td.action= link_to t('show'), user
         %td.action= link_to t('edit'), edit_user_path(user)
         %td.action= link_to t('destroy'), user, :confirm => t('are_you_sure'), :method => :delete
