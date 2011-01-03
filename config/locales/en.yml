@@ -17,6 +17,8 @@ en:
      new_artwork: "New artwork"
    new:
      title: "Add new piece of artwork"
+   recently_added:
+     title: "Recently added artwork"
    show:
      title: "Artwork details"
 
@@ -35,6 +37,7 @@ en:
    index: 
      title: "Your dashboard"
      new_artwork: "Add new artwork"
+     all_artwork: "See all artwork"
 
  invites:
    new:

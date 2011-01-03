@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   
   # GET /home
   def index
+    @recently_added_artwork = Artwork.order_by(:created_at.desc).limit(6)
   end
 end

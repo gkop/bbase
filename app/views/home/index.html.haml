@@ -1,2 +1,6 @@
 %h1= t '.title'
+
+= render 'artworks/recently_added'
+
 %p= link_to t('.new_artwork'), new_artwork_path
+%p= link_to t('.all_artwork'), :controller => 'artworks', :action => 'index'
