@@ -1,20 +1,17 @@
-%h1= t '.title'
+%h1= @artwork.title+" ("+(@artwork.year ? @artwork.year.to_s : "?")+")"
 %p
 
   %dl
 
     = image_tag @artwork.image.economy.url 
 
-    %dt= :title
-    %dd= @artwork.title
-    
     %dt= 'Links to images'
-    %dd= link_to 'Master image', @artwork.image.url
-    %dd= link_to '512x512 image', @artwork.image.economy.url
-    %dd= link_to '256x256 image', @artwork.image.collage.url
-    %dd= link_to '128x128 image', @artwork.image.bigtoe.url
-    %dd= link_to '72x72 image', @artwork.image.thumb.url
-    %dd= link_to '36x36 image', @artwork.image.tiny.url
+    %dd= link_to 'Master', @artwork.image.url
+    %dd= link_to '512x512', @artwork.image.economy.url
+    %dd= link_to '256x256', @artwork.image.collage.url
+    %dd= link_to '128x128', @artwork.image.bigtoe.url
+    %dd= link_to '72x72', @artwork.image.thumb.url
+    %dd= link_to '36x36', @artwork.image.tiny.url
 
   = link_to t('back'), artworks_path
   = link_to t('edit'), edit_artwork_path(@artwork)
