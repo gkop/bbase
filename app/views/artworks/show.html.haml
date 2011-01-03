@@ -2,11 +2,19 @@
 %p
 
   %dl
+
+    = image_tag @artwork.image.economy.url 
+
     %dt= :title
     %dd= @artwork.title
-
-    %dt= 'Image URL'
-    %dd= @artwork.image.url
+    
+    %dt= 'Links to images'
+    %dd= link_to 'Master image', @artwork.image.url
+    %dd= link_to '512x512 image', @artwork.image.economy.url
+    %dd= link_to '256x256 image', @artwork.image.collage.url
+    %dd= link_to '128x128 image', @artwork.image.bigtoe.url
+    %dd= link_to '72x72 image', @artwork.image.thumb.url
+    %dd= link_to '36x36 image', @artwork.image.tiny.url
 
   = link_to t('back'), artworks_path
   = link_to t('edit'), edit_artwork_path(@artwork)
