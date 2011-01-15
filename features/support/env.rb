@@ -39,6 +39,15 @@ require 'factory_girl/step_definitions'
 # of your scenarios, as this makes it hard to discover errors in your application.
 ActionController::Base.allow_rescue = false
 
+AfterConfiguration do |config|
+  Mongoid.master.collections.each do |coll|
+    unless coll.name =~ /^system\./
+      coll.drop
+    end
+  end
+end
+
+
 # How to clean your database when transactions are turned off. See
 # http://github.com/bmabey/database_cleaner for more info.
 begin
