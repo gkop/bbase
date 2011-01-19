@@ -82,4 +82,8 @@ class SitesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def painted
+    render :text => 'sites painted'
+  end
 end

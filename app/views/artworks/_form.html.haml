@@ -16,17 +16,24 @@
     %br
     = f.text_field :year
 
-  = f.fields_for :location_painted do |ff|
-    = ff.fields_for :city do |fff|
-      .field
-        = fff.label :state
-        %br
-        = fff.us_state_select :name, :priority => %w(MA MI)
+  %div#location_painted
+    = f.label :location_painted
+    = f.fields_for :location_painted do |ff|
+      = ff.fields_for :city do |fff|
+        .field
+          = fff.label :state
+          %br
+          = fff.us_state_select :state
+  
+        .field
+          = fff.label :site
+          %br
+          %div.site_form_container
 
   .field
     = f.label :image
     %br
     = f.file_field :image
-  
+ 
   .actions
     = f.submit

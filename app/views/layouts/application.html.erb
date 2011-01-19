@@ -3,17 +3,22 @@
 <head>
   <title>Bbase</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'external/jquery-1.4.1.min', 'external/jquery.rails' %>
+  <%= javascript_include_tag 'external/jquery-1.4.1.min', 'external/jquery.rails', 'BBase/BBase', 'BBase/BBaseForms' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= render 'devise/menu/menu' %>
+  <%= render 'devise/menu/menu' %>
 
-<p style="color: green" class="notice"><%= notice %></p>
-<p style="color: red" class="alert"><%= alert %></p>
+  <p style="color: green" class="notice"><%= notice %></p>
+  <p style="color: red" class="alert"><%= alert %></p>
 
-<%= yield %>
-
+  <%= yield %>
+ 
+  <script type="text/javascript">
+    $('document').ready(function() {
+      BBase.registerHandlers();
+    });
+  </script>
 </body>
 </html>

@@ -80,4 +80,9 @@ class CitiesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def painted
+    render :text => 'cities painted'
+  end
+
 end
