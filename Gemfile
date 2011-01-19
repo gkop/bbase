@@ -22,6 +22,9 @@ gem 'carrierwave'
 # edit images
 gem 'mini_magick'
 
+# states dropdown
+gem 'us_states_select'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'

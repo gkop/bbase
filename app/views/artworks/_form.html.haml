@@ -16,6 +16,13 @@
     %br
     = f.text_field :year
 
+  = f.fields_for :location_painted do |ff|
+    = ff.fields_for :city do |fff|
+      .field
+        = fff.label :state
+        %br
+        = fff.us_state_select :name, :priority => %w(MA MI)
+
   .field
     = f.label :image
     %br

@@ -152,6 +152,7 @@ GEM
     unicorn (3.2.1)
       kgio (~> 2.1)
       rack
+    us_states_select (1.0.0)
     warden (1.0.3)
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
@@ -180,3 +181,4 @@ DEPENDENCIES
   ruby-debug
   ruby_parser
   unicorn
+  us_states_select
