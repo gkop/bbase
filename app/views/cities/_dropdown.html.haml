@@ -5,3 +5,9 @@
         = fff.label :city
         %br
         = fff.collection_select( :name, @cities, :id, :name)
+
+        = link_to 'New city', '#', {:id => 'new-city'}
+
+      %div.new_city_form_container
+
+       

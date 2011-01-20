@@ -25,9 +25,15 @@ class CitiesController < ApplicationController
   # GET /cities/new.xml
   def new
     @city = City.new
+    @state = params[:state]
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html {
+         if @state 
+           render :partial => 'form_for_state'
+         end
+         # new.html.erb
+      }
       format.xml  { render :xml => @city }
     end
   end
