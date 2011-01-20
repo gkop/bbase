@@ -81,9 +81,13 @@ class CitiesController < ApplicationController
     end
   end
 
-  # GET /cities/painted
-  def painted
-    render :text => 'state: '+params[:state]
+  # GET /cities/created
+  def created
+    @cities = City.find(:all, :conditions => { :state => params[:state] })
+    @site_tag = :location_created 
+    respond_to do |format|
+      format.html { render :partial => 'dropdown' }
+    end
   end
 
 end

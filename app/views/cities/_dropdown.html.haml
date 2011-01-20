@@ -1,0 +1,7 @@
+= fields_for :artwork do |f|
+  = f.fields_for @site_tag do |ff|
+    = ff.fields_for :city do |fff|
+      .field
+        = fff.label :city
+        %br
+        = fff.collection_select( :name, @cities, :id, :name)

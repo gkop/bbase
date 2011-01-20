@@ -1,7 +1,7 @@
 Bbase::Application.routes.draw do
   
-  get '/cities/painted' => 'cities#painted'
-  get '/sites/painted' => 'sites#painted'
+  get '/cities/created' => 'cities#created'
+  get '/sites/created' => 'sites#created'
   
   resources :sites
 

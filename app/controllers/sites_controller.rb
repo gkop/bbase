@@ -83,7 +83,7 @@ class SitesController < ApplicationController
     end
   end
 
-  def painted
-    render :text => 'sites painted'
+  def created
+    render :text => 'sites created'
   end
 end
