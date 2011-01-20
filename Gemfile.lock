@@ -95,6 +95,7 @@ GEM
       bson_ext (>= 1.0.4)
       mongoid (>= 2.0.0.beta.15)
       rspec (>= 2.0.0.beta.19)
+    mongoid_taggable (0.1.1)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -175,6 +176,7 @@ DEPENDENCIES
   mini_magick
   mongoid
   mongoid-rspec
+  mongoid_taggable
   rails (= 3.0.3)
   rspec
   rspec-rails

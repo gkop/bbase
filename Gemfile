@@ -25,6 +25,9 @@ gem 'mini_magick'
 # states dropdown
 gem 'us_states_select'
 
+# tagging system
+gem 'mongoid_taggable'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'

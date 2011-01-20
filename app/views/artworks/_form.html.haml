@@ -16,9 +16,9 @@
     %br
     = f.text_field :year
 
-  %div#location_painted
-    = f.label :location_painted
-    = f.fields_for :location_painted do |ff|
+  %div#location_created
+    = f.label :location_created
+    = f.fields_for :location_created do |ff|
       = ff.fields_for :city do |fff|
         .field
           = fff.label :state
@@ -26,9 +26,11 @@
           = fff.us_state_select :state
   
         .field
-          = fff.label :site
+          = fff.label :city
           %br
           %div.site_form_container
+      
+      = ff.hidden_field(:tags, :value => "created")
 
   .field
     = f.label :image

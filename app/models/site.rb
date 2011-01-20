@@ -1,5 +1,7 @@
 class Site
   include Mongoid::Document
+  include Mongoid::Taggable
+
   field :name, :type => String
   field :address, :type => String
 

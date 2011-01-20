@@ -81,8 +81,9 @@ class CitiesController < ApplicationController
     end
   end
 
+  # GET /cities/painted
   def painted
-    render :text => 'cities painted'
+    render :text => 'state: '+params[:state]
   end
 
 end
