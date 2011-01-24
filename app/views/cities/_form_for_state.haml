@@ -1,19 +1,23 @@
-= form_for(@city) do |f|
+= form_for(@city, :url => new_city_path) do |f|
   - if @city.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@city.errors.count, 'error')} prohibited this user from being saved:"
+      %h2= "#{pluralize(@city.errors.count, 'error')} prohibited this city from being saved:"
       %ul
       - @city.errors.full_messages.each do |msg|
         %li= msg
   
   .field
-    = f.label :name
-    %br
-    = f.text_field :name
-  .field
     = f.label :state
     %br
     = @state
+  
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+ 
+  .field
+    = f.hidden_field :state, :value => @state
 
   .actions
     = f.submit

@@ -12,6 +12,7 @@ BBase.Forms.registerHandlers = function() {
     }, 250);
   });
 
+  // link to new show new city form
   $('div#location_created_form a#new-city').live('click', function(e) {
     $('div#location_created_form div.new_city_form_container').load('/cities/new?state='+$('select#artwork_location_created_city_state').val());
     e.preventDefault();
