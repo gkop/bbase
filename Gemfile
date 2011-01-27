@@ -17,10 +17,10 @@ gem 'devise'
 gem 'cancan'
 
 # user uploads
-gem 'carrierwave'
+gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
 
 # edit images
-gem 'mini_magick'
+gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
 
 # states dropdown
 gem 'us_states_select'

@@ -29,26 +29,27 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  # TODO: convert all files to png
+
   # Create different versions of your uploaded files:
-  # TODO: resize proportionately on some of these
   version :economy do
-    process :resize_to_fill => [512, 512]
+    process :resize_to_limit => [512, 5000]
   end
 
   version :collage do
-    process :resize_to_fill => [256, 256]
+    process :resize_to_limit => [256, 5000]
   end
 
   version :bigtoe do
-    process :resize_to_fill => [128, 128]
+    process :resize_to_limit => [128, 5000]
   end
 
   version :thumb do
-    process :resize_to_fill => [72, 72]
+    process :resize_to_limit => [72, 5000]
   end
   
   version :tiny do
-    process :resize_to_fill => [36, 36]
+    process :resize_to_limit => [36, 5000]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

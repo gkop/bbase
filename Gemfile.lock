@@ -1,3 +1,17 @@
+GIT
+  remote: git://github.com/jnicklas/carrierwave.git
+  revision: 4dc1a5c357d8a6adcf02c3af1aa96edb51138e71
+  specs:
+    carrierwave (0.5.1)
+      activesupport (~> 3.0)
+
+GIT
+  remote: git://github.com/probablycorey/mini_magick.git
+  revision: d22f1010d5476aa7837166168fae49e69a6696cc
+  specs:
+    mini_magick (3.1)
+      subexec (~> 0.0.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -43,8 +57,6 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.2)
-    carrierwave (0.5.1)
-      activesupport (~> 3.0)
     celerity (0.8.6)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
@@ -87,8 +99,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mini_magick (3.1)
-      subexec (~> 0.0.4)
     mongo (1.1.5)
       bson (>= 1.1.5)
     mongoid (2.0.0.beta.20)
@@ -172,7 +182,7 @@ DEPENDENCIES
   bson_ext
   cancan
   capybara
-  carrierwave
+  carrierwave!
   cucumber-rails
   devise
   factory_girl
@@ -180,7 +190,7 @@ DEPENDENCIES
   formtastic_cocoon
   haml
   hpricot
-  mini_magick
+  mini_magick!
   mongoid
   mongoid-rspec
   mongoid_taggable

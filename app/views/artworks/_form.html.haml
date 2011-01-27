@@ -10,9 +10,7 @@
     = f.input :title
     = f.input :year
     = f.input :image
-    %h3 Location created
-    = f.semantic_fields_for :location_created do |ff|
-      = render 'sites/fields', :f => ff
-
- 
   = f.buttons
+-#    %h3 Location created
+-#  = f.semantic_fields_for :location_created do |ff|
+-#  = render 'sites/fields', :f => ff
