@@ -11,13 +11,13 @@ class User
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
-  references_many :exhibitions, :class_name => "Exhibition", :inverse_of => :exhibitions, :stored_as => :array
+  references_many :exhibitions, :class_name => "Exhibition", :foreign_key => "owner_id"
 
   after_create :create_favorites
 
   protected
   def create_favorites
-    puts 'works:)'
     favorites = Exhibition.create(:name => "Favorites")
+    self.exhibitions << favorites
   end
 end

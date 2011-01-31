@@ -4,8 +4,6 @@ class Exhibition
 
   field :name, :type => String
 
-  references_many :artworks, :class_name => "Artwork", :inverse_of => :exhibitions, :stored_as => :array
+  references_many :artworks, :class_name => "Artwork", :stored_as => :array, :inverse_of => :exhibitions
   
-  referenced_in :user
-
 end
