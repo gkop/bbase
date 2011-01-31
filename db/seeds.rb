@@ -7,8 +7,6 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-puts 'EMPTY THE MONGODB DATABASE'
-Mongoid.master.collections.reject { |c| c.name == 'system.indexes'}.each(&:drop)
 puts 'SETTING UP ADMIN LOGIN'
 user = User.create! :name => 'admin', :email => 'gabe@sublemon.com', :password => 'Blueberry23', :password_confirmation => 'Blueberry23'
 puts 'New user created: ' << user.name
