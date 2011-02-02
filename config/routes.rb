@@ -25,6 +25,8 @@ Bbase::Application.routes.draw do
 
   match "/exhibitions/:id/add/:artwork_id" => "exhibitions#add", :as => :add_artwork_to_exhibition
 
+  resources :exhibitions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

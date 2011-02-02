@@ -2,7 +2,9 @@
 #dashboard #recently-added,
 #dashboard #your-exhibitions,
 #artwork-details #navigation,
-#artwork-details #artwork {
+#artwork-details #artwork,
+#exhibitions #navigation,
+#exhibitions #exhibitions {
   float: left;
   margin-right: 30px;
 }
@@ -11,8 +13,9 @@
   margin-top: 48px;
 }
 
-#artwork-details #navigation {
-  margin-top: 60px;
+#artwork-details #navigation,
+#exhibitions #navigation {
+  margin-top: 48px;
 }
 
 #your-exhibitions div.title {
@@ -22,4 +25,13 @@
 #your-exhibitions div.empty {
   text-align: center;
   font-style: italic;
+}
+
+#your-exhibitions .exhibition-preview {
+  width: 200px;
+  text-align: center
+}
+
+h4 {
+  text-align: center
 }
