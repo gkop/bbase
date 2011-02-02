@@ -1,0 +1,10 @@
+%div#your-exhibitions
+  %h4= t('.title')
+
+  - current_user.exhibitions.each do |e|
+    %div.title
+      = e.name
+    - if e.artworks.empty?
+      %div.empty
+        \-empty-
+

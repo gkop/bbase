@@ -1,0 +1,19 @@
+#dashboard #navigation,
+#dashboard #recently-added,
+#dashboard #your-exhibitions {
+  float: left;
+  margin-right: 30px;
+}
+
+#dashboard #navigation {
+  margin-top: 48px;
+}
+
+#your-exhibitions div.title {
+  text-align: center;
+}
+
+#your-exhibitions div.empty {
+  text-align: center;
+  font-style: italic;
+}

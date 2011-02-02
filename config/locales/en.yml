@@ -36,6 +36,9 @@ en:
  home:
    index: 
      title: "Your dashboard"
+   exhibitions:
+     title: "Your exhbitions"
+   navigation:
      new_artwork: "Add new artwork"
      all_artwork: "See all artwork"
 
