@@ -37,6 +37,7 @@ en:
    exhibitions:
      title: "Exhibitions"
    navigation:
+     all_exhibitions: "All exhibitions"
      new_exhibition: "New exhibition"
 
  home:

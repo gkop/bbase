@@ -6,9 +6,15 @@
   %p
     %dl
       %dt= 'Add to exhibition'
+      - @artwork.exhibitions.where(:owner_id => current_user.id).each do |e|
+        %span.already-added
+          %dd
+            Already exists in
+            = link_to(e.name, e)
       - current_user.exhibitions.each do |e|
-        = form_tag add_artwork_to_exhibition_path(:id => e.id, :artwork_id => @artwork.id) do
-          %dd= submit_tag e.name
+        - if !e.artworks.include?(@artwork)
+          = form_tag add_artwork_to_exhibition_path(:id => e.id, :artwork_id => @artwork.id) do
+            %dd= submit_tag e.name
   
   %p
     %dl
