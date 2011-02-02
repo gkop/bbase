@@ -46,8 +46,10 @@ en:
    exhibitions:
      title: "Your exhibitions"
    navigation:
-     new_artwork: "Add new artwork"
+     new_artwork: "New artwork"
      all_artwork: "See all artwork"
+     new_exhibition: "New Exhibition"
+     all_exhibitions: "See all exhibitions"
 
  invites:
    new:

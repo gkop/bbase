@@ -1,4 +1,9 @@
 %div#navigation
   
   %p= link_to t('.new_artwork'), new_artwork_path
-  %p= link_to t('.all_artwork'), :controller => 'artworks', :action => 'index'
+  %p= link_to t('.all_artwork'), artworks_path
+ 
+  %br
+  %p= link_to t('.new_exhibition'), new_exhibition_path
+  %p= link_to t('.all_exhibitions'), exhibitions_path
+

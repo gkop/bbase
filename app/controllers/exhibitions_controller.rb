@@ -57,7 +57,8 @@ class ExhibitionsController < ApplicationController
   # POST /exhibitions
   # POST /exhibitions.xml
   def create
-    @exhibition = Exhibition.new(params[:artwork])
+    @exhibition = Exhibition.new(params[:exhibition])
+    current_user.exhibitions << @exhibition
 
     respond_to do |format|
       if @exhibition.save
