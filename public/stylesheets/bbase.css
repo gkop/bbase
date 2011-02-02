@@ -1,12 +1,18 @@
 #dashboard #navigation,
 #dashboard #recently-added,
-#dashboard #your-exhibitions {
+#dashboard #your-exhibitions,
+#artwork-details #navigation,
+#artwork-details #artwork {
   float: left;
   margin-right: 30px;
 }
 
 #dashboard #navigation {
   margin-top: 48px;
+}
+
+#artwork-details #navigation {
+  margin-top: 60px;
 }
 
 #your-exhibitions div.title {

@@ -23,6 +23,7 @@ Bbase::Application.routes.draw do
 
   get "/images/uploads/*path" => "gridfs#serve"
 
+  match "/exhibitions/:id/add/:artwork_id" => "exhibitions#add", :as => :add_artwork_to_exhibition
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
