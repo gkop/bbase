@@ -1,0 +1,14 @@
+%div#exhibition-form
+  %h1= t 'exhibitions.navigation.new_exhibition'
+  
+  = semantic_form_for @exhibition do |f|
+    - if @exhibition.errors.any?
+      #errorExplanation
+        %h2= "#{pluralize(@exhibition.errors.count, 'error')} prohibited this exhibition from being saved:"
+        %ul
+        - @exhibition.errors.full_messages.each do |msg|
+          %li= msg
+
+    = f.inputs do
+      = f.input :name
+    = f.buttons
