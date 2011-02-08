@@ -37,7 +37,7 @@ group :development do
   gem 'ruby-debug'
 end
 
-group :test do
+group :test, :development do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'rspec'
