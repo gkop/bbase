@@ -13,7 +13,8 @@ class Artwork
 #  references_many :exhibitions, :class_name => "Site"
 
    
-   references_many :exhibitions, :class_name => "Exhibition", :stored_as => :array, :inverse_of => :artworks
+  references_many :exhibitions, :class_name => "Exhibition", :stored_as => :array, :inverse_of => :artworks
 
-   validates_numericality_of :year, :greater_than => 1937, :less_than => 2001, :allow_blank => true
+  validates_numericality_of :year, :greater_than => 1937, :less_than => 2001, :allow_blank => true
+  
 end

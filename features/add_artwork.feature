@@ -1,6 +1,5 @@
 Feature: Add artwork
 
-  @javascript
   Scenario: Add a new artwork
     Given I am a new, authenticated user  
     Then I should see "Your dashboard"

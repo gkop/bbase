@@ -75,9 +75,12 @@ class ExhibitionsController < ApplicationController
   # PUT /exhibitions/1.xml
   def update
     @exhibition = Exhibition.find(params[:id])
+    if params[:exhibition][:assigned_to_homepage]
+      @exhibition.assign_to_homepage
+    end
 
     respond_to do |format|
-      if @exhibition.update_attributes(params[:artwork])
+      if @exhibition.save! && @exhibition.update_attributes(params[:artwork])
         format.html { redirect_to(@exhibition, :notice => 'Exhibition was successfully updated.') }
         format.xml  { head :ok }
       else

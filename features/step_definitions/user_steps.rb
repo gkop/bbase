@@ -1,8 +1,8 @@
 Given /^I am a user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*)"$/ do |name, email, password|
-  User.new(:name => name,
+  @user = User.create!(:name => name,
            :email => email,
            :password => password,
-           :password_confirmation => password).save!
+           :password_confirmation => password)
 end
 
 Given /^I am a new, authenticated user$/ do
