@@ -41,10 +41,10 @@ en:
      new_exhibition: "New exhibition"
 
  home:
-   index: 
-     title: "Your dashboard"
+   dashboard: 
+     title: "My dashboard"
    exhibitions:
-     title: "Your exhibitions"
+     title: "My exhibitions"
    navigation:
      new_artwork: "New artwork"
      all_artwork: "See all artwork"

@@ -1,5 +1,4 @@
 <% if user_signed_in? %>
-  <li>
-  <%= link_to('Home', home_path) %>        
-  </li>
+   | <%= link_to('Homepage', homepage_path) %> 
+   | <%= link_to('My Dashboard', dashboard_path) %>        
 <% end %>

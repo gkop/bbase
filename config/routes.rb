@@ -1,4 +1,7 @@
 Bbase::Application.routes.draw do
+
+ 
+  root :to => "home#dashboard"
   
   get '/cities/created' => 'cities#created'
   get '/sites/created' => 'sites#created'
@@ -8,8 +11,6 @@ Bbase::Application.routes.draw do
   resources :cities
 
   resources :artworks
-
-  root :to => "home#index"
   
   devise_for :users do
     # block new user registration
@@ -19,7 +20,9 @@ Bbase::Application.routes.draw do
 
   resources :users, :only => [ :index, :show ]
 
-  get 'home' => "home#index"
+  get '/homepage' => "home#homepage", :as => "homepage"
+
+  get '/dashboard' => "home#dashboard", :as => "dashboard"
 
   get "/images/uploads/*path" => "gridfs#serve"
 

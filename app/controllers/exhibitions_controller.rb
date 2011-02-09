@@ -2,7 +2,7 @@ class ExhibitionsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
 
-  # POST /exhibitons/1/add/2
+  # POST /exhibitions/1/add/2
   def add
     @exhibition = Exhibition.find(params[:id])
     @artwork = Artwork.find(params[:artwork_id])

@@ -17,9 +17,27 @@ class Exhibition
       false
     end 
   end
+ 
+  def to_json
+    json_exhibition = {}
+    json_exhibition[:name ]= self.name
+    json_exhibition[:artworks] = []
+    self.artworks.each do |artwork|
+      json_artwork = {}
+      json_artwork[:big_image_url] = artwork.image.economy.url
+      json_artwork[:small_image_url] = artwork.image.bigtoe.url
+      json_artwork[:id] = artwork.id
+      json_artwork[:title] = artwork.title
+      json_artwork[:year] = artwork.year
+      json_exhibition[:artworks] << json_artwork
+    end
+    json_exhibition.to_json
+  end
 
   def self.assigned_to_homepage
-    Configuration.get(:homepage_configuration)
+    if Configuration.get(:homepage_exhibition)
+      self.find(Configuration.get(:homepage_exhibition))
+    end
   end
 
 end

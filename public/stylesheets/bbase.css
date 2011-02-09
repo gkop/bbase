@@ -1,16 +1,38 @@
+body {
+  text-align: center;
+}
+
 #dashboard #navigation,
 #dashboard #recently-added,
-#dashboard #your-exhibitions,
+#dashboard #my-exhibitions,
 #artwork-details #navigation,
 #artwork-details #artwork,
 #exhibitions #navigation,
 #exhibitions #exhibitions {
   float: left;
-  margin-right: 30px;
+}
+
+#exhibitions,
+#artwork-details,
+#dashboard,
+#homepage {
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#dashboard #recently-added {
+  margin-left: 50px;
+  width: 220px;
+}
+
+#recently-added table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #navigation {
-  width: 168px;
+  width: 170px;
 }
 
 #dashboard #navigation {
@@ -22,26 +44,48 @@
   margin-top: 48px;
 }
 
-#your-exhibitions div.title {
+#my-exhibitions div.title {
   text-align: center;
 }
 
-#your-exhibitions div.empty {
+#my-exhibitions div.empty {
   text-align: center;
   font-style: italic;
 }
 
-#your-exhibitions .exhibition-preview {
-  width: 200px;
-  text-align: center
+#my-exhibitions .exhibition-preview {
+  width: 270px;
+  text-align: center;
 }
 
 h4 {
-  text-align: center
+  text-align: center;
 }
 
 span.already-added {
   color: #C0C0C0;
   font-size: 10px;
   font-style: italic;
+}
+
+span#previous,
+span#next {
+  font-size: 36px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+span#previous a,
+span#next a {
+  text-decoration: none;
+}
+
+div#slideshow img {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 0px;
+}
+
+div#slideshow a.nohover:hover {
+  background-color: inherit;
 }
