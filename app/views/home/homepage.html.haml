@@ -2,18 +2,25 @@
   %h1
     Berta Golahny
 
-  %div#slideshow
-    %span#previous
-      %a{:href => '#', :id => 'previous'}
-        \<
-    - artwork = @exhibition.artworks.first
-    = link_to image_tag(artwork.image.economy.url), artwork, :class => 'artwork nohover'
+  - if !@exhibition
+    Please assign an exhibition to be shown on this page.
 
-    %span#next
-      %a{:href => '#', :id => 'next'}
-        \>
+  - elsif @exhibition.artworks.count == 0
+    Exhibition "#{@exhibition.name}" assigned to this page, but is empty.
+ 
+  -else
+    %div#slideshow
+      %span#previous
+        %a{:href => '#', :id => 'previous'}
+          \<
+      - artwork = @exhibition.artworks.first
+      = link_to image_tag(artwork.image.economy.url), artwork, :class => 'artwork nohover'
+
+      %span#next
+        %a{:href => '#', :id => 'next'}
+          \>
       
-    %p#title
-      = link_to basic_title(artwork), artwork, :class => 'artwork'
+      %p#title
+        = link_to basic_title(artwork), artwork, :class => 'artwork'
   
-  = render 'slideshow/set_slideshow'  
+    = render 'slideshow/set_slideshow'  

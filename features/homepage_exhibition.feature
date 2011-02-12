@@ -22,3 +22,18 @@ Feature: Custom home page exhibition
     When I follow "All exhibitions"
     And I follow "Space"
     Then I should see "Assign to homepage"
+
+  @two
+  Scenario: No homepage exhibition
+    Given I am a new, authenticated user
+    And I go to the homepage
+    Then I should see "Please assign an exhibition to be shown on this page."
+
+  @three
+  Scenario: Empty homepage exhibition
+    Given a homepage exhibition exists with name "No artworks :("
+    And I am a new, authenticated user
+    And I go to the homepage
+    Then I should see "assigned to this page, but is empty."
+
+

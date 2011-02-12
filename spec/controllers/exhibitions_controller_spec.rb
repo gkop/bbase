@@ -25,6 +25,25 @@ describe ExhibitionsController do
       new_exhibition.artworks[0].should == artwork 
     end
   end
+  
+  context "POST remove" do
+    it "removes an artwork from an exhibition" do
+      new_artwork = Factory.create(:artwork)
+      new_exhibition = Factory.create(:exhibition, :artworks => [new_artwork])
+      new_artwork.exhibitions.count.should == 1
+      new_exhibition.artworks.count.should == 1
+  
+      post :remove, :id => new_exhibition.id, :artwork_id => new_artwork.id, :format => :html
+      response.should be_redirect
+      response.should redirect_to new_exhibition
+      exhibition = assigns(:exhibition)
+      
+      flash[:notice].should == "Removed "+new_artwork.title+" from "+new_exhibition.name
+      new_artwork.reload
+      new_artwork.exhibitions.count.should == 0
+      exhibition.artworks.count.should == 0
+    end
+  end
 
   context "GET index" do
     it "displays a list of all exhibitions" do
