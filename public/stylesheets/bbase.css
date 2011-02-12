@@ -12,10 +12,7 @@ body {
   float: left;
 }
 
-#exhibitions,
-#artwork-details,
-#dashboard,
-#homepage {
+#contents {
   width: 710px;
   margin-left: auto;
   margin-right: auto;
