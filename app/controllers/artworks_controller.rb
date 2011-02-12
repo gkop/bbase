@@ -46,6 +46,7 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.new(params[:artwork])
 
     respond_to do |format|
+      
       if @artwork.save
         format.html { redirect_to(@artwork, :notice => 'Artwork was successfully created.') }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }

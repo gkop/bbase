@@ -7,7 +7,7 @@ class ExhibitionsController < ApplicationController
     @exhibition = Exhibition.find(params[:id])
     @artwork = Artwork.find(params[:artwork_id])
     @exhibition.artworks << @artwork
-    if @exhibition && @artwork && @exhibition.save
+    if @exhibition && @artwork && @artwork.save
       flash[:notice] = "Added "+@artwork.title+" to "+@exhibition.name 
     else
       flash[:error] = "Error adding "+@artwork.title+" to "+@exhibition.name 

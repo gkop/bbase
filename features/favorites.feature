@@ -6,7 +6,7 @@ Feature: Favorites exhibition
     Then I should see "Favorites" within "my exhibitions"
     And I should see "-empty-" within "my exhibitions"
 
-  @two
+  @two @javascript
   Scenario: Add an artwork to Favorites
     Given an artwork exists with title "Stewball"
     And I am a new, authenticated user
