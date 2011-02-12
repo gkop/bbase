@@ -4,6 +4,7 @@ class Artwork
 
   field :title, :type => String
   field :year, :type => Integer
+  key :title
 
   mount_uploader :image, ImageUploader
 

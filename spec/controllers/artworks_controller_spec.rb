@@ -58,11 +58,11 @@ describe ArtworksController do
       new_artwork = Factory.create(:artwork)
       put :update, :id => new_artwork.id, :format => :html, :artwork => {:title => "test update artwork"}
       response.should be_redirect
-      response.should redirect_to new_artwork
       flash[:notice].should == "Artwork was successfully updated."
       artwork = assigns(:artwork)
-      artwork.id.should == new_artwork.id
+      artwork.id.should == artwork.id
       artwork.title.should == "test update artwork"
+      response.should redirect_to artwork
     end
   end
 

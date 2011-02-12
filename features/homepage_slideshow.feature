@@ -6,6 +6,7 @@ Feature: Slideshow on homepage
     And a homepage exhibition exists with name "Homepage Exhibition"
     And the exhibition has the artworks "Space, Time, Cosmos"
     When I go to the homepage
+
     Then I should see "Space"
     When I follow "next"
     Then I should see "Time"
