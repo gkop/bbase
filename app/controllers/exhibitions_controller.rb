@@ -16,6 +16,21 @@ class ExhibitionsController < ApplicationController
     redirect_to @artwork 
   end
 
+  # POST /exhibitions/1/add/2
+  def remove
+    @exhibition = Exhibition.find(params[:id])
+    @artwork = Artwork.find(params[:artwork_id])
+    @exhibition.artwork_ids.delete(@artwork.id)
+    @artwork.exhibition_ids.delete(@exhibition.id)
+    if @exhibition && @artwork && @exhibition.save && @artwork.save
+      flash[:notice] = "Removed "+@artwork.title+" from "+@exhibition.name 
+    else
+      flash[:error] = "Error removing "+@artwork.title+" from "+@exhibition.name 
+    end
+
+    redirect_to @exhibition 
+  end
+
   # GET /exhibitions
   # GET /exhibitions.xml
   def index

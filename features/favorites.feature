@@ -6,12 +6,12 @@ Feature: Favorites exhibition
     Then I should see "Favorites" within "my exhibitions"
     And I should see "-empty-" within "my exhibitions"
 
-  @two @javascript
+  @two
   Scenario: Add an artwork to Favorites
     Given an artwork exists with title "Stewball"
     And I am a new, authenticated user
     And I follow "Stewball"
-    And I press "Favorites" within "the navigation panel"
+    And I follow "Favorites" within "the navigation panel"
     Then I should see "Added Stewball to Favorites"
 
     When I go to my dashboard

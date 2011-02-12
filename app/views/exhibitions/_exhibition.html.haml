@@ -5,8 +5,11 @@
   - if @exhibition.is_on_homepage?
     This exhibition is currently assigned to the homepage
   - else
-    = link_to("Assign to homepage", { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put, :exhibition => { :assigned_to_homepage => "true" })
+    = link_to("Assign to homepage", { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
 
   %p
     - @exhibition.artworks.each do |a|
-      = link_to image_tag(a.image.bigtoe.url), a, :id => a.title
+      %span
+        = link_to image_tag(a.image.bigtoe.url), a, :id => a.title
+        - if @exhibition.owner_id == current_user.id
+          = link_to('Remove', remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)

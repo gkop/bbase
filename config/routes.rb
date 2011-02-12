@@ -26,7 +26,8 @@ Bbase::Application.routes.draw do
 
   get "/images/uploads/*path" => "gridfs#serve"
 
-  match "/exhibitions/:id/add/:artwork_id" => "exhibitions#add", :as => :add_artwork_to_exhibition
+  put "/exhibitions/:id/add/:artwork_id" => "exhibitions#add", :as => :add_artwork_to_exhibition
+  put "/exhibitions/:id/remove/:artwork_id" => "exhibitions#remove", :as => :remove_artwork_from_exhibition
 
   resources :exhibitions
 
