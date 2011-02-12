@@ -4,13 +4,13 @@
 
   %div#slideshow
     %span#previous
-      %a{:href => '#'}
+      %a{:href => '#', :id => 'previous'}
         \<
     - artwork = @exhibition.artworks.first
     = link_to image_tag(artwork.image.economy.url), artwork, :class => 'artwork nohover'
 
     %span#next
-      %a{:href => '#'}
+      %a{:href => '#', :id => 'next'}
         \>
       
     %p#title

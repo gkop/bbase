@@ -35,7 +35,7 @@ describe ExhibitionsController do
       response.should be_success
       response.should render_template :index
       exhibitions = assigns(:exhibitions)
-      exhibitions.size.should == 6 # including the user's favorites
+      exhibitions.size.should == 11 # including the users' favorites
     end
   end
 
