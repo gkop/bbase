@@ -72,7 +72,9 @@ describe ArtworksController do
       delete :destroy, :id => new_artwork.id, :format => :html
       response.should be_redirect
       response.should redirect_to artworks_path
-      Artwork.all(:conditions => {:id => new_artwork.id}).count.should == 0
+#      Artwork.all(:conditions => {:id => new_artwork.id}).count.should == 0
+      Artwork.count.should == 0
+      flash[:notice].should == "Deleted artwork "+new_artwork.title
     end
   end
      

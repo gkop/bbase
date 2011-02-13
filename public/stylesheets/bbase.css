@@ -8,8 +8,12 @@ body {
 #artwork-details #navigation,
 #artwork-details #artwork,
 #exhibitions #navigation,
-#exhibitions #exhibitions {
+#exhibitions #exhibition {
   float: left;
+}
+
+#exhibitions #exhibition {
+  width: 540px;
 }
 
 #contents {

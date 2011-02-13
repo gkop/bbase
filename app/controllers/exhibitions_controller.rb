@@ -111,6 +111,13 @@ class ExhibitionsController < ApplicationController
     @exhibition = Exhibition.find(params[:id])
     @exhibition.destroy
 
+    # the deleted exhibition may have been assigned to the homepage
+    if Configuration.get('homepage_exhibition') == @exhibition.id
+      Configuration.set('homepage_exhibition', nil)
+    end
+
+    flash[:notice] = "Deleted exhibition "+@exhibition.name 
+
     respond_to do |format|
       format.html { redirect_to(exhibitions_url) }
       format.xml  { head :ok }

@@ -25,4 +25,9 @@
       %dd= link_to '72x72', @artwork.image.thumb.url
       %dd= link_to '36x36', @artwork.image.tiny.url
  
+  -# TODO show only if user is admin 
+  %p
+    = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
 
+    
+    

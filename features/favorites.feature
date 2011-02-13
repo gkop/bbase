@@ -18,3 +18,12 @@ Feature: Favorites exhibition
     And I follow "Favorites"
     And I follow "Stewball"
     Then I should see "Already exists in Favorites" within "the navigation panel"
+
+  @three
+  Scenario: Remove an artwork from Favorites
+  Given an artwork exists with title "Zia"
+  And I am a new, authenticated user
+  And I have added the artwork to "Favorites"
+  When I follow "Favorites"
+  When I follow "Remove"
+  Then I should see "Removed Zia from Favorites"

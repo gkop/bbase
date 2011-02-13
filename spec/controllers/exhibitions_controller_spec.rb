@@ -112,6 +112,7 @@ describe ExhibitionsController do
       response.should be_redirect
       response.should redirect_to exhibitions_path
       Exhibition.all(:conditions => {:id => new_exhibition.id}).count.should == 0
+      flash[:notice].should == "Deleted exhibition "+new_exhibition.name
     end
   end
      

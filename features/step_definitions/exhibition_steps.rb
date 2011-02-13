@@ -13,3 +13,10 @@ Given /^the exhibition has the artworks "([^"]*)"$/ do |artworks|
   end
 end
 
+Given /^I have added the artwork to "([^"]*)"$/ do |exhibition|
+  @exhibition = @user.exhibitions.find(:first, :conditions => {:name => exhibition })
+  @exhibition.artworks << @artwork
+  @artwork.save!
+end
+
+

@@ -79,6 +79,8 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
 
+    flash[:notice] = "Deleted artwork "+@artwork.title
+
     respond_to do |format|
       format.html { redirect_to(artworks_url) }
       format.xml  { head :ok }
