@@ -52,6 +52,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [48, 48]
   end
 
+  # I want to be able to process after uploading as described in this message
+  #  http://groups.google.com/group/carrierwave/msg/5a73ee0dcc17e402
+  def resize_later
+    resize_to_fill(200, 200)
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list

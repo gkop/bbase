@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/jnicklas/carrierwave.git
-  revision: 4dc1a5c357d8a6adcf02c3af1aa96edb51138e71
+  revision: 60f3a0687f8e0eea4622e4c3548e3244970d1d41
   specs:
-    carrierwave (0.5.1)
+    carrierwave (0.5.2)
       activesupport (~> 3.0)
 
 GIT

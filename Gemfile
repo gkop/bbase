@@ -16,6 +16,9 @@ gem 'devise'
 # authorization
 gem 'cancan'
 
+# roles
+# gem 'cream', :git => 'https://github.com/kristianmandrup/cream.git'
+
 # user uploads
 gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
 
