@@ -4,7 +4,7 @@ class Artwork
 
   field :title, :type => String
   field :year, :type => Integer
-  key :title
+  key :title, :year
 
   mount_uploader :image, ImageUploader
 
@@ -18,7 +18,7 @@ class Artwork
   validates_uniqueness_of :title
   validates_presence_of :title
   validates_numericality_of :year, :greater_than => 1937, :less_than => 2001, :allow_blank => true
-  validate :check_for_collision, :on => [:create, :update]
+#  validate :check_for_collision, :on => [:create, :update]
  
   # validate uniqueness of key 
   def check_for_collision

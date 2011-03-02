@@ -35,6 +35,9 @@ gem 'mongoid_taggable'
 gem 'formtastic', '~> 1.1.0'
 gem "formtastic_cocoon"
 
+# less css
+gem 'less'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'

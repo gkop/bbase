@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jnicklas/carrierwave.git
-  revision: 60f3a0687f8e0eea4622e4c3548e3244970d1d41
+  revision: be8bfa12d70261451a75879af4ad47b3c5dc6d7
   specs:
     carrierwave (0.5.2)
       activesupport (~> 3.0)
@@ -93,6 +93,9 @@ GEM
     json (1.4.6)
     json_pure (1.4.6)
     kgio (2.1.1)
+    less (1.2.21)
+      mutter (>= 0.4.2)
+      treetop (>= 1.4.2)
     linecache (0.43)
     mail (2.2.13)
       activesupport (>= 2.3.6)
@@ -112,6 +115,7 @@ GEM
       mongoid (>= 2.0.0.beta.15)
       rspec (>= 2.0.0.beta.19)
     mongoid_taggable (0.1.1)
+    mutter (0.5.3)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -192,6 +196,7 @@ DEPENDENCIES
   formtastic_cocoon
   haml
   hpricot
+  less
   mini_magick!
   mongoid
   mongoid-rspec
