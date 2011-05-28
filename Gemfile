@@ -20,7 +20,7 @@ gem 'cancan'
 # gem 'cream', :git => 'https://github.com/kristianmandrup/cream.git'
 
 # user uploads
-gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
+gem 'carrierwave'
 
 # edit images
 gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
