@@ -1,4 +1,8 @@
 %div#navigation
+  %p.caption
+    %span.title= @artwork.title
+    %span.year= @artwork.year
+
   %p
     Links to images
     %span.image-link= link_to 'Master', @artwork.image.url
@@ -12,8 +16,6 @@
   -# TODO show only if user is admin 
   %p
     = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
-
-  %p
     = link_to t('edit'), edit_artwork_path(@artwork)
 
   %p

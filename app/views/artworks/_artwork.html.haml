@@ -1,12 +1,11 @@
 %div#artwork
-  %span.carrot
-    >
-  = link_to "Artworks", artworks_path
-  %span.carrot
-    >
-  = link_to @artwork.title, @artwork
-
-  %p
+  %p.flat-tree
+    %span.carrot
+      >
+    = link_to "Artworks", artworks_path
+    %span.carrot
+      >
+    = link_to @artwork.title, @artwork
 
   = image_tag @artwork.image.square.url
 

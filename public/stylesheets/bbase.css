@@ -14,10 +14,6 @@ body {
   font: x-small verdana,arial,helvetica,sans-serif;
 }
 
-#exhibitions #exhibition {
-  width: 540px;
-}
-
 #contents {
   width: 800px;
   margin-left: auto;
@@ -59,8 +55,9 @@ div#session-menu {
 }
 
 #main {
-  width: 800px;
+  width: 780px;
   background-color: #333333;
+  padding: 10px;
 }
 
 #sidebar-menu {
@@ -109,8 +106,7 @@ a:hover {
   text-align: left;
 }
 
-#dashboard img,
-#artwork-details img {
+#dashboard img {
   margin: .5em;
 }
 
@@ -133,12 +129,7 @@ a:hover {
   text-align: left;
 }
 
-#dashboard,
-#artwork-details {
-  padding: 1.5em;
-}
-
-#main h4 {
+#main h4, #main h1 {
   margin: .5em;
 }
 
@@ -231,4 +222,35 @@ div#slideshow a.nohover:hover {
 span.image-link {
   margin-left: .6em;
   margin-right: .6em;
+}
+
+p.caption {
+  margin-top: 1em;
+  margin-bottom: .5em;
+  font-size: 9pt;
+}
+
+p.caption span.title {
+  font-weight: bold;
+}
+
+p.caption span.year {
+}
+
+p.flat-tree {
+  margin-bottom: 1em;
+}
+
+table.artworks {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+}
+
+table.artworks td {
+  padding: .25em .5em .25em .5em;
+}
+
+table.artworks td.action {
+  padding: .25em;
 }
