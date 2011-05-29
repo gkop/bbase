@@ -6,21 +6,12 @@ margin: 0;
 html, body {
   height: 100%;
   background-color: #000000;
+  color: #ffffff;
 }
 
 body {
   text-align: center;
   font: x-small verdana,arial,helvetica,sans-serif;
-}
-
-#dashboard #navigation,
-#dashboard #recently-added,
-#dashboard #my-exhibitions,
-#artwork-details #navigation,
-#artwork-details #artwork,
-#exhibitions #navigation,
-#exhibitions #exhibition {
-  float: left;
 }
 
 #exhibitions #exhibition {
@@ -58,7 +49,6 @@ body {
 div#session-menu {
   display: inline-block;
   background-color: #666666;
-  color: #ffffff;
   margin-right: 1em;
   margin-top: 0px;
   padding: 2px 8px 5px 8px;
@@ -69,11 +59,12 @@ div#session-menu {
 }
 
 #main {
+  width: 800px;
+  display: inline-block;
   background-color: #333333;
 }
 
 #sidebar-menu {
-  color: #ffffff;
   display: inline-block;
   width: auto;
   margin-left: -123px;
@@ -104,34 +95,69 @@ div#session-menu {
 #footer {
   border-top: 1px solid black;
   padding: 10px;
-  color: #ffffff;
 }
 
-#footer a, #session-menu a, #sidebar-menu a {
+a {  
   color: #ffffff;
   text-decoration: none;
 }
 
-#footer a:hover, #session-menu a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-#dashboard #recently-added {
-  margin-left: 50px;
-  width: 220px;
+#dashboard img {
+  margin: .5em;
+}
+
+#dashboard .centered {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#dashboard #navigation,
+#my-exhibitions,
+#recently-added {
+  display: inline-block;
+  float: left;
+  margin: 1em;
+}
+
+#dashboard #navigation {
+  margin-top: 4em;
+  text-align: left;
+}
+
+#dashboard {
+  padding: 1.5em;
+}
+
+#dashboard h4 {
+  margin: .5em;
+}
+
+#dashboard a {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+#dashboard a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#dashboard a img {
+  border: 1px solid #ffffff;
+}
+
+#dashboard a:hover img {
+  border: 1px solid #ffcc00;
 }
 
 #recently-added table {
   margin-left: auto;
   margin-right: auto;
-}
-
-#navigation {
-  width: 170px;
-}
-
-#dashboard #navigation {
-  margin-top: 48px;
 }
 
 #artwork-details #navigation,
@@ -149,12 +175,6 @@ div#session-menu {
 }
 
 #my-exhibitions .exhibition-preview {
-  width: 270px;
-  text-align: center;
-}
-
-h4 {
-  text-align: center;
 }
 
 span.already-added {
