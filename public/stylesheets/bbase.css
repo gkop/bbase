@@ -3,10 +3,12 @@ padding: 0;
 margin: 0;
 }
 
-html, body {height: 100%;}
+html, body {
+  height: 100%;
+  background-color: #000000;
+}
 
 body {
-  background-color: #000000;
   text-align: center;
   font: x-small verdana,arial,helvetica,sans-serif;
 }
@@ -156,12 +158,12 @@ span#next a:hover {
 }
 
 div#slideshow {
+  padding-top: 14px;
   width: auto;
   display: inline-block;
 }
 
 div#slideshow img {
-  margin-top: 14px;
   border: 0px;
 }
 

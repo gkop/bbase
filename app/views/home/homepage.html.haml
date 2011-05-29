@@ -9,14 +9,13 @@
     %div#slideshow
       - artwork = @exhibition.artworks.first
       = link_to image_tag(artwork.image.economy.url), artwork, :class => 'artwork nohover', :title => basic_title(artwork)
-      %br     
- 
-      %span#previous
-        %a{:href => '#', :id => 'previous'}
-          \<
+      %div.navigation 
+        %span#previous
+          %a{:href => '#', :id => 'previous'}
+            \<
 
-      %span#next
-        %a{:href => '#', :id => 'next'}
-          \>
+        %span#next
+          %a{:href => '#', :id => 'next'}
+            \>
       
     = render 'slideshow/set_slideshow'  
