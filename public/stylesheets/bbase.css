@@ -57,7 +57,7 @@ div#session-menu {
 #main {
   width: 780px;
   background-color: #333333;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
 }
 
 #sidebar-menu {
