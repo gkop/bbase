@@ -1,5 +1,10 @@
 %div#artwork
-  %h1= basic_title(@artwork)
+  %span.carrot
+    >
+  = link_to "Artworks", artworks_path
+  %span.carrot
+    >
+  = link_to @artwork.title, @artwork
 
   %p
 
