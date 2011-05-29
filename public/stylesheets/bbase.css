@@ -1,4 +1,12 @@
+* {
+padding: 0;
+margin: 0;
+}
+
+html, body {height: 100%;}
+
 body {
+  background-color: #000000;
   text-align: center;
 }
 
@@ -17,9 +25,32 @@ body {
 }
 
 #contents {
-  width: 710px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
+  min-height: 100%;
+  background-color: #666666;
+}
+
+#header {
+  background-color: #ffcc00;
+}
+
+#main {
+  background-color: #333333;
+}
+
+#footer {
+  color: #ffffff;
+}
+
+#footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
 }
 
 #dashboard #recently-added {

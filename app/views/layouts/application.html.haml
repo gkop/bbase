@@ -1,0 +1,41 @@
+!!! html
+%html
+  %head
+    %title
+      Bbase
+    = stylesheet_link_tag :all
+    = javascript_include_tag 'external/jquery-1.4.1.min', 'external/jquery.rails', 'external/jquery.unescape', 'BBase/BBase', 'BBase/Forms', 'BBase/Slideshow'
+    = csrf_meta_tag
+  
+  %body
+    #contents
+      #header
+        = render 'devise/menu/menu'
+
+        %p.notice{:style => "color: green"}= notice
+        %p.alert{:style => "color: red"}= alert
+  
+      #main
+        = yield
+ 
+      #footer
+        |
+        = link_to "about this site", "#"
+        |
+        = link_to "biography", "#"
+        |
+        = link_to "exhibitions", "#"
+        |
+        = link_to "resources", "#"
+        |
+        = link_to "terms of use", "#"
+        |
+        = link_to "help", "#"
+        |
+        = link_to "contact", "#"
+        |
+ 
+    :javascript 
+      $('document').ready(function() {
+        BBase.registerHandlers();
+      });
