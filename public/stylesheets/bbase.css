@@ -8,6 +8,7 @@ html, body {height: 100%;}
 body {
   background-color: #000000;
   text-align: center;
+  font: x-small verdana,arial,helvetica,sans-serif;
 }
 
 #dashboard #navigation,
@@ -34,10 +35,23 @@ body {
 
 #header {
   background-color: #ffcc00;
-  min-height: 50px;
-  text-align: right;
   font-size: 9pt;
 }
+
+#header .top {
+  text-align: right;
+}
+
+#header .bottom {
+  text-align: left;
+  font-size: 22pt;
+  font-style: italic;
+  padding-left: 16px;
+  padding-bottom: 10px;
+  margin-top: -16px;
+}
+
+
 
 div#session-menu {
   display: inline-block;
@@ -57,6 +71,7 @@ div#session-menu {
 }
 
 #footer {
+  padding: 10px;
   color: #ffffff;
 }
 
