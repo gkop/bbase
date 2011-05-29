@@ -11,11 +11,11 @@
       = link_to image_tag(artwork.image.economy.url), artwork, :class => 'artwork nohover', :title => basic_title(artwork)
       %div.navigation 
         %span#previous
-          %a{:href => '#', :id => 'previous'}
+          %a{:href => '#', :id => 'previous', :title => "Previous"}
             \<
 
         %span#next
-          %a{:href => '#', :id => 'next'}
+          %a{:href => '#', :id => 'next', :title => "Next"}
             \>
       
     = render 'slideshow/set_slideshow'  
