@@ -9,4 +9,4 @@ Feature: Add artwork
     And I attach the file "spec/data/ring_nebula_1987.jpg" to "artwork_image"
     And I press "Create Artwork"
     Then I should see "Artwork was successfully created."
-    Then I should see "Ring Nebula (1977)"
+    Then I should see "Ring Nebula"
