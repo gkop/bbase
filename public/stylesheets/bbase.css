@@ -34,6 +34,22 @@ body {
 
 #header {
   background-color: #ffcc00;
+  min-height: 50px;
+  text-align: right;
+  font-size: 9pt;
+}
+
+div#session-menu {
+  display: inline-block;
+  background-color: #666666;
+  color: #ffffff;
+  margin-right: 1em;
+  margin-top: 0px;
+  padding: 2px 8px 5px 8px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #main {
@@ -44,12 +60,12 @@ body {
   color: #ffffff;
 }
 
-#footer a {
+#footer a, #session-menu a {
   color: #ffffff;
   text-decoration: none;
 }
 
-#footer a:hover {
+#footer a:hover, #session-menu a:hover {
   text-decoration: underline;
 }
 
@@ -121,3 +137,4 @@ div#slideshow img {
 div#slideshow a.nohover:hover {
   background-color: inherit;
 }
+

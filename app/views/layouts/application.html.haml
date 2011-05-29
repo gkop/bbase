@@ -12,10 +12,10 @@
       #header
         = render 'devise/menu/menu'
 
+      #main
         %p.notice{:style => "color: green"}= notice
         %p.alert{:style => "color: red"}= alert
   
-      #main
         = yield
  
       #footer
