@@ -55,9 +55,8 @@ div#session-menu {
 }
 
 #main {
-  width: 780px;
+  width: 800px;
   background-color: #333333;
-  padding: 10px 10px 20px 10px;
 }
 
 #sidebar-menu {
@@ -104,7 +103,13 @@ a:hover {
 
 #artwork-details {
   text-align: left;
-  margin-left: 10px;
+  margin-left: 5px;
+}
+
+#dashboard,
+#artwork-details,
+#general {
+  padding: 1.5em;
 }
 
 #dashboard img {
