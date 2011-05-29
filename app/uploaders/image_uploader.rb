@@ -32,8 +32,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # TODO: convert all files to png
 
   # Create different versions of your uploaded files:
-  version :economy do
+  version :slideshow do
     process :resize_to_limit => [774, 5000]
+  end
+
+  version :square do
+    process :resize_to_limit => [512, 512]
   end
 
   version :collage do

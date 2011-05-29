@@ -1,9 +1,9 @@
 %div#navigation
-  %p
+  -#%p
     = link_to t('back'), artworks_path
     = link_to t('edit'), edit_artwork_path(@artwork)
 
-  %p
+  -#%p
     %dl
       %dt= 'Add to exhibition'
       - @artwork.exhibitions.where(:owner_id => current_user.id).each do |e|
@@ -16,17 +16,17 @@
           = link_to(e.name, add_artwork_to_exhibition_path(:id => e.id, :artwork_id => @artwork.id), :method => :put)
   
   %p
-    %dl
-      %dt= 'Links to images'
-      %dd= link_to 'Master', @artwork.image.url
-      %dd= link_to '512x', @artwork.image.economy.url
-      %dd= link_to '256x', @artwork.image.collage.url
-      %dd= link_to '128x', @artwork.image.bigtoe.url
-      %dd= link_to '72x72', @artwork.image.thumb.url
-      %dd= link_to '36x36', @artwork.image.tiny.url
+    Links to images
+    %span.image-link= link_to 'Master', @artwork.image.url
+    %span.image-link= link_to '774x', @artwork.image.slideshow.url
+    %span.image-link= link_to '512x512', @artwork.image.square.url
+    %span.image-link= link_to '256x', @artwork.image.collage.url
+    %span.image-link= link_to '128x', @artwork.image.bigtoe.url
+    %span.image-link= link_to '72x', @artwork.image.thumb.url
+    %span.image-link= link_to '48x48', @artwork.image.tiny.url
  
   -# TODO show only if user is admin 
-  %p
+  -#%p
     = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
 
     

@@ -105,11 +105,16 @@ a:hover {
   text-decoration: underline;
 }
 
-#dashboard img {
+#artwork-details {
+  text-align: left;
+}
+
+#dashboard img,
+#artwork-details img {
   margin: .5em;
 }
 
-#dashboard .centered {
+#dashboard {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -128,40 +133,36 @@ a:hover {
   text-align: left;
 }
 
-#dashboard {
+#dashboard,
+#artwork-details {
   padding: 1.5em;
 }
 
-#dashboard h4 {
+#main h4 {
   margin: .5em;
 }
 
-#dashboard a {
+#main a {
   text-decoration: underline;
   color: #ffcc00;
 }
 
-#dashboard a:hover {
+#main a:hover {
   text-decoration: none;
   color: #ffffff;
 }
 
-#dashboard a img {
+#main a img {
   border: 1px solid #ffffff;
 }
 
-#dashboard a:hover img {
+#main a:hover img {
   border: 1px solid #ffcc00;
 }
 
 #recently-added table {
   margin-left: auto;
   margin-right: auto;
-}
-
-#artwork-details #navigation,
-#exhibitions #navigation {
-  margin-top: 48px;
 }
 
 #my-exhibitions div.title {
@@ -215,10 +216,19 @@ div#slideshow {
 }
 
 div#slideshow img {
-  border: 0px;
+  border: 1px solid inherit;
+  margin-left: 2px;
 }
 
 div#slideshow a.nohover:hover {
   background-color: inherit;
 }
 
+#artwork-details img {
+  border: 1px solid #ffffff;
+}
+
+span.image-link {
+  margin-left: .6em;
+  margin-right: .6em;
+}

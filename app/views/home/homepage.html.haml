@@ -8,7 +8,7 @@
   -else
     %div#slideshow
       - artwork = @exhibition.artworks.first
-      = link_to image_tag(artwork.image.economy.url), artwork, :class => 'artwork nohover', :title => basic_title(artwork)
+      = link_to image_tag(artwork.image.slideshow.url), artwork, :class => 'artwork nohover', :title => basic_title(artwork)
       %div.navigation 
         %span#previous
           %a{:href => '#', :id => 'previous', :title => "Previous"}
