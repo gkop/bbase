@@ -13,7 +13,7 @@ class Artwork
 #  references_one :collection, :class_name => "Site"
 #  references_many :exhibitions, :class_name => "Site"
    
-  references_many :exhibitions, :class_name => "Exhibition", :stored_as => :array, :inverse_of => :artworks
+  references_and_referenced_in_many :exhibitions, :class_name => "Exhibition", :inverse_of => :artworks
 
   validates_uniqueness_of :title
   validates_presence_of :title

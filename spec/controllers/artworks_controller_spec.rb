@@ -84,9 +84,9 @@ describe ArtworksController do
       artwork = mock_model(Artwork)
       Artwork.should_receive(:new).exactly(2).times.and_return(artwork)
       artwork.should_receive(:attributes=)
+      artwork.should_receive(:save)
 
       post :create, :artwork => {:title => artwork_title, :year => artwork_year}
-
       response.should be_redirect
       response.should redirect_to artwork
       flash[:notice].should == "Artwork was successfully created."
