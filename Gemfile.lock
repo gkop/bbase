@@ -55,6 +55,7 @@ GEM
     celerity (0.8.6)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
+    cocoon (1.0.4)
     columnize (0.3.2)
     cucumber (0.10.0)
       builder (>= 2.1.2)
@@ -79,7 +80,6 @@ GEM
       actionpack (>= 2.3.0)
       activesupport (>= 2.3.0)
       i18n (>= 0.4.0)
-    formtastic_cocoon (0.0.2)
     gherkin (2.3.3)
       json (~> 1.4.6)
     haml (3.0.25)
@@ -179,12 +179,12 @@ DEPENDENCIES
   cancan
   capybara
   carrierwave
+  cocoon
   cucumber-rails
   database_cleaner
   devise
   factory_girl
-  formtastic (~> 1.1.0)
-  formtastic_cocoon
+  formtastic
   haml
   hpricot
   mini_magick!

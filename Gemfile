@@ -32,8 +32,8 @@ gem 'us_states_select'
 gem 'mongoid_taggable'
 
 # dynamic nested forms
-gem 'formtastic', '~> 1.1.0'
-gem "formtastic_cocoon"
+gem 'formtastic'
+gem "cocoon"
 
 group :development do
   gem 'unicorn'
