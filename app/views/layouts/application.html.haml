@@ -13,39 +13,43 @@
         .top
           = render 'devise/menu/menu'
         .bottom
-          Berta Golahny
-    
-      #sidebar-menu
-        %a{:href => "#"}
-          .item
-            ABOUT THIS SITE
-        %a{:href => "#"}
-          .item
-            BIOGRAPHY
-        %a{:href => "#"}
-          .item
-            EXHIBITIONS
-        %a{:href => "#"}
-          .sub.item
-            Paintings
-        %a{:href => "#"}
-          .sub.item
-            Prints
-        %a{:href => "#"}
-          .sub.item
-            Sculpture
-        %a{:href => "#"}
-          .item
-            RESOURCES
-        %a{:href => "#"}
-          .item
-            TERMS OF USE
-        %a{:href => "#"}
-          .item
-            HELP / FAQs
-        %a{:href => "#"}
-          .item
-            CONTACT
+          - if current_user
+            Berta Golahny
+          - else
+            Welcome
+   
+      - if current_user 
+        #sidebar-menu
+          %a{:href => "#"}
+            .item
+              ABOUT THIS SITE
+          %a{:href => "#"}
+            .item
+              BIOGRAPHY
+          %a{:href => "#"}
+            .item
+              EXHIBITIONS
+          %a{:href => "#"}
+            .sub.item
+              Paintings
+          %a{:href => "#"}
+            .sub.item
+              Prints
+          %a{:href => "#"}
+            .sub.item
+              Sculpture
+          %a{:href => "#"}
+            .item
+              RESOURCES
+          %a{:href => "#"}
+            .item
+              TERMS OF USE
+          %a{:href => "#"}
+            .item
+              HELP / FAQs
+          %a{:href => "#"}
+            .item
+              CONTACT
 
       #main
         #inner
@@ -54,22 +58,23 @@
   
           = yield
  
-      #footer
-        |
-        = link_to "about this site", "#"
-        |
-        = link_to "biography", "#"
-        |
-        = link_to "exhibitions", "#"
-        |
-        = link_to "resources", "#"
-        |
-        = link_to "terms of use", "#"
-        |
-        = link_to "help", "#"
-        |
-        = link_to "contact", "#"
-        |
+      - if current_user
+        #footer
+          |
+          = link_to "about this site", "#"
+          |
+          = link_to "biography", "#"
+          |
+          = link_to "exhibitions", "#"
+          |
+          = link_to "resources", "#"
+          |
+          = link_to "terms of use", "#"
+          |
+          = link_to "help", "#"
+          |
+          = link_to "contact", "#"
+          |
  
     :javascript 
       $('document').ready(function() {
