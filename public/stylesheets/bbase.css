@@ -106,9 +106,7 @@ a:hover {
   margin-left: 5px;
 }
 
-#dashboard,
-#artwork-details,
-#general {
+#inner {
   padding: 1.5em;
 }
 
@@ -207,14 +205,13 @@ span#next a:hover {
 }
 
 div#slideshow {
-  padding-top: 14px;
   width: auto;
   display: inline-block;
+  margin-left: -2px;
 }
 
 div#slideshow img {
   border: 1px solid inherit;
-  margin-left: 2px;
 }
 
 div#slideshow a.nohover:hover {

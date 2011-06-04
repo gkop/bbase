@@ -48,10 +48,11 @@
             CONTACT
 
       #main
-        %p.notice{:style => "color: green"}= notice
-        %p.alert{:style => "color: red"}= alert
+        #inner
+          %p.notice{:style => "color: green"}= notice
+          %p.alert{:style => "color: red"}= alert
   
-        = yield
+          = yield
  
       #footer
         |
