@@ -13,6 +13,9 @@ gem 'ruby_parser'
 # authentication
 gem 'devise'
 
+# invitations
+gem 'devise_invitable'
+
 # authorization
 gem 'cancan'
 
