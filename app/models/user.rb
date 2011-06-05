@@ -16,7 +16,11 @@ class User
 
   after_create :create_favorites
 
-  protected
+  def has_invitations_left?
+    admin?
+  end
+    
+   protected
   def create_favorites
     favorites = Exhibition.create(:name => "Favorites")
     self.exhibitions << favorites
