@@ -91,7 +91,11 @@ class ExhibitionsController < ApplicationController
   def update
     @exhibition = Exhibition.find(params[:id])
     if params[:exhibition][:assigned_to_homepage]
-      @exhibition.assign_to_homepage
+      if current_user.admin?
+        @exhibition.assign_to_homepage
+      else
+        raise CanCan::AccessDenied
+      end
     end
 
     respond_to do |format|

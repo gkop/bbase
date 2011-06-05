@@ -1,6 +1,7 @@
 %div#navigation
   
-  %p= link_to t('.new_artwork'), new_artwork_path
+  - if current_user.admin?
+    %p= link_to t('.new_artwork'), new_artwork_path
   %p= link_to t('.all_artwork'), artworks_path
  
   %br

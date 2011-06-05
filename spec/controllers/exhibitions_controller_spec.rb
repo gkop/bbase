@@ -4,7 +4,7 @@ describe ExhibitionsController do
   include Devise::TestHelpers
 
   context "POST add" do
-    it "adds an artwork to an exhibition" do
+    it "adds an artwork to a user's own exhibition" do
       new_artwork = Factory.create(:artwork)
       
       user = login_user
@@ -22,10 +22,29 @@ describe ExhibitionsController do
       new_exhibition.artworks.count.should == 1
       new_exhibition.artworks[0].should == artwork 
     end
+    
+    it "doesn't add an artwork to another user's exhibition" do
+      new_artwork = Factory.create(:artwork)
+      
+      user = login_user
+      new_exhibition = Factory.create(:exhibition, :artworks => [new_artwork])
+      Factory.create(:user).exhibitions << new_exhibition
+ 
+      lambda { post :add, :id => new_exhibition.id, :artwork_id => new_artwork.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
+    
+    it "doesn't add an artwork to an orphaned exhibition" do
+      new_artwork = Factory.create(:artwork)
+      
+      user = login_user
+      new_exhibition = Factory.create(:exhibition, :artworks => [new_artwork])
+ 
+      lambda { post :add, :id => new_exhibition.id, :artwork_id => new_artwork.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
   end
   
   context "POST remove" do
-    it "removes an artwork from an exhibition" do
+    it "removes an artwork from a user's own exhibition" do
       new_artwork = Factory.create(:artwork)
       
       user = login_user
@@ -44,10 +63,32 @@ describe ExhibitionsController do
       new_artwork.exhibitions.count.should == 0
       exhibition.artworks.count.should == 0
     end
+    
+    it "doesn't remove an artwork from another user's exhibition" do
+      new_artwork = Factory.create(:artwork)
+      
+      user = login_user
+      new_exhibition = Factory.create(:exhibition, :artworks => [new_artwork])
+      user.exhibitions << new_exhibition
+      Factory.create(:user).exhibitions << new_exhibition
+ 
+      lambda { post :remove, :id => new_exhibition.id, :artwork_id => new_artwork.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
+    
+    it "doesn't remove an artwork from an orphaned exhibition" do
+      new_artwork = Factory.create(:artwork)
+      
+      user = login_user
+      new_exhibition = Factory.create(:exhibition, :artworks => [new_artwork])
+      user.exhibitions << new_exhibition
+      Factory.create(:user).exhibitions << new_exhibition
+ 
+      lambda { post :remove, :id => new_exhibition.id, :artwork_id => new_artwork.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
   end
 
   context "GET index" do
-    it "displays a list of all exhibitions" do
+    it "displays a list of all exhibitions for user" do
       login_user
       5.times do
         Factory.create(:exhibition)
@@ -58,10 +99,16 @@ describe ExhibitionsController do
       exhibitions = assigns(:exhibitions)
       exhibitions.size.should == 6 # including the users' favorites
     end
+    
+    it "doesn't display a list of all exhibitions for guest" do
+      get :index, :format => :html
+      response.should_not be_success
+      response.should redirect_to new_user_session_path
+    end
   end
 
   context "GET show" do
-    it "shows a specific exhibition" do
+    it "shows a specific exhibition for user" do
       login_user
       new_exhibition = Factory.create(:exhibition)
       get :show, :id => new_exhibition.id, :format => :html
@@ -70,16 +117,29 @@ describe ExhibitionsController do
       exhibition = assigns(:exhibition)
       exhibition.should == new_exhibition 
     end
+
+    it "doesn't show a specific exhibition for guest" do
+      new_exhibition = Factory.create(:exhibition)
+      get :show, :id => new_exhibition.id, :format => :html
+      response.should_not be_success
+      response.should redirect_to new_user_session_path
+    end
   end
 
   context "GET new" do
-    it "displays the new exhibition form" do
+    it "displays the new exhibition form for user" do
       login_user
       get :new, :format => :html
       response.should be_success
       response.should render_template :new
       exhibition = assigns(:exhibition)
       exhibition.should_not == nil
+    end
+    
+    it "doesn't display the new exhibition form for guest" do
+      get :new, :format => :html
+      response.should_not be_success
+      response.should redirect_to new_user_session_path
     end
   end
   
@@ -98,7 +158,7 @@ describe ExhibitionsController do
   end
 
   context "PUT update" do
-    it "updates assigns an exhibition to the homepage" do
+    it "assigns an exhibition to the homepage for admin" do
       login_admin
       new_exhibition = Factory.create(:exhibition)
       put :update, :id => new_exhibition.id, :format => :html, :exhibition => {:assigned_to_homepage => true}
@@ -109,10 +169,17 @@ describe ExhibitionsController do
       exhibition.id.should == new_exhibition.id
       exhibition.is_on_homepage?.should == true
     end
+    
+    it "doesn't assign an exhibition to the homepage for user" do
+      user = login_user
+      new_exhibition = Factory.create(:exhibition)
+      user.exhibitions << new_exhibition
+      lambda { put :update, :id => new_exhibition.id, :format => :html, :exhibition => {:assigned_to_homepage => true} }.should raise_error("You are not authorized to access this page.")
+    end
   end
 
   context "DELETE destroy" do
-    it "destroys an exhibition" do
+    it "destroys a user's own exhibition" do
       user = login_user
       new_exhibition = Factory.create(:exhibition)
       user.exhibitions << new_exhibition
@@ -122,10 +189,23 @@ describe ExhibitionsController do
       Exhibition.all(:conditions => {:id => new_exhibition.id}).count.should == 0
       flash[:notice].should == "Deleted exhibition "+new_exhibition.name
     end
+    
+    it "doesn't destroy another user's exhibition" do
+      user = login_user
+      new_exhibition = Factory.create(:exhibition)
+      Factory.create(:user).exhibitions << new_exhibition
+      lambda { delete :destroy, :id => new_exhibition.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
+
+    it "doesn't destroy an orphaned exhibition" do
+      user = login_user
+      new_exhibition = Factory.create(:exhibition)
+      lambda { delete :destroy, :id => new_exhibition.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
   end
      
   context "POST create" do
-    it "creates a new exhibition" do
+    it "creates a new exhibition for a user" do
       login_user
       exhibition_name = "test exhibition"
       exhibition = mock_model(Exhibition)
@@ -138,10 +218,17 @@ describe ExhibitionsController do
       exhibition.should_receive(:save).exactly(2).times
 
       post :create, :exhibition => {:name => exhibition_name}
-# uncomment once rspec fixes this
-#      response.should be_redirect
- #     response.should redirect_to exhibition
-  #    flash[:notice].should == "Exhibition was successfully created."
+      #TODO uncomment once rspec fixes this
+      #response.should be_redirect
+      #response.should redirect_to exhibition
+      #flash[:notice].should == "Exhibition was successfully created."
     end
+    
+    it "doesn't create a new exhibition for a guest" do
+      post :create, :exhibition => {:name => "Favorites"}
+      response.should_not be_success
+      response.should redirect_to new_user_session_path
+    end
+   
   end
 end
