@@ -3,13 +3,9 @@ require 'spec_helper'
 describe ArtworksController do
   include Devise::TestHelpers
 
-  before (:each) do
-    @user = Factory.create(:user)
-    sign_in @user
-  end
-
   context "GET index" do
     it "displays a list of all artworks" do
+      login_user
       5.times do
         Factory.create(:artwork)
       end  
@@ -23,6 +19,7 @@ describe ArtworksController do
 
   context "GET show" do
     it "shows a specific artwork" do
+      login_user
       new_artwork = Factory.create(:artwork)
       get :show, :id => new_artwork.id, :format => :html
       response.should be_success
@@ -34,6 +31,7 @@ describe ArtworksController do
 
   context "GET new" do
     it "displays the new artwork form" do
+      login_admin
       get :new, :format => :html
       response.should be_success
       response.should render_template :new
@@ -44,6 +42,7 @@ describe ArtworksController do
   
   context "GET edit" do
     it "displays the edit artwork form" do
+      login_admin
       new_artwork = Factory.create(:artwork)
       get :edit, :id => new_artwork.id, :format => :html
       response.should be_success
@@ -55,6 +54,7 @@ describe ArtworksController do
 
   context "PUT update" do
     it "updates an artwork" do
+      login_admin
       new_artwork = Factory.create(:artwork)
       put :update, :id => new_artwork.id, :format => :html, :artwork => {:title => "test update artwork"}
       response.should be_redirect
@@ -68,6 +68,7 @@ describe ArtworksController do
 
   context "DELETE destroy" do
     it "destroys an artwork" do
+      login_admin
       new_artwork = Factory.create(:artwork)
       delete :destroy, :id => new_artwork.id, :format => :html
       response.should be_redirect
@@ -79,6 +80,7 @@ describe ArtworksController do
      
   context "POST create" do
     it "creates a new artwork" do
+      login_admin
       artwork_title = "test artwork"
       artwork_year = "1950"
       artwork = mock_model(Artwork)

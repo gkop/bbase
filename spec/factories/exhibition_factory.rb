@@ -1,9 +1,8 @@
 Factory.define :exhibition do |f|
   f.sequence(:name) {|i| "Test Exhibition #{i}"}
   f.after_create do |exhibition|
-    user = Factory.create(:user)
-    user.exhibitions << exhibition
-    exhibition.save!
+    #user.exhibitions << exhibition
+    #exhibition.save!
   end
 end
 
