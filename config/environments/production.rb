@@ -37,6 +37,18 @@ Bbase::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => 'golahny.org' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address  => "golahny.org",
+    :port  => 25,
+    :domain  => "golahny.org",
+    :user_name  => "gabe@golahny.org",
+    :password  => SENSITIVE_CONFIG[:smtp_password],
+    :authentication  => :login
+  }
+
   # Enable threaded mode
   # config.threadsafe!
 

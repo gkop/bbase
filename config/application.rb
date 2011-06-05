@@ -9,6 +9,8 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+
+
 module Bbase
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -50,4 +52,12 @@ module Bbase
     config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   end
+end
+
+# load sensitive params from yaml file not in repo
+yml_file = Rails.root.join('config', 'sensitive.yml')
+begin
+  SENSITIVE_CONFIG = YAML::load(File.open(yml_file))[Rails.env]
+rescue Exception => ex
+  Rails.logger.error "Error parsing sensitive parameters from yaml file #{yml_file}: #{ex.inspect}"
 end

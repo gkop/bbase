@@ -8,5 +8,5 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 puts 'SETTING UP ADMIN LOGIN'
-user = User.create! :name => 'admin', :email => 'gabe@sublemon.com', :password => 'Blueberry23', :password_confirmation => 'Blueberry23'
+user = User.create! :name => 'Gabe', :email => 'gabe@golahny.org', :password => SENSITIVE_CONFIG[:default_admin_password], :password_confirmation => SENSITIVE_CONFIG[:default_admin_password], :admin => true
 puts 'New user created: ' << user.name
