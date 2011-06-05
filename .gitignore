@@ -4,3 +4,4 @@ log/*.log
 log/*.out
 log/*.err
 tmp/**/*
+config/sensitive.yml
