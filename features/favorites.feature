@@ -11,6 +11,7 @@ Feature: Favorites exhibition
     Given an artwork exists with title "Stewball"
     And I am a new, authenticated user
     And I follow "Stewball"
+    Then I should not see "Already exists in" within "the navigation panel"
     And I follow "Favorites" within "the navigation panel"
     Then I should see "Added Stewball to Favorites"
 
