@@ -11,7 +11,7 @@ class User
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
-  references_many :exhibitions, :class_name => "Exhibition", :foreign_key => "owner_id"
+  has_many :exhibitions
 
   after_create :create_favorites
 

@@ -4,7 +4,8 @@ class Exhibition
 
   field :name, :type => String
 
-  references_many :artworks, :class_name => "Artwork", :stored_as => :array, :inverse_of => :exhibitions
+  references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :exhibitions
+  belongs_to :user
 
   def assign_to_homepage
     Configuration.set(:homepage_exhibition, self.id)

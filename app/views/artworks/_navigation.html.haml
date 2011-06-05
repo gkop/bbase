@@ -21,7 +21,7 @@
   %p
     %dl
       %dt= 'Add to exhibition'
-      - @artwork.exhibitions.where(:owner_id => current_user.id).each do |e|
+      - @artwork.exhibitions.where(:user_id => current_user.id).each do |e|
         %span.already-added
           %dd
             Already exists in

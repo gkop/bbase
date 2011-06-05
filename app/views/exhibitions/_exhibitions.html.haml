@@ -2,5 +2,4 @@
   %h1= t '.title'
   %ul
     - @exhibitions.each do |e|
-      - owner = User.find(e.owner_id)
-      %li= link_to(e.name, e)+" by "+link_to(owner.name, owner)
+      %li= link_to(e.name, e)+" by "+link_to(e.user.name, e.user)

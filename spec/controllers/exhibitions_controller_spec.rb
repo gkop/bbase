@@ -122,7 +122,9 @@ describe ExhibitionsController do
       exhibition = mock_model(Exhibition)
       Exhibition.should_receive(:new).exactly(2).times.and_return(exhibition)
       exhibition.should_receive(:attributes=)
-      exhibition.should_receive(:write_attribute).with("owner_id", @user.id)
+      exhibition.should_receive(:metadata)
+      exhibition.should_receive(:metadata=)
+      exhibition.should_receive(:save)
 
       post :create, :exhibition => {:name => exhibition_name}
 

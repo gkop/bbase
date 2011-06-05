@@ -11,10 +11,10 @@
     - @exhibition.artworks.each do |a|
       %span
         = link_to image_tag(a.image.bigtoe.url), a, :id => a.title
-        - if @exhibition.owner_id == current_user.id
+        - if @exhibition.user == current_user
           = link_to('Remove', remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)
 
-  - if @exhibition.owner_id == current_user.id
+  - if @exhibition.user == current_user
     %p
       %br
       = link_to 'Delete exhibition', @exhibition, :confirm => t('are_you_sure'), :method => :delete
