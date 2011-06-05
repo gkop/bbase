@@ -54,4 +54,5 @@ group :test, :development do
   gem 'factory_girl'
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
+  gem 'email_spec'
 end
