@@ -5,18 +5,19 @@
 
   %p
     Links to images
-    %span.image-link= link_to 'Master', @artwork.image.url
+    - if current_user.admin?
+      %span.image-link= link_to 'Master', @artwork.image.url
     %span.image-link= link_to '774x', @artwork.image.slideshow.url
     %span.image-link= link_to '512x512', @artwork.image.square.url
     %span.image-link= link_to '256x', @artwork.image.collage.url
     %span.image-link= link_to '128x', @artwork.image.bigtoe.url
     %span.image-link= link_to '72x', @artwork.image.thumb.url
     %span.image-link= link_to '48x48', @artwork.image.tiny.url
- 
-  -# TODO show only if user is admin 
-  %p
-    = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
-    = link_to t('edit'), edit_artwork_path(@artwork)
+
+  - if current_user.admin? 
+    %p
+      = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
+      = link_to t('edit'), edit_artwork_path(@artwork)
 
   %p
     %dl

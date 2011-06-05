@@ -1,11 +1,11 @@
 %div#exhibition
   %h1= @exhibition.name
 
-  -# TODO show only for authorized users
-  - if @exhibition.is_on_homepage?
-    This exhibition is currently assigned to the homepage
-  - else
-    = link_to("Assign to homepage", { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
+  - if current_user.admin?
+    - if @exhibition.is_on_homepage?
+      This exhibition is currently assigned to the homepage
+    - else
+      = link_to("Assign to homepage", { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
 
   %p
     - @exhibition.artworks.each do |a|

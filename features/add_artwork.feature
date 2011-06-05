@@ -1,7 +1,7 @@
 Feature: Add artwork
 
   Scenario: Add a new artwork
-    Given I am a new, authenticated user  
+    Given I am logged in as an admin 
     Then I should see "My dashboard"
     When I follow "New artwork"
     And I fill in "Title" with "Ring Nebula"

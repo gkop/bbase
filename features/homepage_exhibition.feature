@@ -2,7 +2,7 @@ Feature: Custom home page exhibition
 
   @one
   Scenario: Set home page exhibition
-    Given I am a new, authenticated user
+    Given I am logged in as an admin
     And I have an exhibition named "Space"
     And I have an exhibition named "Time"
     And I go to my dashboard 

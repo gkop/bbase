@@ -4,3 +4,7 @@ Factory.define :user do |f|
   f.password 'Blueberry23'
   f.password_confirmation 'Blueberry23'
 end
+
+Factory.define :admin, :parent => :user do |f|
+  f.admin true
+end

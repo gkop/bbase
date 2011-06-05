@@ -2,7 +2,7 @@ Feature: Delete artwork
 
   Scenario: Delete an existing artwork
     Given an artwork exists with title "Coral"
-    And I am a new, authenticated user  
+    And I am logged in as an admin 
     When I follow "Coral"
     And I follow "Delete" within "the navigation panel"
     Then I should see "Listing all artworks"

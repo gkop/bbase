@@ -1,6 +1,6 @@
 Given /^I have an exhibition named "([^"]*)"$/ do |name|
   exhibition = Factory.build(:exhibition, :name => name)
-  @user.exhibitions << exhibition
+  @current_user.exhibitions << exhibition
   exhibition.save!
 end
 
@@ -14,7 +14,7 @@ Given /^the exhibition has the artworks "([^"]*)"$/ do |artworks|
 end
 
 Given /^I have added the artwork to "([^"]*)"$/ do |exhibition|
-  @exhibition = @user.exhibitions.find(:first, :conditions => {:name => exhibition })
+  @exhibition = @current_user.exhibitions.find(:first, :conditions => {:name => exhibition })
   @exhibition.artworks << @artwork
   @artwork.save!
 end

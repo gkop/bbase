@@ -7,7 +7,10 @@
       %tr
         %th= Artwork.human_attribute_name :title
         %th= Artwork.human_attribute_name :year
-        %th{:colspan => 3}= t 'actions'
+        - if current_user.admin?
+          %th{:colspan => 3}= t 'actions'
+        - else
+        %th= t 'actions'
     
     %tbody
       - for artwork in @artworks
@@ -15,5 +18,6 @@
           %td= artwork.title
           %td= artwork.year
           %td.action= link_to t('show'), artwork
-          %td.action= link_to t('edit'), edit_artwork_path(artwork)
-          %td.action= link_to t('destroy'), artwork, :confirm => t('are_you_sure'), :method => :delete
+          - if current_user.admin?
+            %td.action= link_to t('edit'), edit_artwork_path(artwork)
+            %td.action= link_to t('destroy'), artwork, :confirm => t('are_you_sure'), :method => :delete
