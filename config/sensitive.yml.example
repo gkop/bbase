@@ -1,0 +1,16 @@
+# sensitive info, like mailer credentials.  
+# update these values to match your system configuration
+# then rename this file sensitive.yml
+
+defaults: &defaults
+  :smtp_password: 'Blueberry23'
+  :default_admin_password: 'Blueberry23'
+
+test:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
