@@ -107,7 +107,10 @@ a:hover {
 }
 
 #inner {
-  padding: 1.5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 #dashboard img {
@@ -211,6 +214,7 @@ div#slideshow {
 }
 
 div#slideshow img {
+  margin-left: 2px;
   border: 1px solid inherit;
 }
 
