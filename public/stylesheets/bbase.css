@@ -258,17 +258,39 @@ table.artworks td.action {
   padding: .25em;
 }
 
-#about {
+#about,
+#contact-us {
   text-align: left;
   width: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3em;
-  margin-bottom: 3em;
 }
 
-#about p {
+#about {
+  margin-bottom: 2.5em;
+}
+
+#about p,
+#contact-us p,
+#contact-us #contacts {
   margin: 2em;
+}
+
+#contacts {
+  padding-right: 1em;
+}
+
+#contacts ul {
+  margin-left: 2em;
+}
+
+#contacts li {
+  margin-bottom: 1em;  
+}
+
+#contacts span {
+  float: right;
 }
 
 h2.margin {

@@ -15,4 +15,8 @@ class HomeController < ApplicationController
   # GET /about
   def about
   end
+  
+  # GET /contact
+  def contact
+  end
 end

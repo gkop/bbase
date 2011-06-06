@@ -62,15 +62,15 @@
  
       - if current_user
         #footer
-          = link_to "about this site", about_path
+          = link_to "about", about_path
+          |
+          = link_to "contact", contact_path
           -#
             = link_to "resources", "#"
             |
             = link_to "terms of use", "#"
             |
             = link_to "help", "#"
-            |
-            = link_to "contact", "#"
             |
           - if current_user.admin?
             |
