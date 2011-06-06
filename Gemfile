@@ -41,6 +41,9 @@ gem "cocoon"
 # ruby 1.8.7 asked for this
 gem 'SystemTimer'
 
+# use info from git inside the app
+gem 'grit'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'

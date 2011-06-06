@@ -62,14 +62,7 @@
  
       - if current_user
         #footer
-          |
-          -#
-            = link_to "about this site", "#"
-            |
-            = link_to "biography", "#"
-            |
-          = link_to "exhibitions", "#"
-          |
+          = link_to "about this site", about_path
           -#
             = link_to "resources", "#"
             |
@@ -79,7 +72,9 @@
             |
             = link_to "contact", "#"
             |
- 
+          - if current_user.admin?
+            |
+            = link_to "invite somebody", new_user_invitation_path
     :javascript 
       $('document').ready(function() {
         BBase.registerHandlers();

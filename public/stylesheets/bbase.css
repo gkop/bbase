@@ -257,3 +257,20 @@ table.artworks td {
 table.artworks td.action {
   padding: .25em;
 }
+
+#about {
+  text-align: left;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+#about p {
+  margin: 2em;
+}
+
+h2.margin {
+  margin-top: 1em;
+}

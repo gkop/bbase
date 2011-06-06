@@ -2,7 +2,7 @@ Feature: Invite an email address
   
   Scenario: Invite an email address
     Given I am logged in as an admin
-    And I am on the create invite page
+    And I follow "invite somebody"
     And I fill in "invite_recipient@test.golahny.org" for "Email"
     And I press "Send an invitation"
 

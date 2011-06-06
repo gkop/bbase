@@ -21,8 +21,8 @@ Bbase::Application.routes.draw do
   resources :users, :only => [ :index, :show ]
 
   get '/homepage' => "home#homepage", :as => "homepage"
-
   get '/dashboard' => "home#dashboard", :as => "dashboard"
+  get '/about' => "home#about", :as => "about"
 
   get "/images/uploads/*path" => "gridfs#serve"
 

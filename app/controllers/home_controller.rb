@@ -11,4 +11,8 @@ class HomeController < ApplicationController
   def dashboard
     @recently_added_artwork = Artwork.order_by(:created_at.desc).limit(6)
   end
+
+  # GET /about
+  def about
+  end
 end
