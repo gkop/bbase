@@ -1,23 +1,15 @@
 #general
-  %h1= t('.title')
-  %p= link_to t('.new_artwork'), new_artwork_path
+  %h1= @title || t('.title')
+ 
+  %p
+    (Found #{@artworks.count})
+  
+  - if current_user.admin?
+    %p= link_to t('.new_artwork'), new_artwork_path
 
   %table.artworks
-    %thead
-      %tr
-        %th= Artwork.human_attribute_name :title
-        %th= Artwork.human_attribute_name :year
-        - if current_user.admin?
-          %th{:colspan => 3}= t 'actions'
-        - else
-        %th= t 'actions'
-    
     %tbody
       - for artwork in @artworks
         %tr{ :class => cycle(:odd, :even) }
-          %td= artwork.title
-          %td= artwork.year
-          %td.action= link_to t('show'), artwork
-          - if current_user.admin?
-            %td.action= link_to t('edit'), edit_artwork_path(artwork)
-            %td.action= link_to t('destroy'), artwork, :confirm => t('are_you_sure'), :method => :delete
+          %td= link_to image_tag(artwork.image.thumb.url), artwork
+          %td= link_to basic_title(artwork), artwork

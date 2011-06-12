@@ -5,7 +5,14 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.xml
   def index
-    @artworks = Artwork.all
+    if params[:tags]
+      @artworks = Artwork.tagged_with_all(params[:tags])
+      friendly_tags = params[:tags].push( params[:tags].pop(2).join ", and " ).join ", "
+      @title = "Artworks tagged with #{friendly_tags}"
+    else
+      @artworks = Artwork.all
+    end
+    @artworks = @artworks.asc(:title)
 
     respond_to do |format|
       format.html # index.html.erb
