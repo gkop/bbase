@@ -38,6 +38,9 @@ gem 'mongoid_taggable'
 gem 'formtastic'
 gem "cocoon"
 
+# send emails via postmark
+gem 'postmark-rails'
+
 # ruby 1.8.7 asked for this
 gem 'SystemTimer'
 

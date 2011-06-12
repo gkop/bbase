@@ -19,15 +19,8 @@ Bbase::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address  => "golahny.org",
-    :port  => 25, 
-    :domain  => "golahny.org",
-    :user_name  => "gabe@golahny.org",
-    :password  => SENSITIVE_CONFIG[:smtp_password],
-    :authentication  => :login
-  }
+  config.action_mailer.delivery_method   = :postmark
+  config.action_mailer.postmark_settings = { :api_key => SENSITIVE_CONFIG[:postmark_api_key] }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
