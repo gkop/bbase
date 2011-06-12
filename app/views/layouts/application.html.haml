@@ -29,17 +29,20 @@
                 BIOGRAPHY
           %a{:href => exhibitions_path}
             .item
-              EXHIBITIONS
+              GALLERIES
+          %a{:href => artworks_path}
+            .item
+              ARTWORKS
+          %a{:href => artworks_path(:tags => ['painting'])}
+            .sub.item
+              Paintings
+          %a{:href => artworks_path(:tags => ['print'])}
+            .sub.item
+              Prints
+          %a{:href => artworks_path(:tags => ['sculpture'])}
+            .sub.item
+              Sculpture
           -#
-            %a{:href => "#"}
-              .sub.item
-                Paintings
-            %a{:href => "#"}
-              .sub.item
-                Prints
-            %a{:href => "#"}
-              .sub.item
-                Sculpture
             %a{:href => "#"}
               .item
                 RESOURCES

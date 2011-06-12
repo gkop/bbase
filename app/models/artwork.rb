@@ -1,6 +1,7 @@
 class Artwork
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Taggable
 
   field :title, :type => String
   field :year, :type => Integer
