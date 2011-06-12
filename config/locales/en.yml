@@ -13,7 +13,7 @@ en:
    edit:
      title: "Edit artwork"
    index:
-     title: "Listing all artworks"
+     title: "All artworks"
      new_artwork: "New artwork"
    new:
      title: "Add new piece of artwork"

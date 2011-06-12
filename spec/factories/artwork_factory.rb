@@ -7,3 +7,14 @@ Factory.define :artwork_with_an_image, :parent => :artwork do |f|
   f.image File.open(File.join(Rails.root, "spec", "data", "ring_nebula_1987.jpg"))
 end
 
+Factory.define :painting, :parent => :artwork do |f|
+  f.tags 'painting'
+end
+
+Factory.define :print, :parent => :artwork do |f|
+  f.tags 'print'
+end
+
+Factory.define :sculpture, :parent => :artwork do |f|
+  f.tags 'sculpture'
+end

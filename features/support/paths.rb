@@ -14,6 +14,12 @@ module NavigationHelpers
       '/homepage'
     when /the create invite page/
       '/users/invitation/new'
+    when /the Paintings page/
+      '/artworks?tags[]=painting'
+    when /the Prints page/
+      '/artworks?tags[]=print'
+    when /the Sculptures page/
+      '/artworks?tags[]=sculpture'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

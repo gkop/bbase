@@ -23,3 +23,8 @@ Given /^an? (.+) exists with (?:an? )?(.+) (?:of )?\"([^\"]*)\"$/ do |model, fie
   eval("@#{factory_name} = Factory.create(factory_name, field => value)")
 end
 
+Then /^I should see the (.*)$/ do |model|
+  factory_name = model.gsub(' ', '_').to_sym
+  object = eval("@#{factory_name}")
+  Then "I should see \"#{object.title}\""
+end

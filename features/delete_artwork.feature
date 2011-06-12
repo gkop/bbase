@@ -5,7 +5,7 @@ Feature: Delete artwork
     And I am logged in as an admin 
     When I follow "Coral"
     And I follow "Delete" within "the navigation panel"
-    Then I should see "Listing all artworks"
+    Then I should see "All artworks"
     And I should see "Deleted artwork Coral"
     When I go to my dashboard
     Then I should not see "Coral"
