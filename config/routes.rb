@@ -18,6 +18,8 @@ Bbase::Application.routes.draw do
     post "/users(.:format)" => "invites#new"
   end
 
+  post "/invites/create" => "invites#create"
+
   resources :users, :only => [ :index, :show ]
 
   get '/homepage' => "home#homepage", :as => "homepage"

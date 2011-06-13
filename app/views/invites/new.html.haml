@@ -1,4 +1,21 @@
 %h1= t '.title'
 %p
 
-Sorry, the system is closed.
+= form_tag invites_create_path do
+
+  %p
+    = label_tag :email
+    %br
+    = text_field_tag :email, "", :size => 21
+  
+  %br
+  %p
+    = label_tag :note
+    (optional)
+    %br
+    = text_area_tag :note, "", :size => "24x6"
+
+  %p
+    %br
+    = submit_tag "Submit"
+

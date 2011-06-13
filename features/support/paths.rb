@@ -20,6 +20,8 @@ module NavigationHelpers
       '/artworks?tags[]=print'
     when /the Sculptures page/
       '/artworks?tags[]=sculpture'
+    when /the Request an Invite page/
+      '/users/sign_up'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
