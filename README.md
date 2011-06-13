@@ -20,7 +20,7 @@ That's it.  Now you should be able to browse to `localhost:3000` and login with 
 Demo
 ----
 
-You can find a live BBase instance at [Golahny.org](http://golahny.org).  The site is currently in private alpha.  For an invite, email me at [gabe@golahny.org](gabe@golahny.org).
+You can find a live BBase instance at [Golahny.org](http://golahny.org).
 
 
 
