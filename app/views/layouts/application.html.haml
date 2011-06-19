@@ -4,7 +4,7 @@
     %title
       Bbase
     = stylesheet_link_tag :all
-    = javascript_include_tag 'external/jquery-1.4.1.min', 'external/jquery.rails', 'external/jquery.unescape', 'BBase/BBase', 'BBase/Forms', 'BBase/Slideshow'
+    = javascript_include_tag 'external/lazyload-min.js'
     = csrf_meta_tag
   
   %body
@@ -63,8 +63,8 @@
   
           = yield
  
-      - if current_user
-        #footer
+      #footer
+        - if current_user
           = link_to "about", about_path
           |
           = link_to "contact", contact_path
@@ -78,7 +78,3 @@
           - if current_user.admin?
             |
             = link_to "invite somebody", new_user_invitation_path
-    :javascript 
-      $('document').ready(function() {
-        BBase.registerHandlers();
-      });

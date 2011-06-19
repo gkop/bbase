@@ -4,6 +4,7 @@ class Artwork
   include Mongoid::Taggable
 
   field :title, :type => String
+  field :note, :type => String
   field :year, :type => Integer
   key :title
 
