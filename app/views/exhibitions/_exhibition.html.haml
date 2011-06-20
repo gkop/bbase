@@ -9,10 +9,13 @@
 
   %p
     - @exhibition.artworks.each do |a|
-      %span
+      .exhibition-item
         = link_to image_tag(a.image.bigtoe.url), a, :id => a.title
+        %br
+        = basic_title(a)
         - if @exhibition.user == current_user
-          = link_to('Remove', remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)
+          %br
+            #{link_to('Remove', remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
 
   - if @exhibition.user == current_user
     %p

@@ -307,3 +307,8 @@ table.artworks td.action {
 h2.margin {
   margin-top: 1em;
 }
+
+.exhibition-item {
+  display: inline-block;
+  margin: 1em;
+}
