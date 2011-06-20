@@ -47,6 +47,9 @@ gem 'SystemTimer'
 # use info from git inside the app
 gem 'grit'
 
+# render markdown
+gem 'rdiscount'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'

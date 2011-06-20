@@ -3,6 +3,11 @@
     %span.title= @artwork.title
     %span.year= @artwork.year
 
+  - if !@artwork.note.blank?
+    #note
+      :markdown
+        #{@artwork.note}
+
   %p
     Links to images
     - if current_user.admin?

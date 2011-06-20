@@ -14,8 +14,32 @@
     Enter tags separated by commas:
     %br
     eg. painting, newton, etc.
-    = f.input :note, :as => :text, :input_html => { :rows => 10 }
+    %li#artwork-note-label
+      %label{:for => 'artwork_note'}
+        Note
+      %br
+      %span#edit-note-link= link_to 'Edit note', '#', :id => 'edit-link'
+      #display-note
+        :markdown
+          #{@artwork.note}
+    = f.input :note, :as => :hidden
   = f.buttons
 -#    %h3 Location created
 -#  = f.semantic_fields_for :location_created do |ff|
 -#  = render 'sites/fields', :f => ff
+
+#editor-wrapper
+  #editor
+    %table
+      %tr
+        %td 
+          = text_area_tag "input-box", @artwork.note
+        %td
+          #preview
+    Here's a guide to markdown syntax:
+    = link_to "http://bywordapp.com/markdown/syntax.html", "http://bywordapp.com/markdown/syntax.html"
+    #actions
+      = submit_tag "Cancel"
+      = submit_tag "Continue"
+
+= render 'set_editor'
