@@ -6,6 +6,9 @@ class Artwork
   field :title, :type => String
   field :note, :type => String
   field :year, :type => Integer
+  field :height, :type => Integer
+  field :width, :type => Integer
+  field :grandpa_index, :type => Integer
   key :title
 
   mount_uploader :image, ImageUploader

@@ -241,7 +241,10 @@ p.caption span.title {
   font-weight: bold;
 }
 
-p.caption span.year {
+p.caption span.year,
+p.caption span.dimensions,
+p.caption span.grandpa-index {
+  margin-left: 2em;
 }
 
 div#note {

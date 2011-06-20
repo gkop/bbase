@@ -2,6 +2,10 @@
   %p.caption
     %span.title= @artwork.title
     %span.year= @artwork.year
+    %span.dimensions= friendly_dimensions(@artwork)
+    - if current_user.admin? && !@artwork.grandpa_index.blank?
+      %span.grandpa-index
+        \##{@artwork.grandpa_index}
 
   - if !@artwork.note.blank?
     #note
