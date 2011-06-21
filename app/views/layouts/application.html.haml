@@ -58,8 +58,10 @@
 
       #main
         #inner
-          %p.notice{:style => "color: green"}= notice
-          %p.alert{:style => "color: red"}= alert
+          - if alert
+            %div.alert= alert
+          - elsif notice
+            %div.notice= notice
   
           = yield
  
