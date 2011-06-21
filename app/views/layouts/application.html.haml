@@ -61,10 +61,11 @@
 
       #main
         #inner
-          - if alert
-            %div.alert= alert
-          - elsif notice
-            %div.notice= notice
+          #flash-container 
+            - if alert
+              %div.alert= alert
+            - elsif notice
+              %div.notice= notice
   
           = yield
  

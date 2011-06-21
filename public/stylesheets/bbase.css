@@ -136,7 +136,8 @@ a:hover {
   text-align: left;
 }
 
-#main h4, #main h1 {
+#main h4, #main h1,
+#main h2 {
   margin: .5em;
 }
 
@@ -328,5 +329,4 @@ h2.margin {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  margin-bottom: 1em;
 }
