@@ -2,7 +2,10 @@
 %html
   %head
     %title
-      Bbase
+      - if content_for?(:title)
+        #{yield(:title)} | Golahny.org
+      - else
+        Golahny.org, online home of artist Berta Golahny
     = stylesheet_link_tag :all
     = javascript_include_tag 'external/lazyload-min.js'
     = csrf_meta_tag
