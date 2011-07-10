@@ -14,6 +14,11 @@ body {
   font: x-small verdana,arial,helvetica,sans-serif;
 }
 
+p,
+#display-note p {
+  margin: 1em 0;
+}
+
 #contents {
   width: 800px;
   margin-left: auto;
