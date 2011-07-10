@@ -50,6 +50,9 @@ gem 'grit'
 # render markdown
 gem 'rdiscount'
 
+# deployment
+gem 'capistrano'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'
