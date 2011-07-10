@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 set :application, "bbase"
 set :repository,  "git@github.com:gkop/bbase.git"
 
