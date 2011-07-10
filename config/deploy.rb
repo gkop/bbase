@@ -29,4 +29,18 @@ namespace :deploy do
   end
 end
 
+namespace :rvm do
+  desc 'Trust rvmrc file'
+  task :trust_rvmrc do
+    run "rvm rvmrc trust #{current_release}"
+  end
+ 
+  desc 'Use rvmrc file'
+  task :use_rvmrc do
+    run "cd #{current_release}"
+  end
+end
+
 after 'deploy:update_code', 'deploy:symlink_shared'
+before "bundle:install", "rvm:trust_rvmrc"
+after "rvm:trust_rvmrc", "rvm:use_rvmrc"
