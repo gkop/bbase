@@ -1,3 +1,5 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+require "rvm/capistrano"                  # Load RVM's capistrano plugin.
 require 'bundler/capistrano'
 
 set :application, "bbase"
@@ -15,6 +17,9 @@ set :branch, "master"
 
 set :deploy_to, "/opt/#{application}"
 
+set :rvm_ruby_string, 'ree@bbase'
+set :rvm_type, :user  # Copy the exact line. I really mean :user here
+
 # deploy task for Passenger
 namespace :deploy do
 
@@ -29,18 +34,4 @@ namespace :deploy do
   end
 end
 
-namespace :rvm do
-  desc 'Trust rvmrc file'
-  task :trust_rvmrc do
-    run "rvm rvmrc trust #{current_release}"
-  end
- 
-  desc 'Use rvmrc file'
-  task :use_rvmrc do
-    run "cd #{current_release}"
-  end
-end
-
 after 'deploy:update_code', 'deploy:symlink_shared'
-before "bundle:install", "rvm:trust_rvmrc"
-after "rvm:trust_rvmrc", "rvm:use_rvmrc"
