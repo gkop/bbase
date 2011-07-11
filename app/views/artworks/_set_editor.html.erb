@@ -1,5 +1,4 @@
 <script type='text/javascript'>
-  LazyLoad.js(['/javascripts/external/jquery-1.4.1.min.js', '/javascripts/external/jquery.rails.js', '/javascripts/external/jquery.unescape.js', '/javascripts/external/jquery.litedialog.js', '/javascripts/external/showdown.js', '/javascripts/BBase/BBase.js', '/javascripts/BBase/NoteEditor.js'], function() { 
-    BBase.NoteEditor.init();
-  });
+  <%= maybe_load('function() { BBase.NoteEditor.init(); });',
+   'external/jquery-1.4.1.min.js', 'external/jquery.rails.js', 'external/jquery.unescape.js', 'external/jquery.litedialog.js', 'external/showdown.js', 'BBase/BBase.js', 'BBase/NoteEditor.js') %>
 </script>
