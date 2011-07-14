@@ -275,6 +275,7 @@ table.artworks td.action {
   padding: .25em;
 }
 
+#biography,
 #about,
 #contact-us {
   text-align: left;
