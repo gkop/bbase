@@ -42,7 +42,7 @@ en:
      assign_to_homepage: "Assign to homepage"
      assigned_to_homepage: "This gallery is currently assigned to the homepage"
      delete: "Delete gallery"
-     title: "#{gallery_name} Gallery"
+     title: "%{gallery_name} Gallery"
    index:
      title: "Galleries"
    navigation:
