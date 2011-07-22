@@ -4,7 +4,7 @@
   = semantic_form_for @exhibition do |f|
     - if @exhibition.errors.any?
       #errorExplanation
-        %h2= "#{pluralize(@exhibition.errors.count, 'error')} prohibited this exhibition from being saved:"
+        %h2= t("exhibitions.errors_on_save", :errors => pluralize(@exhibition.errors.count, 'error'))
         %ul
         - @exhibition.errors.full_messages.each do |msg|
           %li= msg

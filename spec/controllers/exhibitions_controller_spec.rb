@@ -164,7 +164,7 @@ describe ExhibitionsController do
       put :update, :id => new_exhibition.id, :format => :html, :exhibition => {:assigned_to_homepage => true}
       response.should be_redirect
       response.should redirect_to new_exhibition
-      flash[:notice].should == "Exhibition was successfully updated."
+      flash[:notice].should == "Gallery was successfully updated"
       exhibition = assigns(:exhibition)
       exhibition.id.should == new_exhibition.id
       exhibition.is_on_homepage?.should == true

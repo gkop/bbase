@@ -6,7 +6,9 @@ en:
  are_you_sure: "Are you sure?"
  back: "Back"
  destroy: "Destroy"
+ exhibition: "gallery"
  edit: "Edit"
+ remove: "Remove"
  show: "Show"
 
  artworks:
@@ -34,22 +36,33 @@ en:
      title: "City details"
 
  exhibitions:
-   exhibitions:
-     title: "Exhibitions"
+   errors_on_save: "%{errors} prohibited this gallery from being saved:"
+   successful_update: "Gallery was successfully updated"
+   exhibition:
+     assign_to_homepage: "Assign to homepage"
+     assigned_to_homepage: "This gallery is currently assigned to the homepage"
+     delete: "Delete gallery"
+     title: "#{gallery_name} Gallery"
+   index:
+     title: "Galleries"
    navigation:
-     all_exhibitions: "All exhibitions"
-     new_exhibition: "New exhibition"
+     all_exhibitions: "All galleries"
+     new_exhibition: "New gallery"
+   new: 
+     title: "New gallery"
 
  home:
    dashboard: 
      title: "My dashboard"
    exhibitions:
-     title: "My exhibitions"
+     title: "My galleries"
+   homepage:
+     please_assign_gallery: "Please assign a gallery to be shown on this page"
    navigation:
      new_artwork: "New artwork"
      all_artwork: "See all artwork"
-     new_exhibition: "New Exhibition"
-     all_exhibitions: "See all exhibitions"
+     new_exhibition: "New gallery"
+     all_exhibitions: "See all galleries"
 
  invites:
    new:

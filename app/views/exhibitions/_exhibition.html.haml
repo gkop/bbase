@@ -1,13 +1,13 @@
-- content_for :title, "#{@exhibition.name} Gallery"
+- content_for :title, t('.title', :gallery_name => @exhibition.name)
 
 %div#exhibition
   %h1= @exhibition.name
 
   - if current_user.admin?
     - if @exhibition.is_on_homepage?
-      This exhibition is currently assigned to the homepage
+      = t('.assigned_to_homepage')
     - else
-      = link_to("Assign to homepage", { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
+      = link_to(t(".assign_to_homepage"), { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
 
   %p
     - @exhibition.artworks.each do |a|
@@ -17,9 +17,9 @@
         = basic_title(a)
         - if @exhibition.user == current_user
           %br
-            #{link_to('Remove', remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
+            #{link_to(t("remove"), remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
 
   - if @exhibition.user == current_user
     %p
       %br
-      = link_to 'Delete exhibition', @exhibition, :confirm => t('are_you_sure'), :method => :delete
+      = link_to t(".delete"), @exhibition, :confirm => t('are_you_sure'), :method => :delete

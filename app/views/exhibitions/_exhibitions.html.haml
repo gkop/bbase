@@ -1,5 +1,5 @@
 %div#exhibitions
-  %h1= t '.title'
+  %h1= t 'exhibitions.index.title'
   %ul
     - @exhibitions.each do |e|
       %li= link_to(e.name, e)+" by "+link_to(e.user.name, e.user)

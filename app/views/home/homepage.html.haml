@@ -1,6 +1,6 @@
 %div#homepage
   - if !@exhibition
-    Please assign an exhibition to be shown on this page.
+    = t(".please_assign_gallery")
 
   - elsif @exhibition.artworks.count == 0
     Exhibition "#{@exhibition.name}" assigned to this page, but is empty.

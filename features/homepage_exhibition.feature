@@ -11,15 +11,15 @@ Feature: Custom home page exhibition
     When I follow "Space" within "my exhibitions"
     Then I should see "Assign to homepage"
     When I follow "Assign to homepage"
-    Then I should see "Exhibition was successfully updated."
-    And I should see "This exhibition is currently assigned to the homepage"
-    When I follow "All exhibitions"
+    Then I should see "Gallery was successfully updated"
+    And I should see "This gallery is currently assigned to the homepage"
+    When I follow "All galleries"
     And I follow "Time"
     Then I should see "Assign to homepage"
     When I follow "Assign to homepage"
-    Then I should see "Exhibition was successfully updated."
-    And I should see "This exhibition is currently assigned to the homepage"
-    When I follow "All exhibitions"
+    Then I should see "Gallery was successfully updated"
+    And I should see "This gallery is currently assigned to the homepage"
+    When I follow "All galleries"
     And I follow "Space"
     Then I should see "Assign to homepage"
 
@@ -27,7 +27,7 @@ Feature: Custom home page exhibition
   Scenario: No homepage exhibition
     Given I am a new, authenticated user
     And I go to the homepage
-    Then I should see "Please assign an exhibition to be shown on this page."
+    Then I should see "Please assign a gallery to be shown on this page"
 
   @three
   Scenario: Empty homepage exhibition
