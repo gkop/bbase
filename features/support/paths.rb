@@ -22,6 +22,8 @@ module NavigationHelpers
       '/artworks?tags[]=sculpture'
     when /the Request an Invite page/
       '/users/sign_up'
+    when /the page for the artwork/
+      artwork_path(@artwork)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

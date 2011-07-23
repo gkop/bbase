@@ -83,4 +83,5 @@
             = link_to "invite somebody", new_user_invitation_path
 
     %script{:type => 'text/javascript'}
-      = maybe_load nil, 'external/jquery-1.4.1.min.js', 'external/jquery.rails.js'
+      - callback = 'function() { jQuery.fx.off = true; }' if Rails.env.test?
+      = maybe_load callback, 'external/jquery-1.4.1.min.js', 'external/jquery.rails.js'

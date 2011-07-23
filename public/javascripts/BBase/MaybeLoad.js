@@ -12,10 +12,16 @@ BBase.maybeLoad = function(callback, jsFiles) {
       }
     }
   }
-  buf += "]";
-  if (arguments[0] != "null") {
-    buf += ", "+arguments[0]
+  if (buf == "LazyLoad.js([" && arguments[0] != "null") {
+    // all scripts have already been loaded, so simply eval callback
+    buf = "("+arguments[0]+")();";
   }
-  buf += ");";
+  else {
+    buf += "]";
+    if (arguments[0] != "null") {
+      buf += ", "+arguments[0]
+    }
+    buf += ");";
+  }
   eval(buf);
 };
