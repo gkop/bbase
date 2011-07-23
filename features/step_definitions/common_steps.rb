@@ -4,6 +4,10 @@ module WithinHelpers
       within(:css, "div#my-exhibitions") { yield }
     elsif locator == "the navigation panel"
       within(:css, "div#navigation") { yield }
+    elsif locator == "the live preview"
+      within(:css, "div#editor div#preview") { yield }
+    elsif locator == "the note preview"
+      within(:css, "div#display-note") { yield }
     else
       locator ? within(locator) { yield } : yield
     end

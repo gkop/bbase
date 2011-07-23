@@ -21,4 +21,10 @@ Feature: Edit artwork
     When I follow "Edit"
     And I follow "Edit note"
     Then the note editor should appear
-    When I fill in "hello world" for "input-box" within "#editor"
+    When I fill in "hello world" for "input-box"
+    Then I should see "hello world" within "the live preview"
+    When I press "Continue"
+    Then I should see "hello world" within "the note preview"
+    When I press "Update Artwork"
+    Then I should see "Artwork was successfully updated"
+    And I should see "hello world"
