@@ -77,7 +77,7 @@ class ExhibitionsController < ApplicationController
 
     respond_to do |format|
       if @exhibition.save
-        format.html { redirect_to(@exhibition, :notice => 'Exhibition was successfully created.') }
+        format.html { redirect_to(@exhibition, :notice => I18n.t("exhibitions.successful_create")) }
         format.xml  { render :xml => @exhibition, :status => :created, :location => @artwork }
       else
         format.html { render :action => "new" }

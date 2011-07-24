@@ -37,6 +37,7 @@ en:
 
  exhibitions:
    errors_on_save: "%{errors} prohibited this gallery from being saved:"
+   successful_create: "Gallery was successfully created"
    successful_update: "Gallery was successfully updated"
    edit:
      title: "Edit gallery"

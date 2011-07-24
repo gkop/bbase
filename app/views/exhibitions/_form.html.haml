@@ -22,5 +22,4 @@
       = f.input :note, :as => :hidden
     = f.buttons
 
-= render :partial => 'common/editor', :locals => {:note => @exhibition.note}
-= render :partial => 'common/set_editor', :locals => {:model_name => "exhibition"}
+= render :partial => 'common/editor', :locals => {:editable => @exhibition}
