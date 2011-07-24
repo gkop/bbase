@@ -144,16 +144,20 @@ describe ExhibitionsController do
   end
   
   context "GET edit" do
-    it "displays the edit exhibition form" do
-      pending "need an edit view" do
-        login_user
-        new_exhibition = Factory.create(:exhibition)
-        get :edit, :id => new_exhibition.id, :format => :html
-        response.should be_success
-        response.should render_template :edit
-        exhibition = assigns(:exhibition)
-        exhibition.should == new_exhibition
-      end
+    it "doesn't display the edit gallery form for user that's not the owner" do
+      login_user
+      new_exhibition = Factory.create(:exhibition)
+      lambda { get :edit, :id => new_exhibition.id, :format => :html }.should raise_error("You are not authorized to access this page.")
+    end
+    
+    it "shows the edit gallery form for the owner" do
+      user = login_user
+      new_gallery = Factory.build(:exhibition)
+      user.exhibitions << new_gallery
+      new_gallery.save!
+      get :edit, :id => new_gallery.id, :format => :html
+      response.should be_success
+      response.should render_template :edit
     end
   end
 
@@ -175,6 +179,22 @@ describe ExhibitionsController do
       new_exhibition = Factory.create(:exhibition)
       user.exhibitions << new_exhibition
       lambda { put :update, :id => new_exhibition.id, :format => :html, :exhibition => {:assigned_to_homepage => true} }.should raise_error("You are not authorized to access this page.")
+    end
+
+    it "allows the owner to change the name" do
+      user = login_user
+      new_gallery = Factory.build(:exhibition)
+      user.exhibitions << new_gallery
+      new_gallery.save!
+      put :update, :id => new_gallery.id, :format => :html, :exhibition => {:name => "Hoss"}
+      response.should be_redirect
+      response.should redirect_to new_gallery
+    end
+
+    it "doesn't allow user that's not the owner to change the name" do
+      user = login_user
+      new_gallery = Factory.create(:exhibition)
+      lambda { put :update, :id => new_gallery.id, :format => :html, :exhibition => {:name => "Wahacha"} }.should raise_error("You are not authorized to access this page.")
     end
   end
 

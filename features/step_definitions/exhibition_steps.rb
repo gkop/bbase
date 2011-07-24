@@ -1,7 +1,7 @@
-Given /^I have an exhibition named "([^"]*)"$/ do |name|
-  exhibition = Factory.build(:exhibition, :name => name)
-  @current_user.exhibitions << exhibition
-  exhibition.save!
+Given /^I have a gallery named "([^"]*)"$/ do |name|
+  @gallery = Factory.build(:exhibition, :name => name)
+  @current_user.exhibitions << @gallery
+  @gallery.save!
 end
 
 Given /^the exhibition has the artworks "([^"]*)"$/ do |artworks|
@@ -18,5 +18,3 @@ Given /^I have added the artwork to "([^"]*)"$/ do |exhibition|
   @exhibition.artworks << @artwork
   @artwork.save!
 end
-
-

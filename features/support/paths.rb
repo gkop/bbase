@@ -24,6 +24,8 @@ module NavigationHelpers
       '/users/sign_up'
     when /the page for the artwork/
       artwork_path(@artwork)
+    when /the page for the gallery/
+      exhibition_path(@gallery)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
