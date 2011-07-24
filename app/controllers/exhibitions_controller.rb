@@ -99,7 +99,7 @@ class ExhibitionsController < ApplicationController
     end
 
     respond_to do |format|
-      if @exhibition.save! && @exhibition.update_attributes(params[:artwork])
+      if @exhibition.save! && @exhibition.update_attributes(params[:exhibition])
         format.html { redirect_to(@exhibition, :notice => I18n.t("exhibitions.successful_update")) }
         format.xml  { head :ok }
       else

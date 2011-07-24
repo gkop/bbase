@@ -18,8 +18,14 @@
         - if @exhibition.user == current_user
           %br
             #{link_to(t("remove"), remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
+ 
+  - if !@exhibition.note.blank?
+    %p
+      = @exhibition.note
 
   - if @exhibition.user == current_user
     %p
       %br
+      = link_to t("edit"), edit_exhibition_path(@exhibition)
+      |
       = link_to t(".delete"), @exhibition, :confirm => t('are_you_sure'), :method => :delete

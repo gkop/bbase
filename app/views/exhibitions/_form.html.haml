@@ -1,5 +1,5 @@
 %div#exhibition-form
-  %h1= t 'exhibitions.navigation.new_exhibition'
+  %h1= t 'exhibitions.edit.title'
   
   = semantic_form_for @exhibition do |f|
     - if @exhibition.errors.any?
@@ -11,4 +11,16 @@
 
     = f.inputs do
       = f.input :name
+      %li#artwork-note-label
+        %label{:for => 'exibition_note'}
+          Note
+        %br
+        %span#edit-note-link= link_to 'Edit note', '#', :id => 'edit-link'
+        #display-note
+          :markdown
+            #{@exhibition.note}
+      = f.input :note, :as => :hidden
     = f.buttons
+
+= render :partial => 'common/editor', :locals => {:note => @exhibition.note}
+= render :partial => 'common/set_editor', :locals => {:model_name => "exhibition"}

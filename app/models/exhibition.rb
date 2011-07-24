@@ -3,6 +3,7 @@ class Exhibition
   include Mongoid::Timestamps
 
   field :name, :type => String
+  field :note, :type => String
 
   references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :exhibitions
   belongs_to :user

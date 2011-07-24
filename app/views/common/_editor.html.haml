@@ -1,0 +1,13 @@
+#editor-wrapper
+  #editor
+    %table
+      %tr
+        %td
+          = text_area_tag "input-box", note
+        %td
+          #preview
+    Here's a guide to markdown syntax:
+    = link_to "http://bywordapp.com/markdown/syntax.html", "http://bywordapp.com/markdown/syntax.html"
+    #actions
+      = submit_tag "Cancel"
+      = submit_tag "Continue"

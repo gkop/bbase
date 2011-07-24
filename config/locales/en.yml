@@ -38,6 +38,8 @@ en:
  exhibitions:
    errors_on_save: "%{errors} prohibited this gallery from being saved:"
    successful_update: "Gallery was successfully updated"
+   edit:
+     title: "Edit gallery"
    exhibition:
      assign_to_homepage: "Assign to homepage"
      assigned_to_homepage: "This gallery is currently assigned to the homepage"
