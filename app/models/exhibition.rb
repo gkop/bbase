@@ -7,6 +7,7 @@ class Exhibition
 
   references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :exhibitions
   belongs_to :user
+  before_save :sanitize_note
   validates_presence_of :name
 
   def assign_to_homepage
@@ -35,6 +36,10 @@ class Exhibition
       json_exhibition[:artworks] << json_artwork
     end
     json_exhibition.to_json
+  end
+
+  def sanitize_note
+    self.note = Sanitize.clean(note, Sanitize::Config::RELAXED)
   end
 
   def self.assigned_to_homepage

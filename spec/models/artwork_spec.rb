@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Artwork do
-  it "increments the artwork count with a new artwork" do
-    num_artworks = Artwork.count
-    Factory.create(:artwork)
-    Artwork.count.should == num_artworks + 1
+
+  it "sanitizes the note field" do
+    artwork = Factory.create(:artwork, :note => '<script type="text/javascript">alert("stwdg");</script>')
+    artwork.note.should == "alert(\"stwdg\");"
   end
 end

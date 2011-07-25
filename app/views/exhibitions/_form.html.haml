@@ -18,7 +18,7 @@
         #display-note
           :markdown
             #{@exhibition.note}
-      = f.input :note, :as => :hidden
+      = f.input :note, :as => :hidden, :input_html => {:value => ""}
     = f.buttons
 
 = render :partial => 'common/editor', :locals => {:editable => @exhibition}

@@ -175,6 +175,8 @@ GEM
     ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
     rubyzip (0.9.4)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
     selenium-webdriver (0.2.2)
       childprocess (>= 0.1.9)
       ffi (>= 1.0.7)
@@ -228,5 +230,6 @@ DEPENDENCIES
   rspec-rails
   ruby-debug
   ruby_parser
+  sanitize
   unicorn
   us_states_select

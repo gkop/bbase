@@ -20,6 +20,7 @@ class Artwork
    
   references_and_referenced_in_many :exhibitions, :class_name => "Exhibition", :inverse_of => :artworks
 
+  before_save :sanitize_note
   validates_uniqueness_of :title
   validates_presence_of :title
   validates_numericality_of :year, :greater_than => 1937, :less_than => 2001, :allow_blank => true
@@ -33,4 +34,8 @@ class Artwork
       errors.add(:base, "Title too similar to that of an existing artwork")
     end
   end   
+
+  def sanitize_note
+    self.note = Sanitize.clean(note, Sanitize::Config::RELAXED)
+  end
 end

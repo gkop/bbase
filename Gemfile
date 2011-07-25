@@ -50,6 +50,9 @@ gem 'grit'
 # render markdown
 gem 'rdiscount'
 
+# sanitize markdown
+gem 'sanitize'
+ 
 # deployment
 gem 'capistrano'
 
