@@ -1,5 +1,5 @@
 .bundle
-**/*.swp
+*.sw?
 log/*.log
 log/*.out
 log/*.err
