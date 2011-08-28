@@ -2,4 +2,9 @@
   %h1= t 'exhibitions.index.title'
   %ul
     - @exhibitions.each do |e|
-      %li= link_to(e.name, e)+" by "+link_to(e.user.name, e.user)
+      %li
+        = link_to(e.name, e)+" by "+link_to(e.user.name, e.user)
+        - if e.curated?
+          %b
+            Officially curated
+      

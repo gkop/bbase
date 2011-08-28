@@ -4,6 +4,9 @@ class Exhibition
 
   field :name, :type => String
   field :note, :type => String
+  field :curated, :type => Boolean
+
+  attr_protected :curated
 
   references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :exhibitions
   belongs_to :user

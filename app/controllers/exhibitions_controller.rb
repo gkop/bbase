@@ -74,15 +74,10 @@ class ExhibitionsController < ApplicationController
   def create
     @exhibition = Exhibition.new(params[:exhibition])
     current_user.exhibitions << @exhibition
-
-    respond_to do |format|
-      if @exhibition.save
-        format.html { redirect_to(@exhibition, :notice => I18n.t("exhibitions.successful_create")) }
-        format.xml  { render :xml => @exhibition, :status => :created, :location => @artwork }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @exhibition.errors, :status => :unprocessable_entity }
-      end
+    if @exhibition.save
+      redirect_to(@exhibition, :notice => I18n.t("exhibitions.successful_create"))
+    else
+      render :action => "new"
     end
   end
 
@@ -93,6 +88,14 @@ class ExhibitionsController < ApplicationController
     if params[:exhibition][:assigned_to_homepage]
       if current_user.admin?
         @exhibition.assign_to_homepage
+      else
+        raise CanCan::AccessDenied
+      end
+    end
+
+    if params[:exhibition][:curated]
+      if current_user.admin?
+        @exhibition.curated = params[:exhibition][:curated]
       else
         raise CanCan::AccessDenied
       end
