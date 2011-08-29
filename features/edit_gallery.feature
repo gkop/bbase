@@ -28,3 +28,20 @@ Feature: Edit gallery
     When I press "Update Exhibition"
     Then I should see "Gallery was successfully updated"
     And I should see "new note for an old gallery"
+
+  @three
+  Scenario: Mark and unmark gallery as curated
+    Given I am logged in as an admin
+    And an exhibition exists with name "To be blessed"
+    And I am on the page for the gallery
+    When I follow "Edit"
+    And I check "Curated"
+    And I press "Update Exhibition"
+    Then I should see "Gallery was successfully updated"
+    And I should see "This gallery is officially curated by a Golahny expert"
+    When I follow "Edit"
+    And I uncheck "Curated"
+    And I press "Update Exhibition"
+    Then I should see "Gallery was successfully updated"
+    And I should not see "This gallery is officially curated by a Golahny expert"
+
