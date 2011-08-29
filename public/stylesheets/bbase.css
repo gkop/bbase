@@ -318,6 +318,25 @@ h2.margin {
 .exhibition-item {
   display: inline-block;
   margin: 3em;
+  max-width: 180px;
+}
+
+.exhibition-item.preview {
+  vertical-align: top;
+  margin: 2em;
+}
+
+.gallery-preview img {
+  margin: 3px;
+}
+
+.exhibition-item .caption {
+  vertical-align: bottom;
+  line-height: 1.5em;
+}
+
+.exhibition-item .caption .title {
+  font-size: 1.5em;
 }
 
 .notice {

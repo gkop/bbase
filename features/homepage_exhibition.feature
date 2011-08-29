@@ -3,8 +3,8 @@ Feature: Custom home page exhibition
   @one
   Scenario: Set home page exhibition
     Given I am logged in as an admin
-    And I have a gallery named "Space"
-    And I have a gallery named "Time"
+    And I have a gallery named "Space" with an artwork in it
+    And I have a gallery named "Time" with an artwork in it
     And I go to my dashboard 
     Then I should see "Space" within "my exhibitions"
     And I should see "Time" within "my exhibitions"

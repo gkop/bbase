@@ -13,6 +13,8 @@ class Exhibition
   before_save :sanitize_note
   validates_presence_of :name
 
+  scope :non_empty, where(:artwork_ids.ne=> [])
+
   def assign_to_homepage
     Configuration.set(:homepage_exhibition, self.id)
   end
@@ -51,4 +53,8 @@ class Exhibition
     end
   end
 
+  # returns num artworks at random
+  def random_artworks(num)
+    self.artworks.shuffle.slice(0, num)
+  end
 end

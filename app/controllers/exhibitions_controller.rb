@@ -34,7 +34,7 @@ class ExhibitionsController < ApplicationController
   # GET /exhibitions
   # GET /exhibitions.xml
   def index
-    @exhibitions = Exhibition.all
+    @exhibitions = Exhibition.non_empty
 
     respond_to do |format|
       format.html # index.html.erb

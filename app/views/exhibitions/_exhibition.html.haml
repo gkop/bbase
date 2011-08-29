@@ -29,7 +29,6 @@
 
   - if can?(:manage, @exhibition)
     %p
-      %br
       = link_to t("edit"), edit_exhibition_path(@exhibition)
       |
       = link_to t(".delete"), @exhibition, :confirm => t('are_you_sure'), :method => :delete

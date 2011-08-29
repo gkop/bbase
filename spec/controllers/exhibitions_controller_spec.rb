@@ -80,7 +80,7 @@ describe ExhibitionsController do
       login_user
       get :index, :format => :html
       response.should render_template :index
-      assigns(:exhibitions).size.should == Exhibition.all.count
+      assigns(:exhibitions).size.should == Exhibition.non_empty.count
     end
     
     it "doesn't display a list of all exhibitions for guest" do
