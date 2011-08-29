@@ -12,7 +12,7 @@
     - else
       = link_to(t(".assign_to_homepage"), { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
 
-  %p
+  .left-aligned
     - @exhibition.artworks.each do |a|
       .exhibition-item
         = link_to image_tag(a.image.bigtoe.url), a, :id => a.title
@@ -23,7 +23,7 @@
             #{link_to(t("remove"), remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
  
   - if !@exhibition.note.blank?
-    %p
+    .left-aligned.note
       :markdown
         #{@exhibition.note}
 

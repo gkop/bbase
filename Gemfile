@@ -58,7 +58,6 @@ gem 'capistrano'
 
 # fun
 gem 'pry', :group => :development
-#gem 'pry-doc'
 
 group :development do
   gem 'unicorn'

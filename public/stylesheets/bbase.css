@@ -317,7 +317,7 @@ h2.margin {
 
 .exhibition-item {
   display: inline-block;
-  margin: 1em;
+  margin: 3em;
 }
 
 .notice {
@@ -335,4 +335,14 @@ h2.margin {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+}
+
+div.left-aligned {
+  margin-left: 1em;
+  text-align: left;
+}
+
+div.left-aligned.note {
+  margin-left: 8em;
+  margin-right: 8em;
 }
