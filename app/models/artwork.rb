@@ -23,7 +23,7 @@ class Artwork
   before_save :sanitize_note
   validates_uniqueness_of :title
   validates_presence_of :title
-  validates_numericality_of :year, :greater_than => 1937, :less_than => 2001, :allow_blank => true
+  validates_numericality_of :year, :greater_than => 1937, :less_than => 2006, :allow_blank => true
   validate :check_for_collision, :on => [:create, :update]
  
   # validate uniqueness of key 
