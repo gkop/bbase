@@ -16,11 +16,11 @@ class Exhibition
   scope :non_empty, where(:artwork_ids.ne=> [])
 
   def assign_to_homepage
-    Configuration.set(:homepage_exhibition, self.id)
+    Settings.set(:homepage_exhibition, self.id)
   end
  
   def is_on_homepage?
-    if Configuration.get(:homepage_exhibition) ==  self.id
+    if Settings.get(:homepage_exhibition) ==  self.id
       true
     else
       false
@@ -48,8 +48,8 @@ class Exhibition
   end
 
   def self.assigned_to_homepage
-    if Configuration.get(:homepage_exhibition)
-      self.find(Configuration.get(:homepage_exhibition))
+    if Settings.get(:homepage_exhibition)
+      self.find(Settings.get(:homepage_exhibition))
     end
   end
 

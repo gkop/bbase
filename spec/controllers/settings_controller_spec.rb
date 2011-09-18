@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ConfigurationController do
+describe SettingsController do
   include Devise::TestHelpers
 
   context "GET edit" do
@@ -19,14 +19,14 @@ describe ConfigurationController do
   context "PUT update" do 
     it "fails for a non admin user" do
       user = login_user
-      expect { put :update, :configuration => {:biography_content => "grilled cheese"}}.to raise_error(CanCan::AccessDenied)
+      expect { put :update, :settings => {:biography_content => "grilled cheese"}}.to raise_error(CanCan::AccessDenied)
     end
  
     it "succeeds for an admin" do
       user = login_admin
-      put :update, :configuration => {:biography_content => "grilled cheese"}
-      flash[:notice].should == "Successfully updated configuration"
-      Configuration.get("biography_content").should == "grilled cheese"      
+      put :update, :settings => {:biography_content => "grilled cheese"}
+      flash[:notice].should == "Successfully updated settings"
+      Settings.get("biography_content").should == "grilled cheese"      
     end
   end
 end

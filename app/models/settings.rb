@@ -1,4 +1,4 @@
-class Configuration
+class Settings
   include Mongoid::Document
 
   field :homepage_exhibition, :type => BSON::ObjectId
@@ -7,10 +7,10 @@ class Configuration
   before_save :sanitize_biography_content
 
   def self.singleton
-    if Configuration.all.length > 0 
-      Configuration.all.first
+    if Settings.all.length > 0 
+      Settings.all.first
     else
-      Configuration.create!
+      Settings.create!
     end
   end
 

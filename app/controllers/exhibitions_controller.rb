@@ -119,8 +119,8 @@ class ExhibitionsController < ApplicationController
     @exhibition.destroy
 
     # the deleted exhibition may have been assigned to the homepage
-    if Configuration.get('homepage_exhibition') == @exhibition.id
-      Configuration.set('homepage_exhibition', nil)
+    if Settings.get('homepage_exhibition') == @exhibition.id
+      Settings.set('homepage_exhibition', nil)
     end
 
     flash[:notice] = "Deleted exhibition "+@exhibition.name 

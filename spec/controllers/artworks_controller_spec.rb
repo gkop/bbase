@@ -119,11 +119,6 @@ describe ArtworksController do
       login_admin
       artwork_title = "test artwork"
       artwork_year = "1950"
-      artwork = mock_model(Artwork)
-      Artwork.should_receive(:new).exactly(2).times.and_return(artwork)
-      artwork.should_receive(:attributes=)
-      artwork.should_receive(:save)
-
       post :create, :artwork => {:title => artwork_title, :year => artwork_year}
       #TODO uncomment once rspec fixes this
       #response.should be_redirect

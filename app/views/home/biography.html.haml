@@ -5,7 +5,7 @@
 
 #biography
   :markdown
-    #{Configuration.get(:biography_content)}
+    #{Settings.get(:biography_content)}
 
-  - if can?(:manage, Configuration)
-    = link_to t("edit"), edit_configuration_path
+  - if can?(:manage, Settings)
+    = link_to t("edit"), edit_settings_path

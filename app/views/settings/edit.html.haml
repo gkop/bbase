@@ -1,6 +1,6 @@
 %h1= t '.title'
 
-= semantic_form_for @configuration, :url => configuration_path, :html => {:method => :put} do |f|
+= semantic_form_for @settings, :url => settings_path, :html => {:method => :put} do |f|
 
   %li#biography-content-label
     %label{:for => 'biography_content'}
@@ -9,8 +9,8 @@
     %span#edit-note-link= link_to 'Edit biography', '#', :id => 'edit-link'
     #display-note
       :markdown
-        #{@configuration.biography_content}
+        #{@settings.biography_content}
   = f.input :biography_content, :as => :hidden
   = f.buttons
                                
-= render :partial => 'common/editor', :locals => {:content => @configuration.biography_content, :editable_id => "biography_content" }
+= render :partial => 'common/editor', :locals => {:content => @settings.biography_content, :editable_id => "biography_content" }

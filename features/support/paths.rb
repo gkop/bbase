@@ -14,8 +14,8 @@ module NavigationHelpers
       '/biography'
     when /the create invite page/
       '/users/invitation/new'
-    when /the edit configuration page/
-      '/configuration/edit'
+    when /the edit settings page/
+      '/settings/edit'
     when /the homepage/
       '/homepage'
     when /the Paintings page/

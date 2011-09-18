@@ -35,8 +35,8 @@ Bbase::Application.routes.draw do
 
   resources :exhibitions
 
-  get "/configuration/edit" => "configuration#edit", :as => :edit_configuration
-  put "/configuration" => "configuration#update", :as => :configuration
+  get "/settings/edit" => "settings#edit", :as => :edit_settings
+  put "/settings" => "settings#update", :as => :settings
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

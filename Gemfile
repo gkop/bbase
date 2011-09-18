@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', "3.1.0"
 
 gem 'mongoid'
 gem 'bson_ext'
@@ -23,7 +23,7 @@ gem 'cancan'
 # gem 'cream', :git => 'https://github.com/kristianmandrup/cream.git'
 
 # user uploads
-gem 'carrierwave'
+gem 'carrierwave', '0.5.4'
 
 # edit images
 gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
