@@ -16,6 +16,7 @@ class Ability
     any_admin(user) do |user|
       can :manage, Artwork
       can :manage, Exhibition
+      can :manage, Configuration
       can :manage, User   
     end 
   end

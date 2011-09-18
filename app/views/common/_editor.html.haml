@@ -3,7 +3,7 @@
     %table
       %tr
         %td
-          = text_area_tag "input-box", editable.note
+          = text_area_tag "input-box", content
         %td
           #preview
     Here's a guide to markdown syntax:
@@ -12,4 +12,4 @@
       = submit_tag "Cancel"
       = submit_tag "Continue"
 
-= render :partial => 'common/set_editor', :locals => {:model_name => editable.class.to_s.downcase}
+= render :partial => 'common/set_editor', :locals => {:editable_id => editable_id}

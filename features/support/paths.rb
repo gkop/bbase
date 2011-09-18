@@ -10,10 +10,14 @@ module NavigationHelpers
 
     when /my dashboard/
       '/dashboard'
-    when /the homepage/
-      '/homepage'
+    when /the biography page/
+      '/biography'
     when /the create invite page/
       '/users/invitation/new'
+    when /the edit configuration page/
+      '/configuration/edit'
+    when /the homepage/
+      '/homepage'
     when /the Paintings page/
       '/artworks?tags[]=painting'
     when /the Prints page/

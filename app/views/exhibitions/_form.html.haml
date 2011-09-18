@@ -23,4 +23,4 @@
         = f.input :curated, :as => :boolean
     = f.buttons
 
-= render :partial => 'common/editor', :locals => {:editable => @exhibition}
+= render :partial => 'common/editor', :locals => {:content => @exhibition.note, :editable_id => "exhibition_note"}

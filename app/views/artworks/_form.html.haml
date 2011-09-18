@@ -31,4 +31,4 @@
 -#  = f.semantic_fields_for :location_created do |ff|
 -#  = render 'sites/fields', :f => ff
 
-= render :partial => 'common/editor', :locals => {:editable => @artwork}
+= render :partial => 'common/editor', :locals => {:content => @artwork.note, :editable_id => "artwork_note"}

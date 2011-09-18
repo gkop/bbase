@@ -35,6 +35,10 @@ en:
    show:
      title: "City details"
 
+ configuration:
+   edit:
+     title: "Edit configuration"
+
  exhibitions:
    errors_on_save: "%{errors} prohibited this gallery from being saved:"
    successful_create: "Gallery was successfully created"
