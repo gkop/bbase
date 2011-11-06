@@ -7,5 +7,6 @@
 %dl
   %dt= User.human_attribute_name :name
   %dd= @user.name
-  %dt= User.human_attribute_name :email
-  %dd= @user.email
+  - if can? :manage, @user
+    %dt= User.human_attribute_name :email
+    %dd= @user.email
