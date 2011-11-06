@@ -3,7 +3,7 @@
   .exhibition-item.preview.left-aligned
     .gallery-preview
       - e.random_artworks(6).each do |a|
-        = link_to image_tag(a.image.tiny.url), a, :id => a.id
+        = link_to tiny_image(a), a, :id => a.id
     .caption
       %span.title
         = link_to(e.name, e)

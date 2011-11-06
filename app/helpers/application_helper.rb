@@ -9,4 +9,28 @@ module ApplicationHelper
     end
   end
 
+  def tiny_image(artwork)
+    image_tag(artwork.image.tiny.url, :size => "48x48")
+  end
+  
+  def thumb_image(artwork)
+    image_tag(artwork.image.thumb.url, :width => 72)
+  end
+  
+  def bigtoe_image(artwork)
+    image_tag(artwork.image.bigtoe.url, :width => 128)
+  end
+  
+  def collage_image(artwork)
+    image_tag(artwork.image.collage.url, :width => 256)
+  end
+  
+  def square_image(artwork)
+    image_tag(artwork.image.square.url, :size => "512x512")
+  end
+  
+  def slideshow_image(artwork)
+    image_tag(artwork.image.slideshow.url, :width => 774)
+  end
+
 end

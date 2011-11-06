@@ -14,7 +14,7 @@
   .left-aligned
     - @exhibition.artworks.each do |a|
       .exhibition-item
-        = link_to image_tag(a.image.bigtoe.url), a, :id => a.title
+        = link_to bigtoe_image(a), a, :id => a.title
         %br
         = basic_title(a)
         - if can?(:manage, @exhibition)

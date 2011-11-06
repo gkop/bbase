@@ -6,5 +6,5 @@
     %tbody
       - for artwork in @recently_added_artwork
         %tr{ :class => cycle(:odd, :even) }
-          %td= link_to image_tag(artwork.image.thumb.url), artwork
+          %td= link_to thumb_image(artwork), artwork
           %td= link_to basic_title(artwork), artwork
