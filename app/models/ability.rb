@@ -10,8 +10,8 @@ class Ability
 
     any_user(user) do |user|
       can :create, Exhibition
-      can(:manage, Exhibition) { |e| e.user == user }
-      can(:manage, User) { |u| u == user }
+      can :manage, Exhibition, :user_id => user.id
+      can :manage, User, :id => user.id
     end
 
     any_admin(user) do |user|

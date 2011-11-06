@@ -5,8 +5,7 @@
   - if @exhibition.curated?
     %h4
       This gallery is officially curated by a Golahny expert
-
-  - if can? :manaage, Exhibition
+  - if can? :manage, Settings
     - if @exhibition.is_on_homepage?
       = t('.assigned_to_homepage')
     - else
