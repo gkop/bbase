@@ -339,12 +339,6 @@ h2.margin {
   font-size: 1.5em;
 }
 
-.notice {
-}
-
-.alert {
-}
-
 .notice,
 .alert {
   background-color: #666666;
@@ -354,6 +348,7 @@ h2.margin {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  margin-bottom: 1.2em;
 }
 
 div.left-aligned {
@@ -364,8 +359,4 @@ div.left-aligned {
 div.left-aligned.note {
   margin-left: 8em;
   margin-right: 8em;
-}
-
-div#flash-container {
-  margin-bottom: 1.2em;
 }
