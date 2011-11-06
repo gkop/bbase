@@ -6,7 +6,7 @@
     %h4
       This gallery is officially curated by a Golahny expert
 
-  - if current_user.admin?
+  - if can? :manaage, Exhibition
     - if @exhibition.is_on_homepage?
       = t('.assigned_to_homepage')
     - else

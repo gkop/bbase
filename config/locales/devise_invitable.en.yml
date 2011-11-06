@@ -7,4 +7,4 @@ en:
       no_invitations_remaining: "No invitations remaining"
     mailer:
       invitation_instructions:
-        subject: 'Invitation instructions, Golahny.org private alpha'
+        subject: 'Invitation instructions, Golahny.org'

@@ -2,7 +2,7 @@ Feature: Invite an email address
  
   @one 
   Scenario: Invite an email address
-    Given I am logged in as an admin
+    Given I am logged in as a user
     And I follow "invite somebody"
     And I fill in "invite_recipient@test.golahny.org" for "Email"
     And I press "Send an invitation"
@@ -13,7 +13,7 @@ Feature: Invite an email address
     And "invite_recipient@test.golahny.org" should have 1 email
 
     When I open the email
-    Then I should see "Invitation instructions, Golahny.org private alpha" in the email subject
+    Then I should see "Invitation instructions, Golahny.org" in the email subject
     And I should see "To accept the invitation, please click the link below." in the email body
    
     When I follow "Accept invitation" in the email
@@ -26,19 +26,3 @@ Feature: Invite an email address
 
     Then I should see "Your name and password were set successfully. You are now signed in."
     And I should see "My dashboard"
-  
-  @two
-  Scenario: Request an invite
-    Given I am on the Request an Invite page
-    And I fill in "gimme_an_invite@test.golahny.org" for "Email"
-    And I fill in "NOW!" for "Note"
-    And I press "Submit"
-
-    Then I should see "Thank you, gimme_an_invite@test.golahny.org"
-    And I should see "Your request for an invite has been received."
-
-    And "gabe@golahny.org" should have 1 email 
-    
-    When I open the email
-    Then I should see "Invite requested for Golahny.org (gimme_an_invite@test.golahny.org)" in the email subject
-    And I should see "NOW!" in the email body

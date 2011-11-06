@@ -1,0 +1,7 @@
+- unless current_page? root_path
+  = link_to('Home', root_path)
+  |
+
+- if user_signed_in?
+  = link_to('My Dashboard', user_root_path)
+  | 

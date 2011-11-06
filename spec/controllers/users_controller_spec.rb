@@ -6,39 +6,32 @@ describe UsersController do
   context "GET index" do
     it "displays a list of all users for user" do
       login_user
-      5.times do
-        Factory.create(:user)
-      end  
-      get :index, :format => :html
-      response.should be_success
+      2.times { Factory(:user) }
+      get :index
       response.should render_template :index
-      users = assigns(:users)
-      users.size.should == 6
+      assigns(:users).size.should == 3
     end
 
-    it "doesn't display a list of all users for guest" do
-      get :index, :format => :html
-      response.should_not be_success
-      response.should redirect_to new_user_session_path
+    it "displays a list of all users for guest" do
+      get :index
+      response.should render_template :index
     end
   end
 
   context "GET show" do
+    let(:new_user) { Factory(:user) }  
+
     it "shows a specific user for user" do
       login_user
-      new_user = Factory.create(:user)
-      get :show, :id => new_user.id, :format => :html
-      response.should be_success
+      get :show, :id => new_user.id
       response.should render_template :show
-      user = assigns(:user)
-      user.should == new_user
+      assigns(:user).should == new_user
     end
 
-    it "doesn't show a specific user for guest" do
-      new_user = Factory.create(:user)
-      get :show, :id => new_user.id, :format => :html
-      response.should_not be_success
-      response.should redirect_to new_user_session_path
+    it "shows a specific user for guest" do
+      get :show, :id => new_user.id
+      response.should render_template :show
+      assigns(:user).should == new_user
     end
   end
 

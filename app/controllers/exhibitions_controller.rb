@@ -1,5 +1,4 @@
 class ExhibitionsController < ApplicationController
-  before_filter :authenticate_user!
   load_and_authorize_resource
 
   # POST /exhibitions/1/add/2
@@ -123,7 +122,7 @@ class ExhibitionsController < ApplicationController
       Settings.set('homepage_exhibition', nil)
     end
 
-    flash[:notice] = "Deleted exhibition "+@exhibition.name 
+    flash[:notice] = "Deleted gallery "+@exhibition.name 
 
     respond_to do |format|
       format.html { redirect_to(exhibitions_url) }

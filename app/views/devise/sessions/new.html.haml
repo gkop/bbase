@@ -1,28 +1,19 @@
-%br
 %p
-  Hello! Golahny.org is under construction. Please #{link_to "request an invite", new_user_registration_path} or revisit after our launch on November 1, 2011.
-%br
+  Hello!  Please sign in with your Golahny.org account in order to create your own galleries.
 
 %h2 Sign in
-%br
 
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   %p
     = f.label :email
-    %br
     = f.text_field :email
-  %br
   %p
     = f.label :password
-    %br
     = f.password_field :password
-  %br
   - if devise_mapping.rememberable?
     %p
       = f.check_box :remember_me
       = f.label :remember_me
-  %br
   %p= f.submit "Sign in"
-%br
 
 = link_to "Forgot your password?", new_password_path(resource_name)

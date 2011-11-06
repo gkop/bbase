@@ -1,7 +1,7 @@
 Bbase::Application.routes.draw do
 
  
-  root :to => "home#dashboard"
+  root :to => "home#homepage"
   
   get '/cities/created' => 'cities#created'
   get '/sites/created' => 'sites#created'
@@ -12,18 +12,13 @@ Bbase::Application.routes.draw do
 
   resources :artworks
   
-  devise_for :users do
-    # block new user registration
-    get "/users/sign_up(.:format)" => "invites#new"
-    post "/users(.:format)" => "invites#new"
-  end
+  devise_for :users
 
   post "/invites/create" => "invites#create"
 
   resources :users, :only => [ :index, :show ]
 
-  get '/homepage' => "home#homepage", :as => "homepage"
-  get '/dashboard' => "home#dashboard", :as => "dashboard"
+  get '/dashboard' => "home#dashboard", :as => "user_root"
   get '/about' => "home#about", :as => "about"
   get '/contact' => "home#contact", :as => "contact"
   get '/biography' => "home#biography", :as => "biography"

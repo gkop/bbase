@@ -18,44 +18,25 @@
         .bottom
           Berta Golahny
    
-      - if current_user 
-        #sidebar-menu
-          -#
-            %a{:href => "#"}
-              .item
-                ABOUT THIS SITE
-          %a{:href => biography_path}
-            .item
-              BIOGRAPHY
-          %a{:href => exhibitions_path}
-            .item
-              GALLERIES
-          %a{:href => artworks_path}
-            .item
-              ARTWORKS
-          %a{:href => artworks_path(:tags => ['painting'])}
-            .sub.item
-              Paintings
-          %a{:href => artworks_path(:tags => ['print'])}
-            .sub.item
-              Prints
-          %a{:href => artworks_path(:tags => ['sculpture'])}
-            .sub.item
-              Sculpture
-          -#
-            %a{:href => "#"}
-              .item
-                RESOURCES
-            %a{:href => "#"}
-              .item
-                TERMS OF USE
-            %a{:href => "#"}
-              .item
-                HELP / FAQs
-            %a{:href => "#"}
-              .item
-                CONTACT
-
+      #sidebar-menu
+        %a{:href => biography_path}
+          .item
+            BIOGRAPHY
+        %a{:href => exhibitions_path}
+          .item
+            GALLERIES
+        %a{:href => artworks_path}
+          .item
+            ARTWORKS
+        %a{:href => artworks_path(:tags => ['painting'])}
+          .sub.item
+            Paintings
+        %a{:href => artworks_path(:tags => ['print'])}
+          .sub.item
+            Prints
+        %a{:href => artworks_path(:tags => ['sculpture'])}
+          .sub.item
+            Sculpture
       #main
         #inner
           #flash-container 
@@ -67,20 +48,19 @@
           = yield
  
       #footer
-        - if current_user
-          = link_to "about", about_path
+        = link_to "about", about_path
+        |
+        = link_to "contact", contact_path
+        -#
+          = link_to "resources", "#"
           |
-          = link_to "contact", contact_path
-          -#
-            = link_to "resources", "#"
-            |
-            = link_to "terms of use", "#"
-            |
-            = link_to "help", "#"
-            |
-          - if current_user.admin?
-            |
-            = link_to "invite somebody", new_user_invitation_path
+          = link_to "terms of use", "#"
+          |
+          = link_to "help", "#"
+          |
+        - if current_user && current_user.has_invitations_left?
+          |
+          = link_to "invite somebody", new_user_invitation_path
 
     %script{:type => 'text/javascript'}
       - callback = 'function() { jQuery.fx.off = true; }' if Rails.env.test?

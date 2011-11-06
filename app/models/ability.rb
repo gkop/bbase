@@ -3,14 +3,15 @@ class Ability
 
   def initialize(user)
     guest do
-    end
-
-    any_user(user) do |user|
       can :read, Artwork
       can :read, Exhibition 
       can :read, User
+    end
+
+    any_user(user) do |user|
       can :create, Exhibition
       can(:manage, Exhibition) { |e| e.user == user }
+      can(:manage, User) { |u| u == user }
     end
 
     any_admin(user) do |user|
@@ -31,5 +32,5 @@ def any_user(user)
 end
 
 def any_admin(user)
-  yield(user) if user.admin?
+  yield(user) if user && user.admin?
 end

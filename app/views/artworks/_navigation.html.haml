@@ -3,7 +3,7 @@
     %span.title= @artwork.title
     %span.year= @artwork.year
     %span.dimensions= friendly_dimensions(@artwork)
-    - if current_user.admin? && !@artwork.grandpa_index.blank?
+    - if can? :manage, Artwork  && !@artwork.grandpa_index.blank?
       %span.grandpa-index
         \##{@artwork.grandpa_index}
 
@@ -14,7 +14,7 @@
 
   %p
     Links to images
-    - if current_user.admin?
+    - if can? :manage, Artwork
       %span.image-link= link_to 'Master', @artwork.image.url
     %span.image-link= link_to '774x', @artwork.image.slideshow.url
     %span.image-link= link_to '512x512', @artwork.image.square.url
@@ -23,21 +23,19 @@
     %span.image-link= link_to '72x', @artwork.image.thumb.url
     %span.image-link= link_to '48x48', @artwork.image.tiny.url
 
-  - if current_user.admin? 
+  - if can? :manage, @artwork 
     %p
       = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
       = link_to t('edit'), edit_artwork_path(@artwork)
-
-  %p
-    %dl
-      %dt= 'Add to exhibition'
-      - @artwork.exhibitions.where(:user_id => current_user.id).each do |e|
-        %span.already-added
-          %dd
-            Already exists in
-            = link_to(e.name, e)
-      - current_user.exhibitions.each do |e|
-        - if !e.artworks.include?(@artwork)
-          = link_to(e.name, add_artwork_to_exhibition_path(:id => e.id, :artwork_id => @artwork.id), :method => :put)
-  
-    
+  - if can? :create, Exhibition
+    %p
+      %dl
+        %dt= 'Add to exhibition'
+        - @artwork.exhibitions.where(:user_id => current_user.id).each do |e|
+          %span.already-added
+            %dd
+              Already exists in
+              = link_to(e.name, e)
+        - current_user.exhibitions.each do |e|
+          - if !e.artworks.include?(@artwork)
+            = link_to(e.name, add_artwork_to_exhibition_path(:id => e.id, :artwork_id => @artwork.id), :method => :put)

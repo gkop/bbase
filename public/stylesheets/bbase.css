@@ -365,3 +365,7 @@ div.left-aligned.note {
   margin-left: 8em;
   margin-right: 8em;
 }
+
+div#flash-container {
+  margin-bottom: 1.2em;
+}

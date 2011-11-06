@@ -1,7 +1,8 @@
 %h1= t '.title'
 %p
-  = link_to t('back'), users_path
-  = link_to t('edit'), edit_user_registration_path(@user)
+  = link_to 'All users', users_path
+  - if can? :manage, @user
+    = link_to t('edit'), edit_user_registration_path(@user)
 
 %dl
   %dt= User.human_attribute_name :name

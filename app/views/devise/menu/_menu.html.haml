@@ -1,0 +1,10 @@
+#session-menu
+  = render 'devise/menu/navigation_items'
+  - if user_signed_in?
+    = render 'devise/menu/registration_items'
+    |
+    = render 'devise/menu/login_items'
+  - else
+    = render 'devise/menu/login_items'
+    |
+    = render 'devise/menu/registration_items'

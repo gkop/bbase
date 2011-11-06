@@ -6,7 +6,7 @@
   %p
     (Found #{@artworks.count})
   
-  - if current_user.admin?
+  - if can? :create, Artwork
     %p= link_to t('.new_artwork'), new_artwork_path
 
   %table.artworks
