@@ -47,7 +47,7 @@ BBase.NoteEditor.cancelEditing = function() {
 BBase.NoteEditor.finishEditing = function() {
   var selector = "input[id*='"+this.modelName+"']"
   jQuery(selector).attr("value", jQuery("#hyLiteDialog textarea#input-box").val());
-  jQuery("textarea#input-box").html(jQuery("input[id*='"+this.modelName+"'").attr("value"));
+  jQuery("textarea#input-box").html(jQuery("input[id*='"+this.modelName+"']").attr("value"));
   jQuery("#display-note").html(this.converter.makeHtml(jQuery("#hyLiteDialog textarea#input-box").val()));
   this.cancelEditing();
 }
