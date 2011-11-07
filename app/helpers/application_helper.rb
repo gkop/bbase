@@ -26,7 +26,7 @@ module ApplicationHelper
   end
   
   def square_image(artwork)
-    image_tag(artwork.image.square.url, :size => "512x512")
+    image_tag(artwork.image.square.url)
   end
   
   def slideshow_image(artwork)
