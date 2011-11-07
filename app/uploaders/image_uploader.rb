@@ -30,37 +30,43 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # TODO: convert all files to png
+  process :record_version_dimensions
 
   # Create different versions of your uploaded files:
   version :slideshow do
     process :resize_to_fill => [774, 500]
-    #process :resize_to_limit => [774, 5000]
+    process :record_version_dimensions => :slideshow
   end
 
   version :square do
     process :resize_to_limit => [512, 512]
+    process :record_version_dimensions => :square
   end
 
   version :collage do
     process :resize_to_limit => [256, 5000]
+    process :record_version_dimensions => :collage
   end
 
   version :bigtoe do
     process :resize_to_limit => [128, 5000]
+    process :record_version_dimensions => :bigtoe
   end
 
   version :thumb do
     process :resize_to_limit => [72, 5000]
+    process :record_version_dimensions => :thumb
   end
   
   version :tiny do
     process :resize_to_fill => [48, 48]
+    process :record_version_dimensions => :tiny
   end
 
-  # I want to be able to process after uploading as described in this message
-  #  http://groups.google.com/group/carrierwave/msg/5a73ee0dcc17e402
-  def resize_later
-    resize_to_fill(200, 200)
+  def record_version_dimensions(version=nil)
+    width, height = `identify -format "%wx%h" #{file.path}`.gsub("\n", "").split(/x/)    
+    self.model.send("image_#{version.to_s+"_" if version}width=", width.to_i)
+    self.model.send("image_#{version.to_s+"_" if version}height=", height.to_i)
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
