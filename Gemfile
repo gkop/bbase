@@ -59,6 +59,9 @@ gem 'capistrano'
 # fun
 gem 'pry', :group => :development
 
+# js runtime
+gem 'therubyracer'
+
 group :development do
   gem 'unicorn'
   gem 'ruby-debug'
