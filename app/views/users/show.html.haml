@@ -1,12 +1,15 @@
-%h1= t '.title'
 %p
   = link_to 'All users', users_path
   - if can? :manage, @user
     = link_to t('edit'), edit_user_registration_path(@user)
 
-%dl
-  %dt= User.human_attribute_name :name
-  %dd= @user.name
-  - if can? :manage, @user
+- if can? :manage, @user
+  %dl
     %dt= User.human_attribute_name :email
     %dd= @user.email
+%br
+%p
+  %h2
+    #{@user.name}'s Galleries
+
+  = render :partial => 'exhibitions/preview', :collection => @user.exhibitions, :as => :exhibition, :locals => {:hide_byline => true}

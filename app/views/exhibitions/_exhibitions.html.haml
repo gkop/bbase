@@ -1,15 +1,2 @@
 %h1= t 'exhibitions.index.title'
-- @exhibitions.each do |e|
-  .exhibition-item.preview.left-aligned
-    .gallery-preview
-      - e.random_artworks(6).each do |a|
-        = link_to tiny_image(a), a, :id => a.id
-    .caption
-      %span.title
-        = link_to(e.name, e)
-      %br
-      by #{link_to(e.user.name, e.user)}
-      - if e.curated?
-        %br 
-          %b
-            Officially curated
+= render :partial => 'preview', :as => :exhibition, :collection => @exhibitions
