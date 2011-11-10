@@ -11,15 +11,14 @@
     - else
       = link_to(t(".assign_to_homepage"), { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
 
-  .left-aligned
-    - @exhibition.artworks.each do |a|
-      .exhibition-item
-        = link_to bigtoe_image(a), a, :id => a.title
+  - @exhibition.artworks.each do |a|
+    .exhibition-item
+      = link_to bigtoe_image(a), a, :id => a.title
+      %br
+      = basic_title(a)
+      - if can?(:manage, @exhibition)
         %br
-        = basic_title(a)
-        - if can?(:manage, @exhibition)
-          %br
-            #{link_to(t("remove"), remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
+          #{link_to(t("remove"), remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
  
   - if !@exhibition.note.blank?
     .left-aligned.note
