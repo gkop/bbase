@@ -1,14 +1,5 @@
 module ApplicationHelper
 
-  def maybe_load(callback, *js_files)
-    if !js_files.empty?
-      js_files.map! do |f|
-        f = "\'#{request.protocol + request.host_with_port}/javascripts/#{f}\'"
-      end
-      raw "BBase.maybeLoad(\"#{callback ? callback : 'null'}\", #{js_files * ', '});"
-    end
-  end
-
   # render img tags with the correct demensions
   ["slideshow", "square", "collage", "bigtoe", "thumb", "tiny"].each do |version|
     define_method("#{version}_image".to_s) do |artwork|

@@ -1,4 +1,3 @@
 <script type='text/javascript'>
-  <%= maybe_load("function() { BBase.Slideshow.init(\'#{escape_javascript(@exhibition.to_json)}\'); }",
-  'external/jquery-1.4.1.min.js', 'external/jquery.rails.js', 'external/jquery.unescape.js', 'BBase/BBase.js', 'BBase/Slideshow.js') %> 
+  <%= "BBase.Slideshow.init(\'#{escape_javascript(@exhibition.to_json)}\');" %>
 </script>

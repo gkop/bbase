@@ -12,9 +12,9 @@
       :markdown
         #{@artwork.note}
 
-  %p
-    Links to images
-    - if can? :manage, Artwork
+  - if can? :manage, Artwork
+    %p
+      Links to images
       %span.image-link= link_to 'Master', @artwork.image.url
       %span.image-link= link_to '774x', @artwork.image.slideshow.url
       %span.image-link= link_to '512x512', @artwork.image.square.url
