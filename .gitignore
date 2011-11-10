@@ -6,3 +6,5 @@ log/*.err
 tmp/**/*
 config/sensitive.yml
 public/uploads
+public/assets
+.sass-cache/

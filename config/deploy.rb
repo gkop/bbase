@@ -2,6 +2,8 @@ $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory
 require "rvm/capistrano"                  # Load RVM's capistrano plugin.
 require 'bundler/capistrano'
 
+load 'deploy/assets'
+
 set :application, "bbase"
 set :repository,  "git@github.com:gkop/bbase.git"
 

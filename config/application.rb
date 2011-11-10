@@ -5,11 +5,10 @@ require 'action_mailer/railtie'
 require 'active_resource/railtie'
 require "rails/test_unit/railtie"
 
-# If you have a Gemfile, require the gems listed there, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
-
-
+if defined?(Bundler)  
+  # precompile assets before deploying to production,   
+  Bundler.require *Rails.groups(:assets => %w(development test))  
+end  
 
 module Bbase
   class Application < Rails::Application
@@ -48,6 +47,12 @@ module Bbase
       g.orm             :mongoid 
       g.template_engine :haml
     end
+
+    # Enable the asset pipeline  
+    config.assets.enabled = true  
+  
+    # Version of your assets, change this if you want to expire all your assets  
+    config.assets.version = '1.0'  
 
   end
 end

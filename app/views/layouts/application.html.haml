@@ -6,8 +6,8 @@
         #{yield(:title)} | Golahny.org
       - else
         Golahny.org, online home of artist Berta Golahny
-    = stylesheet_link_tag :all
-    = javascript_include_tag 'BBase/BBase','external/jquery-1.4.1.min', 'external/jquery.rails', 'external/jquery.unescape', 'external/jquery.litedialog', 'external/showdown', 'BBase/BBase', 'BBase/NoteEditor', 'BBase/Slideshow'
+    = stylesheet_link_tag "application" 
+    = javascript_include_tag "application"
     = csrf_meta_tag
   
   %body
