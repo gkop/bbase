@@ -273,12 +273,13 @@ table.artworks td.action {
 
 #biography,
 #about,
+#terms,
 #contact-us {
   text-align: left;
   width: 400px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 #biography {
@@ -291,6 +292,7 @@ table.artworks td.action {
 
 #about p,
 #contact-us p,
+#terms p,
 #contact-us #contacts {
   margin: 2em;
 }

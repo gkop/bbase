@@ -22,6 +22,7 @@ Bbase::Application.routes.draw do
   get '/about' => "home#about", :as => "about"
   get '/contact' => "home#contact", :as => "contact"
   get '/biography' => "home#biography", :as => "biography"
+  get '/terms' => "home#terms", :as => "terms"
 
   get "/images/uploads/*path" => "gridfs#serve"
 
