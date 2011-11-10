@@ -253,10 +253,6 @@ p.caption span.grandpa-index {
   margin-left: 2em;
 }
 
-div#note {
-  margin-bottom: 1em;
-}
-
 p.flat-tree {
   margin-bottom: 1em;
 }
@@ -283,6 +279,10 @@ table.artworks td.action {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3em;
+}
+
+#biography {
+  width: 500px;
 }
 
 #about {
@@ -356,7 +356,16 @@ div.left-aligned {
   text-align: left;
 }
 
-div.left-aligned.note {
+div.note {
   margin-left: 8em;
   margin-right: 8em;
+}
+
+div.wall-of-text {
+  font-size: 1.3em;
+  line-height: 1.6em;
+}
+
+div.wall-of-text p {
+  margin-bottom: 2em;
 }

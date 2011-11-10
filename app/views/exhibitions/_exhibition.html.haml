@@ -24,7 +24,7 @@
           #{link_to(t("remove"), remove_artwork_from_exhibition_path(:id => @exhibition.id, :artwork_id => a.id), :method => :put)}
  
   - if !@exhibition.note.blank?
-    .left-aligned.note
+    .left-aligned.note.wall-of-text
       :markdown
         #{@exhibition.note}
 

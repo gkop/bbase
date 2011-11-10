@@ -4,8 +4,9 @@
   Biography
 
 #biography
-  :markdown
-    #{Settings.get(:biography_content)}
+  .wall-of-text
+    :markdown
+      #{Settings.get(:biography_content)}
 
   - if can?(:manage, Settings)
     = link_to t("edit"), edit_settings_path

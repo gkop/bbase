@@ -8,7 +8,7 @@
         \##{@artwork.grandpa_index}
 
   - if !@artwork.note.blank?
-    #note
+    .note.wall-of-text
       :markdown
         #{@artwork.note}
 
@@ -16,12 +16,12 @@
     Links to images
     - if can? :manage, Artwork
       %span.image-link= link_to 'Master', @artwork.image.url
-    %span.image-link= link_to '774x', @artwork.image.slideshow.url
-    %span.image-link= link_to '512x512', @artwork.image.square.url
-    %span.image-link= link_to '256x', @artwork.image.collage.url
-    %span.image-link= link_to '128x', @artwork.image.bigtoe.url
-    %span.image-link= link_to '72x', @artwork.image.thumb.url
-    %span.image-link= link_to '48x48', @artwork.image.tiny.url
+      %span.image-link= link_to '774x', @artwork.image.slideshow.url
+      %span.image-link= link_to '512x512', @artwork.image.square.url
+      %span.image-link= link_to '256x', @artwork.image.collage.url
+      %span.image-link= link_to '128x', @artwork.image.bigtoe.url
+      %span.image-link= link_to '72x', @artwork.image.thumb.url
+      %span.image-link= link_to '48x48', @artwork.image.tiny.url
 
   - if can? :manage, @artwork 
     %p
