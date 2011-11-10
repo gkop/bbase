@@ -44,10 +44,10 @@ Feature: Edit gallery
     And I check "Curated"
     And I press "Update Exhibition"
     Then I should see "Gallery was successfully updated"
-    And I should see "This gallery is officially curated by a Golahny expert"
+    And I should see "Officially curated"
     When I follow "Edit"
     And I uncheck "Curated"
     And I press "Update Exhibition"
     Then I should see "Gallery was successfully updated"
-    And I should not see "This gallery is officially curated by a Golahny expert"
+    And I should not see "Officially curated"
 

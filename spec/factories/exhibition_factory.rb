@@ -4,6 +4,7 @@ Factory.define :exhibition do |f|
     #user.exhibitions << exhibition
     #exhibition.save!
   end
+  f.user { Factory(:user) }
 end
 
 Factory.define :homepage_exhibition, :parent => :exhibition do |f|

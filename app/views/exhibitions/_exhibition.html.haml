@@ -2,14 +2,17 @@
 
 %div#exhibition
   %h1= @exhibition.name
-  - if @exhibition.curated?
-    %h4
-      This gallery is officially curated by a Golahny expert
-  - if can? :manage, Settings
+  %h4
+    - if @exhibition.curated?
+      Officially curated by #{link_to(@exhibition.user.name, @exhibition.user)}, a Golahny expert
+    - else
+      By #{@exhibition.user ? link_to(@exhibition.user.name, @exhibition.user) : "Anonymous"} 
+  - if can? :manage, Settings 
     - if @exhibition.is_on_homepage?
       = t('.assigned_to_homepage')
     - else
       = link_to(t(".assign_to_homepage"), { :controller => 'exhibitions', :action => 'update', :exhibition => { :assigned_to_homepage => "true" } } , :id => @exhibition.id, :method => :put)
+    %br
 
   - @exhibition.artworks.each do |a|
     .exhibition-item
