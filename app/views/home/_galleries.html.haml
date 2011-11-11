@@ -1,0 +1,13 @@
+%div#my-galleries
+  %h4= t('.title')
+
+  - current_user.galleries.each do |e|
+    %div.gallery
+      %div.title
+        = link_to(e.name, e)
+      - if e.artworks.empty?
+        %div.empty
+          \-empty-
+      - else
+        = render :partial => 'gallery_preview', :locals => { :gallery => e }
+

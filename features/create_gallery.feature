@@ -5,7 +5,7 @@ Feature: Create gallery
     Then I should see "My dashboard"
     When I follow "New gallery"
     And I fill in "Name" with "Spark Mustard"
-    And I press "Create Exhibition"
+    And I press "Create Gallery"
     Then I should see "Gallery was successfully created"
     Then I should see "Spark Mustard"
     When I go to my dashboard

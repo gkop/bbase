@@ -1,7 +1,7 @@
 module WithinHelpers
   def with_scope(locator)
-    if locator == "my exhibitions"
-      within(:css, "div#my-exhibitions") { yield }
+    if locator == "my galleries"
+      within(:css, "div#my-galleries") { yield }
     elsif locator == "the navigation panel"
       within(:css, "div#navigation") { yield }
     elsif locator == "the live preview"

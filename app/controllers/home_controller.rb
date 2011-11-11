@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   
   # GET /
   def homepage
-    @exhibition = Exhibition.assigned_to_homepage
+    @gallery = Gallery.assigned_to_homepage
   end
   
   # GET /home

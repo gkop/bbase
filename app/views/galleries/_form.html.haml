@@ -1,11 +1,11 @@
-%div#exhibition-form
+%div#gallery-form
   
-  = semantic_form_for @exhibition do |f|
-    - if @exhibition.errors.any?
+  = semantic_form_for @gallery do |f|
+    - if @gallery.errors.any?
       #errorExplanation
-        %h2= t("exhibitions.errors_on_save", :errors => pluralize(@exhibition.errors.count, 'error'))
+        %h2= t("galleries.errors_on_save", :errors => pluralize(@gallery.errors.count, 'error'))
         %ul
-        - @exhibition.errors.full_messages.each do |msg|
+        - @gallery.errors.full_messages.each do |msg|
           %li= msg
 
     = f.inputs do
@@ -17,10 +17,10 @@
         %span#edit-note-link= link_to 'Edit note', '#', :id => 'edit-link'
         #display-note
           :markdown
-            #{@exhibition.note}
+            #{@gallery.note}
       = f.input :note, :as => :hidden, :input_html => {:value => ""}
       - if current_user.admin?
         = f.input :curated, :as => :boolean
     = f.buttons
 
-= render :partial => 'common/editor', :locals => {:content => @exhibition.note, :editable_id => "exhibition_note"}
+= render :partial => 'common/editor', :locals => {:content => @gallery.note, :editable_id => "gallery_note"}

@@ -1,7 +1,7 @@
 class Settings
   include Mongoid::Document
 
-  field :homepage_exhibition, :type => BSON::ObjectId
+  field :homepage_gallery, :type => BSON::ObjectId
   field :biography_content, :type => String
  
   before_save :sanitize_biography_content

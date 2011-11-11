@@ -23,9 +23,9 @@ class Artwork
   references_one :location_created, :class_name => "Site"
 #  references_one :location_stored, :class_name => "Site"
 #  references_one :collection, :class_name => "Site"
-#  references_many :exhibitions, :class_name => "Site"
+#  references_many :galleries, :class_name => "Site"
    
-  references_and_referenced_in_many :exhibitions, :class_name => "Exhibition", :inverse_of => :artworks
+  references_and_referenced_in_many :galleries, :class_name => "Gallery", :inverse_of => :artworks
 
   before_save :sanitize_note
   validates_uniqueness_of :title

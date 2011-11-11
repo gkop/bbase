@@ -1,13 +1,13 @@
 %div#homepage
-  - if !@exhibition
+  - if !@gallery
     = t(".please_assign_gallery")
 
-  - elsif @exhibition.artworks.count == 0
-    Exhibition "#{@exhibition.name}" assigned to this page, but is empty.
+  - elsif @gallery.artworks.count == 0
+    Gallery "#{@gallery.name}" assigned to this page, but is empty.
  
   -else
     %div#slideshow
-      - artwork = @exhibition.artworks.first
+      - artwork = @gallery.artworks.first
       = link_to slideshow_image(artwork), artwork, :class => 'artwork nohover', :title => basic_title(artwork)
       %div.navigation 
         %span#previous

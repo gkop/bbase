@@ -1,6 +1,6 @@
 Given /^I have a gallery named "([^"]*)"$/ do |name|
-  @gallery = Factory.build(:exhibition, :name => name)
-  @current_user.exhibitions << @gallery
+  @gallery = Factory.build(:gallery, :name => name)
+  @current_user.galleries << @gallery
   @gallery.save!
 end
 
@@ -10,17 +10,17 @@ Given /^I have a gallery named "([^"]*)" with an artwork in it$/ do |name|
   @gallery.save!
 end
 
-Given /^the exhibition has the artworks "([^"]*)"$/ do |artworks|
-  @exhibition ? exhibition = @exhibition : exhibition = @homepage_exhibition
+Given /^the gallery has the artworks "([^"]*)"$/ do |artworks|
+  @gallery ? gallery = @gallery : gallery = @homepage_gallery
   artworks.split(',').each do |title|
     artwork = Factory.create(:artwork, :title => title.strip)
-    exhibition.artworks << artwork
+    gallery.artworks << artwork
     artwork.save!
   end
 end
 
-Given /^I have added the artwork to "([^"]*)"$/ do |exhibition|
-  @exhibition = @current_user.exhibitions.find(:first, :conditions => {:name => exhibition })
-  @exhibition.artworks << @artwork
+Given /^I have added the artwork to "([^"]*)"$/ do |gallery|
+  @gallery = @current_user.galleries.find(:first, :conditions => {:name => gallery })
+  @gallery.artworks << @artwork
   @artwork.save!
 end

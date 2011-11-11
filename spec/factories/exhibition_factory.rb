@@ -1,14 +1,14 @@
-Factory.define :exhibition do |f|
-  f.sequence(:name) {|i| "Test Exhibition #{i}"}
-  f.after_create do |exhibition|
-    #user.exhibitions << exhibition
-    #exhibition.save!
+Factory.define :gallery do |f|
+  f.sequence(:name) {|i| "Test Gallery #{i}"}
+  f.after_create do |gallery|
+    #user.galleries << gallery
+    #gallery.save!
   end
   f.user { Factory(:user) }
 end
 
-Factory.define :homepage_exhibition, :parent => :exhibition do |f|
-  f.after_create do |exhibition|
-    exhibition.assign_to_homepage
+Factory.define :homepage_gallery, :parent => :gallery do |f|
+  f.after_create do |gallery|
+    gallery.assign_to_homepage
   end
 end

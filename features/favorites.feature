@@ -1,10 +1,10 @@
-Feature: Favorites exhibition
+Feature: Favorites gallery
 
   @one
   Scenario: New user has empty Favorites
     Given I am a new, authenticated user 
-    Then I should see "Favorites" within "my exhibitions"
-    And I should see "-empty-" within "my exhibitions"
+    Then I should see "Favorites" within "my galleries"
+    And I should see "-empty-" within "my galleries"
 
   @two
   Scenario: Add an artwork to Favorites

@@ -1,4 +1,4 @@
-class Exhibition
+class Gallery
   include Mongoid::Document
   include Mongoid::Timestamps
 
@@ -8,7 +8,7 @@ class Exhibition
 
   attr_protected :curated
 
-  references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :exhibitions
+  references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :galleries
   belongs_to :user
   before_save :sanitize_note
   validates_presence_of :name
@@ -16,11 +16,11 @@ class Exhibition
   scope :non_empty, where(:artwork_ids.ne=> [])
 
   def assign_to_homepage
-    Settings.set(:homepage_exhibition, self.id)
+    Settings.set(:homepage_gallery, self.id)
   end
  
   def is_on_homepage?
-    if Settings.get(:homepage_exhibition) ==  self.id
+    if Settings.get(:homepage_gallery) ==  self.id
       true
     else
       false
@@ -28,9 +28,9 @@ class Exhibition
   end
  
   def to_json
-    json_exhibition = {}
-    json_exhibition[:name ]= self.name
-    json_exhibition[:artworks] = []
+    json_gallery = {}
+    json_gallery[:name ]= self.name
+    json_gallery[:artworks] = []
     self.artworks.each do |artwork|
       json_artwork = {}
       json_artwork[:big_image_url] = artwork.image.slideshow.url
@@ -38,9 +38,9 @@ class Exhibition
       json_artwork[:id] = artwork.id
       json_artwork[:title] = artwork.title
       json_artwork[:year] = artwork.year
-      json_exhibition[:artworks] << json_artwork
+      json_gallery[:artworks] << json_artwork
     end
-    json_exhibition.to_json
+    json_gallery.to_json
   end
 
   def sanitize_note
@@ -48,8 +48,8 @@ class Exhibition
   end
 
   def self.assigned_to_homepage
-    if Settings.get(:homepage_exhibition)
-      self.find(Settings.get(:homepage_exhibition))
+    if Settings.get(:homepage_gallery)
+      self.find(Settings.get(:homepage_gallery))
     end
   end
 

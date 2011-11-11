@@ -4,19 +4,19 @@ class Ability
   def initialize(user)
     guest do
       can :read, Artwork
-      can :read, Exhibition 
+      can :read, Gallery 
       can :read, User
     end
 
     any_user(user) do |user|
-      can :create, Exhibition
-      can :manage, Exhibition, :user_id => user.id
+      can :create, Gallery
+      can :manage, Gallery, :user_id => user.id
       can :manage, User, :id => user.id
     end
 
     any_admin(user) do |user|
       can :manage, Artwork
-      can :manage, Exhibition
+      can :manage, Gallery
       can :manage, Settings
       can :manage, User   
     end 

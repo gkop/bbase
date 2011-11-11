@@ -26,10 +26,10 @@ Bbase::Application.routes.draw do
 
   get "/images/uploads/*path" => "gridfs#serve"
 
-  put "/exhibitions/:id/add/:artwork_id" => "exhibitions#add", :as => :add_artwork_to_exhibition
-  put "/exhibitions/:id/remove/:artwork_id" => "exhibitions#remove", :as => :remove_artwork_from_exhibition
+  put "/galleries/:id/add/:artwork_id" => "galleries#add", :as => :add_artwork_to_gallery
+  put "/galleries/:id/remove/:artwork_id" => "galleries#remove", :as => :remove_artwork_from_gallery
 
-  resources :exhibitions
+  resources :galleries
 
   get "/settings/edit" => "settings#edit", :as => :edit_settings
   put "/settings" => "settings#update", :as => :settings

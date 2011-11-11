@@ -14,13 +14,13 @@ class User
 
   attr_protected :admin
 
-  has_many :exhibitions
+  has_many :galleries
 
   after_create :create_favorites
 
   protected
   def create_favorites
-    favorites = Exhibition.create(:name => "Favorites")
-    self.exhibitions << favorites
+    favorites = Gallery.create(:name => "Favorites")
+    self.galleries << favorites
   end
 end

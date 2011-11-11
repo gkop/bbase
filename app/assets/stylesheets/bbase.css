@@ -129,7 +129,7 @@ a:hover {
 }
 
 #dashboard #navigation,
-#my-exhibitions,
+#my-galleries,
 #recently-added {
   display: inline-block;
   float: left;
@@ -169,16 +169,16 @@ a:hover {
   margin-right: auto;
 }
 
-#my-exhibitions div.title {
+#my-galleries div.title {
   text-align: center;
 }
 
-#my-exhibitions div.empty {
+#my-galleries div.empty {
   text-align: center;
   font-style: italic;
 }
 
-#my-exhibitions .exhibition-preview {
+#my-galleries .gallery-preview {
 }
 
 span.already-added {
@@ -317,13 +317,13 @@ h2.margin {
   margin-top: 1em;
 }
 
-.exhibition-item {
+.gallery-item {
   display: inline-block;
   margin: 3em;
   max-width: 180px;
 }
 
-.exhibition-item.preview {
+.gallery-item.preview {
   vertical-align: top;
   margin: 2em;
 }
@@ -332,12 +332,12 @@ h2.margin {
   margin: 3px;
 }
 
-.exhibition-item .caption {
+.gallery-item .caption {
   vertical-align: bottom;
   line-height: 1.5em;
 }
 
-.exhibition-item .caption .title {
+.gallery-item .caption .title {
   font-size: 1.5em;
 }
 

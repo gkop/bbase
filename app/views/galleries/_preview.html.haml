@@ -1,0 +1,15 @@
+.gallery-item.preview.left-aligned
+  .gallery-preview
+    - gallery.random_artworks(6).each do |a|
+      = link_to tiny_image(a), a, :id => a.id
+  .caption
+    %span.title
+      = link_to(gallery.name, gallery)
+    - unless defined? hide_byline && hide_byline == true
+      %br
+      by #{link_to(gallery.user.name, gallery.user)}
+      - if gallery.curated?
+        %br
+          %b
+            Officially curated
+

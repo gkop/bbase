@@ -27,15 +27,15 @@
     %p
       = link_to 'Delete', @artwork, :confirm => t('are_you_sure'), :method => :delete
       = link_to t('edit'), edit_artwork_path(@artwork)
-  - if can? :create, Exhibition
+  - if can? :create, Gallery
     %p
       %dl
-        %dt= 'Add to exhibition'
-        - @artwork.exhibitions.where(:user_id => current_user.id).each do |e|
+        %dt= 'Add to gallery'
+        - @artwork.galleries.where(:user_id => current_user.id).each do |e|
           %span.already-added
             %dd
               Already exists in
               = link_to(e.name, e)
-        - current_user.exhibitions.each do |e|
+        - current_user.galleries.each do |e|
           - if !e.artworks.include?(@artwork)
-            = link_to(e.name, add_artwork_to_exhibition_path(:id => e.id, :artwork_id => @artwork.id), :method => :put)
+            = link_to(e.name, add_artwork_to_gallery_path(:id => e.id, :artwork_id => @artwork.id), :method => :put)
