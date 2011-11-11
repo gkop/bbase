@@ -41,4 +41,4 @@ namespace :deploy do
 end
 
 before 'deploy:finalize_update', 'deploy:set_current_release'
-after 'deploy:update_code', 'deploy:symlink_shared'
+before 'deploy:assets:precompile', 'deploy:symlink_shared'
