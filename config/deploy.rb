@@ -20,7 +20,7 @@ set :branch, "master"
 set :deploy_to, "/opt/#{application}"
 
 set :rvm_ruby_string, 'ree@bbase'
-set :rvm_type, :user  # Copy the exact line. I really mean :user here
+set :rvm_bin_path, "/usr/local/rvm/bin"
 
 # deploy task for Passenger
 namespace :deploy do
@@ -34,6 +34,11 @@ namespace :deploy do
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/sensitive.yml #{release_path}/config/sensitive.yml"
   end
+
+  task :set_current_release, :roles => :app do
+    set :current_release, latest_release
+  end
 end
 
+before 'deploy:finalize_update', 'deploy:set_current_release'
 after 'deploy:update_code', 'deploy:symlink_shared'
