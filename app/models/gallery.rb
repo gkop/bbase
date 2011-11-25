@@ -53,6 +53,11 @@ class Gallery
     end
   end
 
+  # returns an artwork at random
+  def random_artwork
+    self.random_artworks(1).first
+  end
+
   # returns num artworks at random
   def random_artworks(num)
     self.artworks.shuffle.slice(0, num)

@@ -1,6 +1,6 @@
 BBase.Slideshow = {};
 
-BBase.Slideshow.init = function(galleryData) {
+BBase.Slideshow.init = function(galleryData, currentIndex) {
   this.gallery = jQuery.parseJSON(jQuery.unescape(galleryData));
   this.index = 0;
 

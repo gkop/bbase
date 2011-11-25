@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   # GET /
   def homepage
     @gallery = Gallery.assigned_to_homepage
+    @artwork = @gallery.random_artwork if @gallery
   end
   
   # GET /home
