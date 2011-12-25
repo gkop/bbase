@@ -11,7 +11,7 @@ html, body {
 
 body {
   text-align: center;
-  font: x-small verdana,arial,helvetica,sans-serif;
+  font: 12pt verdana,arial,helvetica,sans-serif;
 }
 
 p,
@@ -31,7 +31,7 @@ p,
 
 #header {
   background-color: #ffcc00;
-  font-size: 9pt;
+  font-size: 11pt;
 }
 
 #header .top {
@@ -71,7 +71,7 @@ div#session-menu {
   margin-top: 3px;
   float: left;
   text-align: left;
-  font-size: 8pt;
+  font-size: 12pt;
 }
 
 #sidebar-menu .item {
@@ -95,6 +95,7 @@ div#session-menu {
 #footer {
   border-top: 1px solid black;
   padding: 10px;
+  font-size: 11pt;
 }
 
 a {  
@@ -240,7 +241,6 @@ span.image-link {
 p.caption {
   margin-top: 1em;
   margin-bottom: .5em;
-  font-size: 9pt;
 }
 
 p.caption span.title {
@@ -283,7 +283,7 @@ table.artworks td.action {
 }
 
 #biography {
-  width: 500px;
+  width: 550px;
 }
 
 #about {
@@ -364,7 +364,7 @@ div.note {
 }
 
 div.wall-of-text {
-  font-size: 1.3em;
+  font-size: 13pt;
   line-height: 1.6em;
 }
 
