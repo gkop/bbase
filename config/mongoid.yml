@@ -12,7 +12,7 @@ development:
 
 test:
   <<: *defaults
-  database: bbase_test
+  database: bbase_test<%= ENV['TEST_ENV_NUMBER'] %>
 
 # set these environment variables on your prod server
 production:

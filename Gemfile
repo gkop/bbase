@@ -76,6 +76,9 @@ group :test, :development do
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
   gem 'email_spec'
+
+  # parallelize tests across cpu cores
+  gem 'parallel_tests'
 end
 
 # Gems used only for assets and not required  
