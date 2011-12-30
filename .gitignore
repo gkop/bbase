@@ -3,7 +3,7 @@
 log/*.log
 log/*.out
 log/*.err
-tmp/**/*
+tmp/
 config/sensitive.yml
 public/uploads
 public/assets
