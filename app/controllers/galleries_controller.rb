@@ -3,7 +3,6 @@ class GalleriesController < ApplicationController
 
   # POST /galleries/1/add/2
   def add
-    @gallery = Gallery.find(params[:id])
     @artwork = Artwork.find(params[:artwork_id])
     @gallery.artworks << @artwork
     if @gallery && @artwork && @artwork.save

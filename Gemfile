@@ -8,8 +8,6 @@ gem 'bson_ext'
 gem 'haml'
 gem 'hpricot'
 
-gem 'ruby_parser'
-
 # authentication
 gem 'devise'
 
@@ -41,9 +39,6 @@ gem "cocoon"
 # send emails via postmark
 gem 'postmark-rails'
 
-# ruby 1.8.7 asked for this
-gem 'SystemTimer'
-
 # use info from git inside the app
 gem 'grit'
 
@@ -56,15 +51,11 @@ gem 'sanitize'
 # deployment
 gem 'capistrano'
 
-# fun
-gem 'pry', :group => :development
-
 # js runtime
 gem 'therubyracer'
 
 group :development do
   gem 'unicorn'
-  gem 'ruby-debug'
 end
 
 group :test, :development do
@@ -79,6 +70,10 @@ group :test, :development do
 
   # parallelize tests across cpu cores
   gem 'parallel_tests'
+
+  # fancy debugger
+  gem "pry", "~> 0.9.7"
+  gem "pry-nav", "~> 0.0.4"
 end
 
 # Gems used only for assets and not required  

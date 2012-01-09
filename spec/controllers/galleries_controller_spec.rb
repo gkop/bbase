@@ -15,7 +15,6 @@ describe GalleriesController do
     it "adds an artwork to a user's own gallery" do
       user = login_user
       user.galleries << gallery
- 
       post :add, :id => gallery.id, :artwork_id => artwork.id
       response.should redirect_to artwork
       assigns(:artwork).should == artwork

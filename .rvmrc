@@ -1,2 +1,3 @@
-rvm ree
-rvm gemset use bbase
+rvm_gemset_create_on_use_flag=1
+rvm 1.9.3-p0
+rvm --create use ruby-1.9.3-p0@bbase

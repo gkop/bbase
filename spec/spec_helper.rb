@@ -4,8 +4,8 @@ require File.expand_path("../../config/environment", __FILE__) unless defined?(R
 require 'rspec/rails'
 require 'mongoid-rspec'
 require 'factory_girl'
-require 'ruby-debug'
 require 'email_spec'
+
 Dir.glob(Rails.root.join("spec", "factories", "*.rb").to_s).each do |f|
   require f
 end
