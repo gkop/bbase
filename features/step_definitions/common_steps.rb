@@ -30,5 +30,5 @@ end
 Then /^I should see the (.*)$/ do |model|
   factory_name = model.gsub(' ', '_').to_sym
   object = eval("@#{factory_name}")
-  Then "I should see \"#{object.title}\""
+  step %Q{I should see "#{object.title}"}
 end

@@ -5,7 +5,7 @@ Given /^I have a gallery named "([^"]*)"$/ do |name|
 end
 
 Given /^I have a gallery named "([^"]*)" with an artwork in it$/ do |name|
-  When %Q{I have a gallery named "#{name}"}
+  step %{I have a gallery named "#{name}"}
   @gallery.artworks << Factory(:artwork)
   @gallery.save!
 end

@@ -1,8 +1,8 @@
 def do_login
-  And %{I go to my dashboard}
-  And %{I fill in "user_email" with "#{@current_user.email}"}
-  And %{I fill in "user_password" with "#{@current_user.password}"}
-  And %{I press "Sign in"}
+  step %{I go to my dashboard}
+  step %{I fill in "user_email" with "#{@current_user.email}"}
+  step %{I fill in "user_password" with "#{@current_user.password}"}
+  step %{I press "Sign in"}
 end
 
 Given /^I am a user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*)"$/ do |name, email, password|
@@ -17,7 +17,7 @@ Given /^I am a new, authenticated user$/ do
   name = 'Testing man'
   password = 'secretpass'
 
-  Given %{I am a user "#{name}" with email "#{email}" and password "#{password}"}
+  step %{I am a user "#{name}" with email "#{email}" and password "#{password}"}
   do_login
 end
 
