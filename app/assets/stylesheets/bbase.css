@@ -371,3 +371,7 @@ div.wall-of-text {
 div.wall-of-text p {
   margin-bottom: 2em;
 }
+
+div#preloaded-images {
+  display: none;
+}

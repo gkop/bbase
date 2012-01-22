@@ -1,3 +1,10 @@
 <script type='text/javascript'>
   <%= "BBase.Slideshow.init(\'#{escape_javascript(@gallery.to_json)}\', #{@gallery.artworks.to_a.find_index(@artwork)});" %>
 </script>
+<%# pre-load images %>
+<div id="preloaded-images">
+  <% @gallery.artworks.each do |artwork| %>
+    <img src="<%= artwork.image.slideshow.url %>" />
+    <img src="<%= artwork.image.fullscreen.url %>" />
+  <% end %>
+</div>

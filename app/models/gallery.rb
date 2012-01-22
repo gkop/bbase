@@ -34,6 +34,7 @@ class Gallery
     self.artworks.each do |artwork|
       json_artwork = {}
       json_artwork[:big_image_url] = artwork.image.slideshow.url
+      json_artwork[:fullscreen_image_url] = artwork.image.fullscreen.url
       json_artwork[:small_image_url] = artwork.image.bigtoe.url
       json_artwork[:id] = artwork.id
       json_artwork[:title] = artwork.title

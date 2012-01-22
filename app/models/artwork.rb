@@ -12,7 +12,7 @@ class Artwork
   key :title
 
   # easiest way to store the dimensions of the different versions :/
-  ["", "_slideshow", "_square", "_collage", "_bigtoe", "_thumb", "_tiny"].each do |v|
+  ["", "_fullscreen", "_slideshow", "_square", "_collage", "_bigtoe", "_thumb", "_tiny"].each do |v|
     ["_width", "_height"].each do |f|
       field "image#{v}#{f}".to_sym, :type => Integer
     end

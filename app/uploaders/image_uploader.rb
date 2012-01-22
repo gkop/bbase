@@ -33,6 +33,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :record_version_dimensions
 
   # Create different versions of your uploaded files:
+  version :fullscreen do
+    process :resize_to_limit => [1920, 1200]
+    process :record_version_dimensions => :fullscreen
+  end
+
   version :slideshow do
     process :resize_to_fill => [774, 500]
     process :record_version_dimensions => :slideshow
