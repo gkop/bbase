@@ -1,4 +1,4 @@
-%div#homepage
+#homepage
   - if @gallery.blank?
     = t(".please_assign_gallery")
 
@@ -6,8 +6,9 @@
     Gallery "#{@gallery.name}" assigned to this page, but is empty.
  
   -else
-    %div#slideshow
-      = link_to slideshow_image(@artwork), @artwork, :class => 'artwork nohover', :title => basic_title(@artwork)
+    #slideshow
+      #image-placeholder
+        = link_to slideshow_image(@artwork), @artwork, :class => 'artwork nohover', :title => basic_title(@artwork)
       %div.navigation 
         %span#previous
           %a{:href => '#', :id => 'previous', :title => "Previous"}
