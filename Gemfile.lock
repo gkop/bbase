@@ -239,7 +239,6 @@ GEM
       kgio (~> 2.4)
       rack
       raindrops (~> 0.6)
-    us_states_select (1.0.0)
     warden (1.1.0)
       rack (>= 1.0)
     xpath (0.1.4)
@@ -284,4 +283,3 @@ DEPENDENCIES
   therubyracer
   uglifier
   unicorn
-  us_states_select
