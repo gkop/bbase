@@ -64,6 +64,7 @@ group :test, :development do
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'capybara-webkit'
 
   # parallelize tests across cpu cores
   gem 'parallel_tests'
