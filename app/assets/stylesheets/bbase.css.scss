@@ -326,14 +326,17 @@ h2.margin {
   margin-top: 1em;
 }
 
+#galleries {
+  margin-left: 1em;
+}
+
 div.gallery-item {
   display: inline-block;
-  margin: 3em;
+  margin: 2em;
   max-width: 180px;
 
   .preview {
     vertical-align: top;
-    margin: 2em;
 
     img {
       margin: 3px;
