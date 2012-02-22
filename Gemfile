@@ -40,7 +40,7 @@ gem 'postmark-rails'
 gem 'grit'
 
 # render markdown
-gem 'maruku'
+gem "redcarpet", "~> 1.17.2"
 
 # sanitize markdown
 gem 'sanitize'
