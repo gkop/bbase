@@ -22,7 +22,10 @@ Demo
 
 You can find a live BBase instance at [Golahny.org](http://golahny.org).
 
+CI
+--
 
+[![Build Status](https://secure.travis-ci.org/gkop/bbase.png?branch=master)](http://travis-ci.org/gkop/bbase)
 
 Legal
 -----
