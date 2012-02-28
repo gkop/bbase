@@ -6,8 +6,8 @@ class ArtworksController < ApplicationController
   def index
     if params[:tags]
       @artworks = Artwork.tagged_with_all(params[:tags])
-      friendly_tags = params[:tags].push( params[:tags].pop(2).join ", and " ).join ", "
-      @title = "Artworks tagged with #{friendly_tags}"
+      friendly_tags = params[:tags].map {|t| t+"s" }.push( params[:tags].pop(2).join ", and " ).join ", "
+      @title = "#{friendly_tags.capitalize}"
     else
       @artworks = Artwork.all
     end
