@@ -60,10 +60,12 @@ module Bbase
   end
 end
 
-# load sensitive params from yaml file not in repo
-yml_file = Rails.root.join('config', 'sensitive.yml')
-begin
-  SENSITIVE_CONFIG = YAML::load(File.open(yml_file))[Rails.env]
-rescue Exception => ex
-  Rails.logger.error "Error parsing sensitive parameters from yaml file #{yml_file}: #{ex.inspect}"
+unless Rails.env.test?
+  # load sensitive params from yaml file not in repo
+  yml_file = Rails.root.join('config', 'sensitive.yml')
+  begin
+    SENSITIVE_CONFIG = YAML::load(File.open(yml_file))[Rails.env]
+  rescue Exception => ex
+    Rails.logger.error "Error parsing sensitive parameters from yaml file #{yml_file}: #{ex.inspect}"
+  end
 end
