@@ -28,6 +28,9 @@
         %a{:href => artworks_path}
           .item
             ARTWORKS
+        %a{:href => artworks_path(:tags => ['drawing'])}
+          .sub.item
+            Drawings
         %a{:href => artworks_path(:tags => ['painting'])}
           .sub.item
             Paintings

@@ -1,4 +1,11 @@
 Feature: Tagged artwork
+  
+  Scenario:  Drawings
+    Given a drawing exists with title "I'm a drawing"
+    And I am a new, authenticated user
+    And I am on the Drawings page.
+    Then I should see "Drawings"
+    And I should see the drawing 
 
   Scenario:  Paintings
     Given a painting exists with title "I'm a painting"

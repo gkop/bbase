@@ -18,6 +18,8 @@ module NavigationHelpers
       '/settings/edit'
     when /the homepage/
       root_path
+    when /the Drawings page/
+      '/artworks?tags[]=drawing'
     when /the Paintings page/
       '/artworks?tags[]=painting'
     when /the Prints page/
