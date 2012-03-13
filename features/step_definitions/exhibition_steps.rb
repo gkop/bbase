@@ -24,3 +24,12 @@ Given /^I have added the artwork to "([^"]*)"$/ do |gallery|
   @gallery.artworks << @artwork
   @artwork.save!
 end
+
+Then /^I should see a byline by my gallery$/ do
+  step %{I should see "by #{@gallery.user.name}" within ".caption"}
+end
+
+Then /^I should not see a byline by the gallery$/ do
+  step %{I should not see "by #{@gallery.user.name}"}
+end
+

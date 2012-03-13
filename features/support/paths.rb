@@ -32,6 +32,8 @@ module NavigationHelpers
       artwork_path(@artwork)
     when /the page for the gallery/
       gallery_path(@gallery || @gallery)
+    when /the user page of the gallery owner/
+      user_path(@gallery.user)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
