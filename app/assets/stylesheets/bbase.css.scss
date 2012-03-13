@@ -369,13 +369,14 @@ div.left-aligned {
 }
 
 div.note {
-  margin-left: 8em;
-  margin-right: 8em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 div.wall-of-text {
   font-size: 13pt;
   line-height: 1.6em;
+  text-align: justify;
 
   p {
     margin-bottom: 2em;
