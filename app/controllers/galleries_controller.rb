@@ -32,12 +32,9 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.xml
   def index
-    @galleries = Gallery.non_empty
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @galleries }
-    end
+    all_galleries = Gallery.non_empty
+    @curated_galleries = all_galleries.curated.shuffle
+    @uncurated_galleries = all_galleries.uncurated.shuffle
   end
 
   # GET /galleries/1

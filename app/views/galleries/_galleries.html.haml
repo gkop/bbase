@@ -1,2 +1,5 @@
-%h1= t 'galleries.index.title'
-= render :partial => 'preview', :as => :gallery, :collection => @galleries
+%h3 Curated Galleries
+= render :partial => 'preview', :as => :gallery, :collection => @curated_galleries
+
+%h3 User Galleries
+= render :partial => 'preview', :as => :gallery, :collection => @uncurated_galleries

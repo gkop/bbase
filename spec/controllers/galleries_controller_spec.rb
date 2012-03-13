@@ -72,13 +72,13 @@ describe GalleriesController do
       login_user
       get :index
       response.should render_template :index
-      assigns(:galleries).size.should == Gallery.non_empty.count
+      assigns(:uncurated_galleries).size.should == Gallery.non_empty.count
     end
     
     it "displays a list of all galleries for guest" do
       get :index
       response.should render_template :index
-      assigns(:galleries).size.should == Gallery.non_empty.count
+      assigns(:uncurated_galleries).size.should == Gallery.non_empty.count
     end
   end
 

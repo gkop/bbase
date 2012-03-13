@@ -4,7 +4,7 @@ class Gallery
 
   field :name, :type => String
   field :note, :type => String
-  field :curated, :type => Boolean
+  field :curated, :type => Boolean, :default => false
 
   attr_protected :curated
 
@@ -14,6 +14,8 @@ class Gallery
   validates_presence_of :name
 
   scope :non_empty, where(:artwork_ids.ne=> [])
+  scope :curated, where(:curated => true)
+  scope :uncurated, where(:curated => false)
 
   def assign_to_homepage
     Settings.set(:homepage_gallery, self.id)
