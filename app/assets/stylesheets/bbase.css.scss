@@ -152,7 +152,6 @@ div#dashboard {
   }
 
   a {
-    text-decoration: underline;
     color: #ffcc00;
   
     img {
@@ -160,8 +159,7 @@ div#dashboard {
     }
 
     &:hover {
-      text-decoration: none;
-      color: #ffffff;
+      text-decoration: underline;
     
       img {
         border: 1px solid #ffcc00;
