@@ -47,6 +47,7 @@ gem 'sanitize'
  
 # deployment
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 # js runtime
 gem 'therubyracer'
@@ -65,7 +66,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'capybara-webkit'
-
+ 
   # parallelize tests across cpu cores
   gem 'parallel_tests'
 

@@ -1,4 +1,3 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"                  # Load RVM's capistrano plugin.
 require 'bundler/capistrano'
 
@@ -6,6 +5,8 @@ load 'deploy/assets'
 
 set :application, "bbase"
 set :repository,  "git@github.com:gkop/bbase.git"
+
+set :rvm_type, :system
 
 set :scm, :git
 
@@ -19,7 +20,7 @@ set :branch, "master"
 
 set :deploy_to, "/opt/#{application}"
 
-set :rvm_ruby_string, 'ree@bbase'
+set :rvm_ruby_string, 'ruby-1.9.3@bbase'
 set :rvm_bin_path, "/usr/local/rvm/bin"
 
 # deploy task for Passenger
