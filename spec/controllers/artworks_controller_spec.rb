@@ -3,12 +3,12 @@ require 'spec_helper'
 describe ArtworksController do
   include Devise::TestHelpers
  
-  let(:new_artwork) {Factory(:artwork)}
+  let(:new_artwork) {FactoryGirl.create(:artwork)}
 
   context "GET index" do
     it "displays a list of all artworks for user" do
       login_user
-      2.times {Factory(:artwork)}
+      2.times {FactoryGirl.create(:artwork)}
       get :index
       response.should render_template :index
       assigns(:artworks).size.should == 2

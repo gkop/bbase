@@ -1,19 +1,19 @@
 Given /^I have a gallery named "([^"]*)"$/ do |name|
-  @gallery = Factory.build(:gallery, :name => name)
+  @gallery = FactoryGirl.build(:gallery, :name => name)
   @current_user.galleries << @gallery
   @gallery.save!
 end
 
 Given /^I have a gallery named "([^"]*)" with an artwork in it$/ do |name|
   step %{I have a gallery named "#{name}"}
-  @gallery.artworks << Factory(:artwork)
+  @gallery.artworks << FactoryGirl.create(:artwork)
   @gallery.save!
 end
 
 Given /^the gallery has the artworks "([^"]*)"$/ do |artworks|
   @gallery ? gallery = @gallery : gallery = @homepage_gallery
   artworks.split(',').each do |title|
-    artwork = Factory.create(:artwork, :title => title.strip)
+    artwork = FactoryGirl.create(:artwork, :title => title.strip)
     gallery.artworks << artwork
     artwork.save!
   end
@@ -36,8 +36,8 @@ end
 Given /^a couple curated, non\-empty galleries exist$/ do
   @curated_galleries = []
   2.times do
-    new_gallery = Factory(:gallery, :curated => true)
-    new_gallery.artworks << Factory(:artwork)
+    new_gallery = FactoryGirl.create(:gallery, :curated => true)
+    new_gallery.artworks << FactoryGirl.create(:artwork)
     @curated_galleries << new_gallery
   end
 end
@@ -45,8 +45,8 @@ end
 Given /^a couple uncurated, non\-empty galleries exist$/ do
   @uncurated_galleries = []
   2.times do
-    new_gallery = Factory(:gallery)
-    new_gallery.artworks << Factory(:artwork)
+    new_gallery = FactoryGirl.create(:gallery)
+    new_gallery.artworks << FactoryGirl.create(:artwork)
     @uncurated_galleries << new_gallery
   end
 end

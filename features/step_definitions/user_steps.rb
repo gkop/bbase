@@ -23,6 +23,6 @@ end
 
 Given /^I am logged in as an? (.+)$/ do |model|
   factory_name = model.gsub(' ', '_')
-  @current_user = Factory.create(factory_name)
+  @current_user = FactoryGirl.create(factory_name)
   do_login
 end

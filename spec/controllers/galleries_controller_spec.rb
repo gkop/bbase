@@ -3,9 +3,9 @@ require 'spec_helper'
 describe GalleriesController do
   include Devise::TestHelpers
     
-  let(:artwork) { Factory(:artwork) }
+  let(:artwork) { FactoryGirl.create(:artwork) }
   let(:gallery) do
-    g = Factory(:gallery)
+    g = FactoryGirl.create(:gallery)
     g.artworks << artwork
     g
   end
@@ -27,7 +27,7 @@ describe GalleriesController do
     
     it "doesn't add an artwork to another user's gallery" do
       user = login_user
-      Factory(:user).galleries << gallery
+      FactoryGirl.create(:user).galleries << gallery
  
       lambda { post :add, :id => gallery.id, :artwork_id => artwork.id }.should raise_error("You are not authorized to access this page.")
     end
@@ -57,7 +57,7 @@ describe GalleriesController do
     
     it "doesn't remove an artwork from another user's gallery" do
       user = login_user
-      Factory(:user).galleries << gallery
+      FactoryGirl.create(:user).galleries << gallery
       lambda { post :remove, :id => gallery.id, :artwork_id => artwork.id }.should raise_error("You are not authorized to access this page.")
     end
     
@@ -192,7 +192,7 @@ describe GalleriesController do
     
     it "doesn't destroy another user's gallery" do
       user = login_user
-      Factory(:user).galleries << gallery
+      FactoryGirl.create(:user).galleries << gallery
       lambda { delete :destroy, :id => gallery.id }.should raise_error("You are not authorized to access this page.")
       gallery.reload.should be_present
     end

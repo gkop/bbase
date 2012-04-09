@@ -6,7 +6,7 @@ describe UsersController do
   context "GET index" do
     it "displays a list of all users for user" do
       login_user
-      2.times { Factory(:user) }
+      2.times { FactoryGirl.create(:user) }
       get :index
       response.should render_template :index
       assigns(:users).size.should == 3
@@ -19,7 +19,7 @@ describe UsersController do
   end
 
   context "GET show" do
-    let(:new_user) { Factory(:user) }  
+    let(:new_user) { FactoryGirl.create(:user) }  
 
     it "shows a specific user for user" do
       login_user

@@ -1,22 +1,24 @@
-Factory.define :user do |f|
-  f.sequence(:name) {|i| "Test User #{i}"}
-  f.sequence(:email) {|i| "testuser_#{i}@test.golahny.org"}
-  f.password 'Blueberry23'
-  f.password_confirmation 'Blueberry23'
-end
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) {|i| "Test User #{i}"}
+    sequence(:email) {|i| "testuser_#{i}@test.golahny.org"}
+    password 'Blueberry23'
+    password_confirmation 'Blueberry23'
+  end
 
-Factory.define :admin, :parent => :user do |f|
-  f.admin true
+  factory :admin, :parent => :user do
+    admin true
+  end
 end
 
 def login_admin
-  admin = Factory.create(:admin)
+  admin = FactoryGirl.create(:admin)
   sign_in admin
   admin
 end
 
 def login_user
-  user = Factory.create(:user)
+  user = FactoryGirl.create(:user)
   sign_in user
   user
 end
