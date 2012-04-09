@@ -21,8 +21,7 @@ gem 'cancan'
 # gem 'cream', :git => 'https://github.com/kristianmandrup/cream.git'
 
 # user uploads
-gem 'carrierwave'
-gem "carrierwave-mongoid", :git => "git://github.com/jnicklas/carrierwave-mongoid.git", :branch => "carrierwave-0.6-support", :require => 'carrierwave/mongoid'
+gem 'carrierwave', '0.5.4'
 
 # edit images
 gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
