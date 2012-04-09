@@ -11,6 +11,6 @@
       :markdown
         #{@settings.biography_content}
   = f.input :biography_content, :as => :hidden
-  = f.buttons
+  = f.actions
                                
 = render :partial => 'common/editor', :locals => {:content => @settings.biography_content, :editable_id => "biography_content" }
