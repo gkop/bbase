@@ -18,7 +18,7 @@ class Artwork
     end
   end
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader, mount_on: :image_filename
 
   references_one :location_created, :class_name => "Site"
 #  references_one :location_stored, :class_name => "Site"
