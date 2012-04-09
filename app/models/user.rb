@@ -9,6 +9,8 @@ class User
 
   field :admin, :type => Boolean
   field :name, :type => String
+  field :invitation_token, :type => String
+  field :invitation_sent_at, :type => DateTime
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
