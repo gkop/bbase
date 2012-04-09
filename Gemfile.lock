@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/jnicklas/carrierwave-mongoid.git
+  revision: 8f8a918a1a8ca2c9a800bd67fcbaeee0d3c887c7
+  branch: carrierwave-0.6-support
+  specs:
+    carrierwave-mongoid (0.2.0.pre)
+      carrierwave (~> 0.6.1)
+      mongoid (~> 2.1)
+
+GIT
   remote: git://github.com/probablycorey/mini_magick.git
   revision: 97a2f8aef3596dc4086693976faa86b6fdd867a3
   specs:
@@ -58,8 +67,9 @@ GEM
     capybara-webkit (0.11.0)
       capybara (>= 1.0.0, < 1.2)
       json
-    carrierwave (0.5.4)
-      activesupport (~> 3.0)
+    carrierwave (0.6.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     childprocess (0.3.1)
       ffi (~> 1.0.6)
     cocoon (1.0.19)
@@ -256,7 +266,8 @@ DEPENDENCIES
   capistrano
   capybara
   capybara-webkit
-  carrierwave (= 0.5.4)
+  carrierwave
+  carrierwave-mongoid!
   cocoon
   coffee-rails
   cucumber-rails
