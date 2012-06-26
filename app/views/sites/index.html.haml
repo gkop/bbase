@@ -15,4 +15,4 @@
         %td= site.address
         %td.action= link_to t('show'), site
         %td.action= link_to t('edit'), edit_site_path(site)
-        %td.action= link_to t('destroy'), site, :confirm => t('are_you_sure'), :method => :delete
+        %td.action= link_to t('destroy'), site, :data => {:confirm => t('are_you_sure')}, :method => :delete

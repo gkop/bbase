@@ -32,4 +32,4 @@
     %p
       = link_to t("edit"), edit_gallery_path(@gallery)
       |
-      = link_to t(".delete"), @gallery, :confirm => t('are_you_sure'), :method => :delete
+      = link_to t(".delete"), @gallery, :data => {:confirm => t('are_you_sure')}, :method => :delete

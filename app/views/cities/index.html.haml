@@ -17,4 +17,4 @@
         %td= city.country
         %td.action= link_to t('show'), city
         %td.action= link_to t('edit'), edit_city_path(city)
-        %td.action= link_to t('destroy'), city, :confirm => t('are_you_sure'), :method => :delete
+        %td.action= link_to t('destroy'), city, :data => {:confirm => t('are_you_sure')}, :method => :delete
