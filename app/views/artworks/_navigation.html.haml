@@ -1,7 +1,7 @@
 %div#navigation
   %p.caption
     %span.title= @artwork.title
-    %span.year= @artwork.year
+    %span.year= year_for(@artwork)
     %span.dimensions= friendly_dimensions(@artwork)
     - if can? :manage, Artwork  && !@artwork.grandpa_index.blank?
       %span.grandpa-index

@@ -1,6 +1,7 @@
 class Gallery
   include Mongoid::Document
   include Mongoid::Timestamps
+  include ArtworksHelper
 
   field :name, :type => String
   field :note, :type => String
@@ -40,7 +41,7 @@ class Gallery
       json_artwork[:small_image_url] = artwork.image.bigtoe.url
       json_artwork[:id] = artwork.id
       json_artwork[:title] = artwork.title
-      json_artwork[:year] = artwork.year
+      json_artwork[:year] = year_for(artwork)
       json_gallery[:artworks] << json_artwork
     end
     json_gallery.to_json

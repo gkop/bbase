@@ -1,7 +1,11 @@
 module ArtworksHelper
 
   def basic_title(artwork)
-    artwork.title+" ("+(artwork.year ? artwork.year.to_s : "?")+")"
+    "#{artwork.title} (#{year_for(artwork)})"
+  end
+
+  def year_for(artwork)
+    "#{(artwork.display_year.present? ? artwork.display_year : (artwork.year.present? ? artwork.year : "?"))}"
   end
 
   def friendly_dimensions(artwork)
@@ -14,5 +18,5 @@ module ArtworksHelper
     else
     end
   end
- 
+
 end

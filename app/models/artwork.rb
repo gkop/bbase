@@ -6,6 +6,7 @@ class Artwork
   field :title, :type => String
   field :note, :type => String
   field :year, :type => Integer
+  field :display_year, :type => String
   field :height, :type => Integer
   field :width, :type => Integer
   field :grandpa_index, :type => Integer
@@ -44,5 +45,9 @@ class Artwork
 
   def sanitize_note
     self.note = Sanitize.clean(note, Sanitize::Config::RELAXED)
+  end
+
+  def to_json
+    binding.pry
   end
 end
