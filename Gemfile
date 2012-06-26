@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.6'
 
-gem 'mongoid'
+gem 'mongoid', '~> 2.1'
 gem 'bson_ext'
 
 gem 'haml'
@@ -22,7 +22,7 @@ gem 'cancan'
 
 # user uploads
 gem 'carrierwave'
-gem "carrierwave-mongoid", :git => "git://github.com/jnicklas/carrierwave-mongoid.git", :branch => "carrierwave-0.6-support", :require => 'carrierwave/mongoid'
+gem "carrierwave-mongoid", :require => 'carrierwave/mongoid', :git => 'https://github.com/jnicklas/carrierwave-mongoid'
 
 # edit images
 gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
