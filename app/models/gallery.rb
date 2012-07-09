@@ -34,6 +34,7 @@ class Gallery
     json_gallery = {}
     json_gallery[:name ]= self.name
     json_gallery[:artworks] = []
+    if false
     self.artworks.each do |artwork|
       json_artwork = {}
       json_artwork[:big_image_url] = artwork.image.slideshow.url
@@ -43,6 +44,7 @@ class Gallery
       json_artwork[:title] = artwork.title
       json_artwork[:year] = year_for(artwork)
       json_gallery[:artworks] << json_artwork
+    end
     end
     json_gallery.to_json
   end

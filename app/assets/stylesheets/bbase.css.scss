@@ -383,6 +383,11 @@ div.wall-of-text {
   }
 }
 
-div#preloaded-images {
+div#preloaded-fullscreen-images,
+div#preloaded-slideshow-images {
   display: none;
+}
+
+#fs-caption {
+  color: black;
 }

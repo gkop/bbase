@@ -57,6 +57,8 @@ module Bbase
     config.assets.prefix = "/assets"
     config.action_dispatch.x_sendfile_header = "X-Accel-Redirect"  
 
+    config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
+
   end
 end
 

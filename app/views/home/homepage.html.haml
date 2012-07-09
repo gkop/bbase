@@ -4,18 +4,22 @@
 
   - elsif @gallery.artworks.empty?
     Gallery "#{@gallery.name}" assigned to this page, but is empty.
- 
+
   -else
     #slideshow
       #image-placeholder
-        = link_to slideshow_image(@artwork), @artwork, :class => 'artwork nohover', :title => basic_title(@artwork)
-      %div.navigation 
+        = link_to slideshow_image(@artworks.first), @artworks.first, :class => 'artwork nohover', :title => basic_title(@artworks.first)
+      %div.navigation
         %span#previous
           %a{:href => '#', :id => 'previous', :title => "Previous"}
             \<
 
+        %span#fullscreen
+          %a{:href => '#', :id => 'fullscreen', :title => "fullscreen"}
+            Fullscreen
+
         %span#next
           %a{:href => '#', :id => 'next', :title => "Next"}
             \>
-      
-    = render 'slideshow/set_slideshow'  
+
+    = render 'slideshow/set_slideshow'

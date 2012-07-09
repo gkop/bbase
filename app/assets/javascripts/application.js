@@ -1,4 +1,9 @@
-//= require jquery  
-//= require jquery_ujs  
-//= require_self  
-//= require_tree .  
+//= require jquery
+//= require jquery_ujs
+//= require_self
+//= require_tree .
+//= require jquery.litedialog
+//= require jquery.timer
+//= require jquery.unescape
+//= require jquery.fullscreenslides
+//= require showdown
