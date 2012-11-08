@@ -6,7 +6,6 @@ gem 'mongoid'
 gem 'bson_ext'
 
 gem 'haml'
-gem 'hpricot'
 
 # authentication
 gem 'devise'
@@ -17,15 +16,12 @@ gem 'devise_invitable'
 # authorization
 gem 'cancan'
 
-# roles
-# gem 'cream', :git => 'https://github.com/kristianmandrup/cream.git'
-
 # user uploads
 gem 'carrierwave'
 gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
 
 # edit images
-gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
+gem 'mini_magick'
 
 # tagging system
 gem 'mongoid_taggable'
@@ -49,9 +45,6 @@ gem 'sanitize'
 # deployment
 gem 'capistrano'
 gem 'rvm-capistrano'
-
-# js runtime
-gem 'therubyracer'
 
 group :development do
   gem 'unicorn'
