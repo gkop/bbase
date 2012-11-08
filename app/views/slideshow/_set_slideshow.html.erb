@@ -1,5 +1,5 @@
 <script type='text/javascript'>
-  <%= "BBase.Slideshow.init(\'#{escape_javascript(@artworks.to_json)}\');" %>
+  <%= "BBase.Slideshow.init('#{escape_javascript(@artworks.to_json)}');".html_safe %>
 </script>
 <%# pre-load images %>
 <div id="preloaded-slideshow-images">
