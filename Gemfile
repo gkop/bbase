@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-gem 'mongoid', '~> 2.1'
+gem 'mongoid'
 gem 'bson_ext'
 
 gem 'haml'
@@ -22,7 +22,7 @@ gem 'cancan'
 
 # user uploads
 gem 'carrierwave'
-gem "carrierwave-mongoid", :require => 'carrierwave/mongoid', :git => 'https://github.com/jnicklas/carrierwave-mongoid'
+gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
 
 # edit images
 gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
@@ -45,7 +45,7 @@ gem "redcarpet", "~> 1.17.2"
 
 # sanitize markdown
 gem 'sanitize'
- 
+
 # deployment
 gem 'capistrano'
 gem 'rvm-capistrano'
@@ -59,7 +59,7 @@ end
 
 group :test, :development do
   gem 'capybara'
-  gem 'cucumber-rails', :require => false 
+  gem 'cucumber-rails', :require => false
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl'
@@ -67,7 +67,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'capybara-webkit'
- 
+
   # parallelize tests across cpu cores
   gem 'parallel_tests'
 
@@ -76,12 +76,12 @@ group :test, :development do
   gem "pry-nav", "~> 0.0.4"
 end
 
-# Gems used only for assets and not required  
-# in production environments by default.  
-group :assets do  
-  gem 'sass-rails'  
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails'
   gem 'coffee-rails'
-  gem 'uglifier'  
-end  
-  
-gem 'jquery-rails'  
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'

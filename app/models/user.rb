@@ -19,6 +19,7 @@ class User
   field :remember_created_at, :type => Time
   field :invitation_token, :type => String
   field :invitation_sent_at, :type => Time
+  field :invitation_accepted_at, :type => Time
   field :reset_password_token, :type => String
   field :reset_password_sent_at, :type => Time
   validates_presence_of :name
