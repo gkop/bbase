@@ -44,7 +44,7 @@ Slideshow.show = (newIndex, startFullscreen = false) ->
     $(document).bind("keydown", this.keyFunc)
   jImage = $("#slideshow img")
   jImage.fadeOut 1000, ->
-    $("a.artwork").attr "href", "/artworks/" + artwork.id
+    $("a.artwork").attr "href", "/artworks/" + artwork._id
     $("a.artwork").attr "title", artwork.title + " (" + (if artwork.year then artwork.year else "?") + ")"
     jImage.attr("src", artwork.image.slideshow.url).fadeIn 1000
 
