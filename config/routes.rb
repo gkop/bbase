@@ -1,20 +1,16 @@
 Bbase::Application.routes.draw do
 
-  # eg www.golahny.com redirects to golahny.com
-  #   http://stackoverflow.com/a/7352878/283398
-  match '(*any)' => redirect { |p, req| req.url.sub('www.', '') }, :constraints => { :host => /^www\./ }
- 
   root :to => "home#homepage"
-  
+
   get '/cities/created' => 'cities#created'
   get '/sites/created' => 'sites#created'
-  
+
   resources :sites
 
   resources :cities
 
   resources :artworks
-  
+
   devise_for :users
 
   post "/invites/create" => "invites#create"
