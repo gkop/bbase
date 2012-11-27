@@ -19,13 +19,13 @@ module NavigationHelpers
     when /the homepage/
       root_path
     when /the Drawings page/
-      '/artworks?tags[]=drawing'
+      '/artworks?tags=drawing'
     when /the Paintings page/
-      '/artworks?tags[]=painting'
+      '/artworks?tags=painting'
     when /the Prints page/
-      '/artworks?tags[]=print'
+      '/artworks?tags=print'
     when /the Sculptures page/
-      '/artworks?tags[]=sculpture'
+      '/artworks?tags=sculpture'
     when /the Request an Invite page/
       '/users/sign_up'
     when /the page for the artwork/
