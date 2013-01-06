@@ -1,0 +1,6 @@
+- content_for :title, @title
+
+%h1= @title
+
+%p= link_to t('back'), resources_path(:tags => @resource.primary_tag)
+= render 'form'

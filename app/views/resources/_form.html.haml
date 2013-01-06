@@ -1,0 +1,28 @@
+= semantic_form_for @resource do |f|
+  - if @resource.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@resource.errors.count, 'error')} prohibited this #{@resource.primary_tag} from being saved:"
+      %ul
+      - @resource.errors.full_messages.each do |msg|
+        %li= msg
+
+  = f.inputs do
+    = f.input :title
+    = f.input :asset_filename
+    = f.input :tags
+    Enter tags separated by commas:
+    %br
+    eg. writing, response, etc.
+    %li#resource-note-label
+      %label{:for => 'resource_note'}
+        Note
+      %br
+      %span#edit-note-link= link_to 'Edit note', '#', :id => 'edit-link'
+      #display-note
+        :markdown
+          #{@resource.note}
+    = f.input :note, :as => :hidden
+  = f.actions do
+    = f.action :submit, :label => save_resource_label(@resource.type)
+
+= render :partial => 'common/editor', :locals => {:content => @resource.note, :editable_id => "resource_note"}

@@ -1,0 +1,15 @@
+%h1= @resource.title
+
+- if @resource.asset_filename.present?
+  %p
+    = link_to "Download PDF", asset_path(@resource.asset_filename)
+
+- if @resource.note.present?
+  .note.wall-of-text
+    :markdown
+      #{@resource.note}
+
+- if can? :manage, @resource
+  %p
+    = link_to 'Delete', @resource, :data => {:confirm => t('are_you_sure')}, :method => :delete
+    = link_to t('edit'), edit_resource_path(@resource)

@@ -4,7 +4,8 @@ class Ability
   def initialize(user)
     guest do
       can :read, Artwork
-      can :read, Gallery 
+      can :read, Gallery
+      can :read, Resource
       can :read, User
     end
 
@@ -18,8 +19,9 @@ class Ability
       can :manage, Artwork
       can :manage, Gallery
       can :manage, Settings
-      can :manage, User   
-    end 
+      can :manage, Resource
+      can :manage, User
+    end
   end
 end
 

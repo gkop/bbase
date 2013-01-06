@@ -10,6 +10,7 @@ Bbase::Application.routes.draw do
   resources :cities
 
   resources :artworks
+  resources :resources
 
   devise_for :users
 

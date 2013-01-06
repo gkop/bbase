@@ -1,3 +1,5 @@
+require "stringify_tags"
+
 class ArtworksController < ApplicationController
   load_and_authorize_resource
 
@@ -7,11 +9,7 @@ class ArtworksController < ApplicationController
     if params[:tags].present?
       tags_array = params[:tags].split(',')
       @artworks = Artwork.tagged_with_any(tags_array)
-      and_string = (tags_array.size == 2 ? " and " : ", and ")
-      friendly_tags = tags_array.map! {|t| t+"s" }
-                                .push(tags_array.pop(2).join and_string )
-                                .join ", "
-      @title = "#{friendly_tags.capitalize}"
+      @title = StringifyTags.stringify(tags_array)
     else
       @artworks = Artwork.all
     end

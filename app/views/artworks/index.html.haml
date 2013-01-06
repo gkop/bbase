@@ -2,10 +2,10 @@
 
 #general
   %h1= @title || t('.title')
- 
+
   %p
     (Found #{@artworks.count})
-  
+
   - if can? :create, Artwork
     %p= link_to t('.new_artwork'), new_artwork_path
 

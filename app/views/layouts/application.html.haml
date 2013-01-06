@@ -6,10 +6,10 @@
         #{yield(:title)} | Golahny.org
       - else
         Golahny.org, online home of artist Berta Golahny
-    = stylesheet_link_tag "application" 
+    = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
-  
+
   %body
     #contents
       #header
@@ -17,7 +17,7 @@
           = render 'devise/menu/menu'
         .bottom
           Berta Golahny
-   
+
       #sidebar-menu
         %a{:href => biography_path}
           .item
@@ -40,16 +40,22 @@
         %a{:href => artworks_path(:tags => 'sculpture')}
           .sub.item
             Sculpture
+        %a{:href => resources_path(:tags => 'writing')}
+          .item
+            WRITINGS
+        %a{:href => resources_path(:tags => 'response')}
+          .item
+            RESPONSES
       #main
         #inner
-          #flash-container 
+          #flash-container
             - if alert
               %div.alert= alert
             - elsif notice
               %div.notice= notice
-  
+
           = yield
- 
+
       #footer
         = link_to "about", about_path
         |

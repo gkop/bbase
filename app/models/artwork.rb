@@ -47,7 +47,4 @@ class Artwork
     self.note = Sanitize.clean(note, Sanitize::Config::RELAXED)
   end
 
-  def to_json
-    binding.pry
-  end
 end

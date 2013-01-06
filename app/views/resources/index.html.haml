@@ -1,0 +1,11 @@
+- content_for :title, @title || t('.title')
+
+#general
+  %h1= @title || t('.title')
+
+  - if can? :create, Resource
+    %p= link_to "New #{params[:tags]}", new_resource_path(:tag => params[:tags])
+
+  %ul.resources
+    - @resources.each do |r|
+      %li= link_to r.title, r
