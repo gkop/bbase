@@ -31,25 +31,6 @@ class Gallery
     end
   end
 
-  def to_json
-    json_gallery = {}
-    json_gallery[:name ]= self.name
-    json_gallery[:artworks] = []
-    if false
-    self.artworks.each do |artwork|
-      json_artwork = {}
-      json_artwork[:big_image_url] = artwork.image.slideshow.url
-      json_artwork[:fullscreen_image_url] = artwork.image.fullscreen.url
-      json_artwork[:small_image_url] = artwork.image.bigtoe.url
-      json_artwork[:id] = artwork.id
-      json_artwork[:title] = artwork.title
-      json_artwork[:year] = year_for(artwork)
-      json_gallery[:artworks] << json_artwork
-    end
-    end
-    json_gallery.to_json
-  end
-
   def self.assigned_to_homepage
     if Settings.get(:homepage_gallery)
       self.find(Settings.get(:homepage_gallery))
