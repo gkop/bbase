@@ -24,11 +24,7 @@ class Gallery
   end
 
   def is_on_homepage?
-    if Settings.get(:homepage_gallery) ==  self.id
-      true
-    else
-      false
-    end
+    Settings.get(:homepage_gallery) ==  self.id
   end
 
   def self.assigned_to_homepage
@@ -37,12 +33,10 @@ class Gallery
     end
   end
 
-  # returns an artwork at random
   def random_artwork
-    self.random_artworks(1).first
+    self.artworks.sample
   end
 
-  # returns num artworks at random
   def random_artworks(num)
     self.artworks.shuffle.slice(0, num)
   end
