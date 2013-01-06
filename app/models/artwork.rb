@@ -2,6 +2,7 @@ class Artwork
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Taggable
+  include Mongoid::Sanitizable
 
   field :title, :type => String
   field :note, :type => String
@@ -25,26 +26,21 @@ class Artwork
 #  references_one :location_stored, :class_name => "Site"
 #  references_one :collection, :class_name => "Site"
 #  references_many :galleries, :class_name => "Site"
-   
+
   references_and_referenced_in_many :galleries, :class_name => "Gallery", :inverse_of => :artworks
 
-  before_save :sanitize_note
   validates_uniqueness_of :title
   validates_presence_of :title
   validates_numericality_of :year, :greater_than => 1937, :less_than => 2006, :allow_blank => true
   validate :check_for_collision
- 
-  # validate uniqueness of key 
+  sanitizes :note
+
+  # validate uniqueness of key
   def check_for_collision
     canonical_id = title.identify
     artworks = Artwork.all(:conditions => {:id => canonical_id})
     if artworks.count > 1 || (artworks.count == 1 && artworks.first != self)
       errors.add(:base, "Title too similar to that of an existing artwork")
     end
-  end   
-
-  def sanitize_note
-    self.note = Sanitize.clean(note, Sanitize::Config::RELAXED)
   end
-
 end

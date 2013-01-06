@@ -1,6 +1,7 @@
 class Gallery
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Sanitizable
   include ArtworksHelper
 
   field :name, :type => String
@@ -11,8 +12,8 @@ class Gallery
 
   references_and_referenced_in_many :artworks, :class_name => "Artwork", :inverse_of => :galleries
   belongs_to :user
-  before_save :sanitize_note
   validates_presence_of :name
+  sanitizes :note
 
   scope :non_empty, where(:artwork_ids.ne=> [])
   scope :curated, where(:curated => true)
@@ -21,15 +22,15 @@ class Gallery
   def assign_to_homepage
     Settings.set(:homepage_gallery, self.id)
   end
- 
+
   def is_on_homepage?
     if Settings.get(:homepage_gallery) ==  self.id
       true
     else
       false
-    end 
+    end
   end
- 
+
   def to_json
     json_gallery = {}
     json_gallery[:name ]= self.name
@@ -47,10 +48,6 @@ class Gallery
     end
     end
     json_gallery.to_json
-  end
-
-  def sanitize_note
-    self.note = Sanitize.clean(note, Sanitize::Config::RELAXED)
   end
 
   def self.assigned_to_homepage
