@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ArtworksController do
   include Devise::TestHelpers
-
+ 
   let(:new_artwork) {FactoryGirl.create(:artwork)}
 
   context "GET index" do
@@ -13,7 +13,7 @@ describe ArtworksController do
       response.should render_template :index
       assigns(:artworks).size.should == 2
     end
-
+    
     it "displays a list of all artworks for guest" do
       get :index
       response.should render_template :index
@@ -25,13 +25,13 @@ describe ArtworksController do
       login_user
       get :show, :id => new_artwork.id
       response.should render_template :show
-      assigns(:artwork).should == new_artwork
+      assigns(:artwork).should == new_artwork 
     end
-
+    
     it "shows specific artwork for guest" do
       get :show, :id => new_artwork.id
       response.should render_template :show
-      assigns(:artwork).should == new_artwork
+      assigns(:artwork).should == new_artwork 
     end
   end
 
@@ -48,7 +48,7 @@ describe ArtworksController do
       lambda {get :new}.should raise_error("You are not authorized to access this page.")
     end
   end
-
+  
   context "GET edit" do
     it "displays the edit artwork form for admin" do
       login_admin
@@ -68,11 +68,12 @@ describe ArtworksController do
       login_admin
       put :update, :id => new_artwork.id, :artwork => {:title => "test update artwork"}
       artwork = assigns(:artwork)
+      artwork.id.should == artwork.id
       artwork.title.should == "test update artwork"
-      response.should redirect_to artwork_path(new_artwork.id)
+      response.should redirect_to artwork
       flash[:notice].should == "Artwork was successfully updated."
     end
-
+    
     it "doesn't update an artwork for user" do
       login_user
       lambda { put :update, :id => new_artwork.id, :artwork => {:title => "test update artwork"} }.should raise_error("You are not authorized to access this page.")
@@ -87,13 +88,13 @@ describe ArtworksController do
       Artwork.count.should == 0
       flash[:notice].should == "Deleted artwork "+new_artwork.title
     end
-
+    
     it "doesn't destroy an artwork for a user" do
       login_user
       lambda { delete :destroy, :id => new_artwork.id }.should raise_error("You are not authorized to access this page.")
     end
   end
-
+     
   context "POST create" do
     it "creates a new artwork for an admin" do
       login_admin
@@ -104,7 +105,7 @@ describe ArtworksController do
       new_artwork.title.should == "test new artwork"
       new_artwork.year.should == 1950
     end
-
+    
     it "doesn't create a new artwork for a user" do
       login_user
       lambda { post :create, :artwork => {:title => "Nebula", :year => 1965} }.should raise_error("You are not authorized to access this page.")

@@ -54,7 +54,7 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.new(params[:artwork])
 
     respond_to do |format|
-
+      
       if @artwork.save
         format.html { redirect_to(@artwork, :notice => 'Artwork was successfully created.') }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
@@ -66,14 +66,18 @@ class ArtworksController < ApplicationController
   end
 
   # PUT /artworks/1
+  # PUT /artworks/1.xml
   def update
     @artwork = Artwork.find(params[:id])
 
-    if @artwork.update_attributes(params[:artwork])
-      redirect_to artwork_path(params[:id]),
-                  :notice => 'Artwork was successfully updated.'
-    else
-      render :action => "edit"
+    respond_to do |format|
+      if @artwork.update_attributes(params[:artwork])
+        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
+      end
     end
   end
 
