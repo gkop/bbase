@@ -7,7 +7,7 @@
         %li= msg
 
   = f.inputs do
-    = f.input :title
+    = f.input :title, :input_html => {:disabled => (params[:action] != "new")}
     = f.input :asset_filename
     = f.input :tags
     Enter tags separated by commas:
