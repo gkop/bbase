@@ -47,9 +47,9 @@ class ResourcesController < ApplicationController
   # PUT /resources/1
   def update
     @resource = Resource.find(params[:id])
-
     if @resource.update_attributes(params[:resource])
-      redirect_to(@resource, :notice => "#{@resource.type} was successfully updated.")
+      redirect_to resource_path(params[:id]),
+                  :notice => "#{@resource.type} was successfully updated."
     else
       render :action => "edit"
     end

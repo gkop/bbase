@@ -68,9 +68,8 @@ describe ResourcesController do
       login_admin
       put :update, :id => new_resource.id, :resource => {:title => "test update resource"}
       resource = assigns(:resource)
-      resource.id.should == resource.id
       resource.title.should == "test update resource"
-      response.should redirect_to resource
+      response.should redirect_to resource_path(new_resource.id)
       flash[:notice].should == "Writing was successfully updated."
     end
 
