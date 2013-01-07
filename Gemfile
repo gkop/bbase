@@ -2,7 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.10'
 
-gem 'mongoid'
+gem "mongo", "~> 1.7.0"
+gem 'mongoid', "~> 2.5.1"
 gem 'bson_ext'
 
 gem 'haml'
@@ -59,7 +60,7 @@ group :test, :development do
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'capybara-webkit'
+  gem 'capybara-webkit', "0.12.1"
 
   # parallelize tests across cpu cores
   gem 'parallel_tests'
