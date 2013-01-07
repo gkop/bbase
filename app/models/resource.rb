@@ -8,11 +8,13 @@ class Resource
   field :title, :type => String
   field :note, :type => String
   field :asset_filename, :type => String
+  field :sort_order, :type => Integer, :default => -1
   key :title
   validates_unique_key
 
   validates_uniqueness_of :title
   validates_presence_of :title
+  validates_numericality_of :sort_order
   sanitizes :note
 
   def primary_tag

@@ -9,6 +9,7 @@
   = f.inputs do
     = f.input :title, :input_html => {:disabled => (params[:action] != "new")}
     = f.input :asset_filename
+    = f.input :sort_order
     = f.input :tags
     Enter tags separated by commas:
     %br

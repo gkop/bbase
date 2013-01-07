@@ -12,7 +12,7 @@ class ResourcesController < ApplicationController
     else
       @resources = Resource.all
     end
-    @resources = @resources.asc(:title)
+    @resources = @resources.asc(:sort_order)
   end
 
   # GET /resource/1
