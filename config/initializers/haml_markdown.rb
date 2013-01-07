@@ -9,7 +9,7 @@ module Haml::Filters::Markdown
 
   private
   def insert_captions(html)
-    parsed = Nokogiri::HTML(html)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(html)
     parsed.css("img[title]").each do |img|
       title = img['title']
       title_inner_html = Redcarpet.new(img['title']).to_html
