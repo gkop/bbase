@@ -6,9 +6,11 @@
         #{yield(:title)} | Golahny.org
       - else
         Golahny.org, online home of artist Berta Golahny
+    %meta{:charset => "UTF-8"}
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
+    = render "common/google_analytics"
 
   %body
     #contents
