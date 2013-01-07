@@ -6,4 +6,8 @@ FactoryGirl.define do
   factory :writing, :parent => :resource do
     tags 'writing'
   end
+
+  factory :response, :parent => :resource do
+    tags 'response'
+  end
 end

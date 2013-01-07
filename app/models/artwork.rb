@@ -3,6 +3,7 @@ class Artwork
   include Mongoid::Timestamps
   include Mongoid::Taggable
   include Mongoid::Sanitizable
+  include Mongoid::UniqueCompositeKey
 
   field :title, :type => String
   field :note, :type => String
@@ -32,15 +33,7 @@ class Artwork
   validates_uniqueness_of :title
   validates_presence_of :title
   validates_numericality_of :year, :greater_than => 1937, :less_than => 2006, :allow_blank => true
-  validate :check_for_collision
+  validates_unique_key
   sanitizes :note
 
-  # validate uniqueness of key
-  def check_for_collision
-    canonical_id = title.identify
-    artworks = Artwork.all(:conditions => {:id => canonical_id})
-    if artworks.count > 1 || (artworks.count == 1 && artworks.first != self)
-      errors.add(:base, "Title too similar to that of an existing artwork")
-    end
-  end
 end
