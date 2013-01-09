@@ -4,10 +4,10 @@
   %h1= @gallery.name
   %h4
     - if @gallery.curated?
-      Officially curated by #{link_to(@gallery.user.name, @gallery.user)}, a Golahny expert
+      Officially curated
     - else
-      By #{@gallery.user ? link_to(@gallery.user.name, @gallery.user) : "Anonymous"} 
-  - if can? :manage, Settings 
+      By #{@gallery.user ? link_to(@gallery.user.name, @gallery.user) : "Anonymous"}
+  - if can? :manage, Settings
     - if @gallery.is_on_homepage?
       = t('.assigned_to_homepage')
     - else
@@ -21,9 +21,9 @@
       = basic_title(a)
       - if can?(:manage, @gallery)
         %br
-          #{link_to(t("remove"), remove_artwork_from_gallery_path(:id => @gallery.id, :artwork_id => a.id), :method => :put)}
- 
-  - if !@gallery.note.blank?
+        = link_to(t("remove"), remove_artwork_from_gallery_path(:id => @gallery.id, :artwork_id => a.id), :method => :put)
+
+  - if @gallery.note.present?
     .left-aligned.note.wall-of-text
       :markdown
         #{@gallery.note}
