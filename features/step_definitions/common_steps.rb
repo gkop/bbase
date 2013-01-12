@@ -24,6 +24,7 @@ end
 # Thanks to John Feminella for the original version of this step (http://gist.github.com/583670)
 Given /^an? (.+) exists with (?:an? )?(.+) (?:of )?\"([^\"]*)\"$/ do |model, field, value|
   factory_name = model.gsub(' ', '_').to_sym
+  field.gsub!(' ', '_')
   eval("@#{factory_name} = FactoryGirl.create(factory_name, field => value)")
 end
 

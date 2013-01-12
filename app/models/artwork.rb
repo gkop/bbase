@@ -9,6 +9,8 @@ class Artwork
   field :note, :type => String
   field :year, :type => Integer
   field :display_year, :type => String
+  field :numeric_year, :type => Integer
+  field :string_year, :type => String
   field :height, :type => Integer
   field :width, :type => Integer
   field :grandpa_index, :type => Integer

@@ -5,7 +5,7 @@ module ArtworksHelper
   end
 
   def year_for(artwork)
-    "#{(artwork.display_year.present? ? artwork.display_year : (artwork.year.present? ? artwork.year : "?"))}"
+    "#{(artwork.numeric_year.present? ? artwork.numeric_year : (artwork.string_year.present? ? artwork.string_year : "?"))}"
   end
 
   def friendly_dimensions(artwork)

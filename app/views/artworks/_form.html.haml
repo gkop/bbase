@@ -9,8 +9,8 @@
   = f.inputs do
 
     = f.input :title, :input_html => {:disabled => (params[:action] != "new")}
-    = f.input :year
-    = f.input :display_year
+    = f.input :numeric_year
+    = f.input :string_year
     = f.input :image
     = f.input :height
     = f.input :width
