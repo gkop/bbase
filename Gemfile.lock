@@ -140,6 +140,11 @@ GEM
       mongoid (>= 2.4.6)
       rake
       rspec (>= 2.9)
+    mongoid_rails_migrations (1.0.0)
+      activesupport (>= 3.2.0)
+      bundler (>= 1.0.0)
+      rails (>= 3.2.0)
+      railties (>= 3.2.0)
     mongoid_taggable (0.1.7)
     multi_json (1.5.0)
     net-scp (1.0.4)
@@ -283,6 +288,7 @@ DEPENDENCIES
   mongo (~> 1.7.0)
   mongoid (~> 2.5.1)
   mongoid-rspec
+  mongoid_rails_migrations
   mongoid_taggable
   parallel_tests
   postmark-rails

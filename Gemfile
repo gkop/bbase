@@ -4,6 +4,7 @@ gem 'rails', '~> 3.2.10'
 
 gem "mongo", "~> 1.7.0"
 gem 'mongoid', "~> 2.5.1"
+gem 'mongoid_rails_migrations'
 gem 'bson_ext'
 
 gem 'haml'
