@@ -18,7 +18,7 @@ class Resource
   sanitizes :note
 
   def primary_tag
-    (tags_array & ['writing', 'response']).first
+    (tags_array & ['writing', 'response', 'exhibition']).first
   end
 
   def type
