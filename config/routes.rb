@@ -29,7 +29,9 @@ Bbase::Application.routes.draw do
   put "/galleries/:id/add/:artwork_id" => "galleries#add", :as => :add_artwork_to_gallery
   put "/galleries/:id/remove/:artwork_id" => "galleries#remove", :as => :remove_artwork_from_gallery
 
-  resources :galleries
+  resources :galleries do
+    resources :artworks, only: [:show]
+  end
 
   get "/settings/edit" => "settings#edit", :as => :edit_settings
   put "/settings" => "settings#update", :as => :settings

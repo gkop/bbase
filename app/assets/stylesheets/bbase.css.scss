@@ -262,6 +262,9 @@ p.caption {
 
 p.flat-tree {
   margin-bottom: 1em;
+  .next-in-gallery {
+    float: right;
+  }
 }
 
 table.artworks {

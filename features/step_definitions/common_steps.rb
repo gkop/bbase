@@ -33,3 +33,7 @@ Then /^I should see the (.*)$/ do |model|
   object = eval("@#{factory_name}")
   step %Q{I should see "#{object.title}"}
 end
+
+Then /^I should see a link to "([^"]*)"$/ do |link_content|
+  find(:xpath, "//a[contains(., '#{link_content}') or img[@alt='#{link_content}'] or @title='#{link_content}']")
+end

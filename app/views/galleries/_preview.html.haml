@@ -1,7 +1,7 @@
 .gallery-item.preview.left-aligned
   .gallery-preview
     - gallery.random_artworks(6).each do |a|
-      = link_to tiny_image(a), a, :id => a.id
+      = link_to tiny_image(a), gallery_artwork_path(gallery_id: gallery.id, id: a.id)
   .caption
     %span.title
       = link_to(gallery.name, gallery)

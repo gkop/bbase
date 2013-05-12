@@ -4,7 +4,6 @@ class ArtworksController < ApplicationController
   load_and_authorize_resource
 
   # GET /artworks
-  # GET /artworks.xml
   def index
     if params[:tags].present?
       tags_array = params[:tags].split(',')
@@ -14,33 +13,17 @@ class ArtworksController < ApplicationController
       @artworks = Artwork.all
     end
     @artworks = @artworks.asc(:title)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @artworks }
-    end
   end
 
   # GET /artworks/1
-  # GET /artworks/1.xml
   def show
     @artwork = Artwork.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @artwork }
-    end
+    @gallery = Gallery.find(params[:gallery_id]) if params[:gallery_id]
   end
 
   # GET /artworks/new
-  # GET /artworks/new.xml
   def new
     @artwork = Artwork.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @artwork }
-    end
   end
 
   # GET /artworks/1/edit
@@ -49,49 +32,32 @@ class ArtworksController < ApplicationController
   end
 
   # POST /artworks
-  # POST /artworks.xml
   def create
     @artwork = Artwork.new(params[:artwork])
 
-    respond_to do |format|
-      
-      if @artwork.save
-        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully created.') }
-        format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
-      end
+    if @artwork.save
+      redirect_to(@artwork, :notice => 'Artwork was successfully created.')
+    else
+      render :action => "new"
     end
   end
 
   # PUT /artworks/1
-  # PUT /artworks/1.xml
   def update
     @artwork = Artwork.find(params[:id])
 
-    respond_to do |format|
-      if @artwork.update_attributes(params[:artwork])
-        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
-      end
+    if @artwork.update_attributes(params[:artwork])
+      redirect_to(@artwork, :notice => 'Artwork was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
 
   # DELETE /artworks/1
-  # DELETE /artworks/1.xml
   def destroy
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
 
-    flash[:notice] = "Deleted artwork "+@artwork.title
-
-    respond_to do |format|
-      format.html { redirect_to(artworks_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(artworks_url, notice: "Deleted artwork "+@artwork.title)
   end
 end

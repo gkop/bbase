@@ -2,11 +2,25 @@
 
 %div#artwork
   %p.flat-tree
-    %span.carrot
-      >
-    = link_to "Artworks", artworks_path
-    %span.carrot
-      >
-    = link_to @artwork.title, @artwork
+    - if @gallery
+      %span.carrot >
+      = link_to "Galleries", galleries_path
+      %span.carrot >
+      - if @gallery.curated?
+        = link_to @gallery.name, @gallery
+      - else
+        = link_to @gallery.name, @gallery
+        by
+        = link_to @gallery.user.name, @gallery.user
+      %span.carrot >
+      = link_to @artwork.title, gallery_artwork_path(gallery_id: @gallery.id, id: @artwork.id)
+      %span.next-in-gallery
+        = next_artwork_in_gallery_link
+        >
+    - else
+      %span.carrot >
+      = link_to "Artworks", artworks_path
+      %span.carrot >
+      = link_to @artwork.title, @artwork
 
   = square_image @artwork

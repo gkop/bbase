@@ -19,4 +19,8 @@ module ArtworksHelper
     end
   end
 
+  def next_artwork_in_gallery_link
+    next_artwork = @gallery.next_artwork_after(@artwork)
+    link_to "Next artwork: #{next_artwork.title}", gallery_artwork_path(gallery_id: @gallery.id, id: next_artwork.id)
+  end
 end

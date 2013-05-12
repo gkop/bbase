@@ -48,6 +48,9 @@ gem 'sanitize'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
+# more concise logging in development
+gem 'quiet_assets'
+
 group :development do
   gem 'unicorn'
 end

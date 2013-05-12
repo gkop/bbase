@@ -27,6 +27,10 @@ class Gallery
     Settings.get(:homepage_gallery) ==  self.id
   end
 
+  def next_artwork_after(artwork)
+    artworks[(artworks.index(artwork)+1) % artworks.length]
+  end
+
   def self.assigned_to_homepage
     if Settings.get(:homepage_gallery)
       self.find(Settings.get(:homepage_gallery))

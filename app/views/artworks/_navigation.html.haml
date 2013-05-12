@@ -7,7 +7,7 @@
       %span.grandpa-index
         \##{@artwork.grandpa_index}
 
-  - if !@artwork.note.blank?
+  - if @artwork.note.present? && !@gallery
     .note.wall-of-text
       :markdown
         #{@artwork.note}
