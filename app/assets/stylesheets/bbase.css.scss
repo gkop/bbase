@@ -261,9 +261,11 @@ p.caption {
 }
 
 p.flat-tree {
+  line-height: 2em;
   margin-bottom: 1em;
   .next-in-gallery {
     float: right;
+    margin-bottom: 0.75em;
   }
 }
 
