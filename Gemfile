@@ -35,9 +35,6 @@ gem "cocoon"
 # send emails via postmark
 gem 'postmark-rails'
 
-# use info from git inside the app
-gem 'grit'
-
 # render markdown
 gem "redcarpet", "~> 1.17.2"
 
