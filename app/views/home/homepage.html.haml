@@ -1,6 +1,12 @@
 #homepage
   -# Put announcements inside following div
-  -#announcement.notice
+  #announcement.notice
+    :markdown
+      **The Brooklyn Art & Design Show**
+
+      September 19-20, 2015
+
+      Brier Hill Gallery will feature twenty-two of Golahny's prints, available online at [http://brierhillgallery.com/artists-g-j/#/berta-r-golahny/](http://brierhillgallery.com/artists-g-j/#/berta-r-golahny/)
 
   - if @gallery.blank?
     = t(".please_assign_gallery")
