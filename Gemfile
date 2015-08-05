@@ -53,7 +53,7 @@ group :development do
 end
 
 group :test, :development do
-  gem 'capybara'
+  gem 'capybara', "2.4.4"
   gem 'cucumber-rails', :require => false
   gem 'rspec'
   gem 'rspec-rails'
@@ -61,7 +61,7 @@ group :test, :development do
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'capybara-webkit', "0.12.1"
+  gem 'capybara-webkit', "1.6.0"
 
   # parallelize tests across cpu cores
   gem 'parallel_tests'

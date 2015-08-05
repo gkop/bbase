@@ -4,6 +4,7 @@ module Haml::Filters::Markdown
 
   def render(text)
     html = Redcarpet.new(text).to_html
+    html.force_encoding("UTF-8")
     insert_captions(html)
   end
 
