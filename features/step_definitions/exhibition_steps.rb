@@ -1,3 +1,7 @@
+Then /^the slideshow should be on "([^"]*)"$/ do |name|
+  page.should have_css("a.artwork[title^='#{name}']")
+end
+
 Given /^I have a gallery named "([^"]*)"$/ do |name|
   @gallery = FactoryGirl.build(:gallery, :name => name)
   @current_user.galleries << @gallery

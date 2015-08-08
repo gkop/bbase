@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def homepage
     @gallery = Gallery.assigned_to_homepage
     if @gallery
-      @artworks = @gallery.artworks.shuffle
+      @artworks = @gallery.artworks
     end
   end
 

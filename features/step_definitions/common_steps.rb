@@ -19,6 +19,14 @@ When /^I wait for (\d+) minutes$/ do |arg1|
   sleep(arg1.to_i*60)
 end
 
+When /^I take a screenshot$/ do
+  page.driver.save_screenshot("/tmp/foo.png")
+end
+
+When /^I wait for you$/ do
+  binding.pry
+end
+
 ##
 # Thanks to Ben for this step
 # Thanks to John Feminella for the original version of this step (http://gist.github.com/583670)
