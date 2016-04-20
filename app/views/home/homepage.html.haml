@@ -1,12 +1,8 @@
 #homepage
   -# Put announcements inside following div
-  - if false#announcement.notice
+  #announcement.notice
     :markdown
-      **The Brooklyn Art & Design Show**
-
-      September 19-20, 2015
-
-      Brier Hill Gallery will feature twenty-two of Golahny's prints, available online at [http://brierhillgallery.com/artists-g-j/#/berta-r-golahny/](http://brierhillgallery.com/artists-g-j/#/berta-r-golahny/)
+      ## [The first annual Berta Golahny Awards, hosted by the Cambridge Center for Adult Education, where Golahny taught from 1959 to 2001.](https://www.ccae.org/content/recap-berta-golahny-awards)
 
   - if @gallery.blank?
     = t(".please_assign_gallery")
