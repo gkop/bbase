@@ -20,7 +20,7 @@ set :branch, "master"
 
 set :deploy_to, "/opt/#{application}"
 
-set :rvm_ruby_string, 'ruby-2.1.2@bbase'
+set :rvm_ruby_string, 'ruby-2.3.1@bbase'
 set :rvm_bin_path, "/usr/local/rvm/bin"
 
 # deploy task for Passenger

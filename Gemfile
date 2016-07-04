@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby '2.3.1'
+
 gem 'rails', '~> 3.2.22'
 
 gem "mongo", "~> 1.7.0"
@@ -43,7 +45,7 @@ gem 'sanitize'
 
 # deployment
 gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'rvm-capistrano', require: false
 
 # more concise logging in development
 gem 'quiet_assets'
@@ -69,6 +71,10 @@ group :test, :development do
   # fancy debugger
   gem "pry", "~> 0.9.7"
   gem "pry-nav", "~> 0.0.4"
+end
+
+group :test do
+  gem 'test-unit'
 end
 
 # Gems used only for assets and not required
