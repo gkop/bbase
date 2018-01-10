@@ -1,5 +1,2 @@
-%h3 Curated Galleries
+%h3 Galleries
 = render :partial => 'preview', :as => :gallery, :collection => @curated_galleries, :locals => {:hide_byline => true}
-
-%h3 User Galleries
-= render :partial => 'preview', :as => :gallery, :collection => @uncurated_galleries

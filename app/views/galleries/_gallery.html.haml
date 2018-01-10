@@ -3,10 +3,6 @@
 %div#gallery
   %h1= @gallery.name
   %h4
-    - if @gallery.curated?
-      Officially curated
-    - else
-      By #{@gallery.user ? link_to(@gallery.user.name, @gallery.user) : "Anonymous"}
   - if can? :manage, Settings
     - if @gallery.is_on_homepage?
       = t('.assigned_to_homepage')
