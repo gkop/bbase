@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '~> 3.2.22'
+gem 'rails', '3.2.22.5'
 
 gem "mongo", "~> 1.7.0"
 gem 'mongoid', "~> 2.5.1"
