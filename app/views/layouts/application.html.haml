@@ -5,7 +5,7 @@
       - if content_for?(:title)
         #{yield(:title)} | Golahny.org
       - else
-        Golahny.org, online home of artist Berta Golahny
+        Golahny.org, online home of artist Berta Rosenbaum Golahny
     %meta{:charset => "UTF-8"}
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
@@ -18,7 +18,7 @@
         .top
           = render 'devise/menu/menu'
         .bottom
-          Berta Golahny
+          Berta Rosenbaum Golahny
 
       #sidebar-menu
         %a{:href => biography_path}
