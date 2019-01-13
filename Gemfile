@@ -4,6 +4,9 @@ ruby '2.3.1'
 
 gem 'rails', '3.2.22.5'
 
+# https://stackoverflow.com/a/35893625/283398
+gem 'rake', '< 11.0'
+
 gem "mongo", "~> 1.7.0"
 gem 'mongoid', "~> 2.5.1"
 gem 'mongoid_rails_migrations'
